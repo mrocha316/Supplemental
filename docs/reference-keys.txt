@@ -4,7 +4,7 @@ fig:unnamed-chunk-3
 fig:unnamed-chunk-4
 tab:unnamed-chunk-5
 kevin-motivation
-goals-of-statistical-analyses-describe-predict-cause-and-effect
+goals-of-quantitative-research-describe-predict-cause-and-effect
 why-multivariable-methods
 why-multiple-regression
 causality

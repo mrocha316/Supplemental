@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.5)  5 MAR 2021 17:22
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.5)  5 MAR 2021 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,6 +873,11 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 Chapter 1.
+
+Underfull \hbox (badness 1028) in paragraph at lines 94--94
+[]\TU/lmr/bx/n/14.4 Goals of quantitative research (describe,
+ []
+
 [5] [6
 
 ]
@@ -882,11 +887,11 @@ Chapter 2.
 ]
 Chapter 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 132.
+(Font)              scaled to size 14.4pt on input line 145.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 132.
+(Font)              scaled to size 14.4013pt on input line 145.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 132.
+(Font)              scaled to size 14.39845pt on input line 145.
 [9]
 Overfull \hbox (258.94124pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 10 \TU/lmr/m/sl/10 CHAPTER 3.  (COL WATTS) QUANTITATIVE EXPLANAT
@@ -906,7 +911,7 @@ File: ./images/crawlObstacle.jpg Graphic file (type bmp)
 File: ./images/tireObstacle.jpg Graphic file (type bmp)
 <./images/tireObstacle.jpg>
 
-Overfull \hbox (2.20631pt too wide) in paragraph at lines 156--157
+Overfull \hbox (2.20631pt too wide) in paragraph at lines 169--170
 [][] [] 
  []
 
@@ -935,12 +940,12 @@ No file MA206supplement.bbl.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
-(rerunfilecheck)             Checksum: D669DDF6EEED0276BD5515D1D9B2E616;4291.
+(rerunfilecheck)             Checksum: 28332A6FA0797C57514398A78EC0F82F;4296.
  ) 
 Here is how much of TeX's memory you used:
  15866 strings out of 478931
- 286841 string characters out of 5864525
- 750732 words of memory out of 5000000
+ 286842 string characters out of 5864525
+ 750976 words of memory out of 5000000
  35502 multiletter control sequences out of 15000+600000
  407954 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

@@ -1,5 +1,5 @@
 --- 
-title: "Supplement to MA206 Probability and Statistics"
+title: "Causality and Multiple Regression Supplement - MA206 Probability and Statistics"
 author: "Authors TBD"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -12,7 +12,17 @@ description: "This is a supplement for MA206 Probability and Statistics, West Po
 
 # (Kevin) Motivation
 
-## Goals of statistical analyses (describe, predict, cause-and-effect)
+## Goals of quantitative research (describe, predict, cause-and-effect)
+
+Researchers and practitioners in nearly every discipline employ quantitative methods to answer important questions and make decisions.  Regardless if it is finance, medicine, psychology, etc., all researchers typically have one of the following three goals when they conduct quantitative research:
+
+* **describe** - (define here)
+
+* **predict** - (define here)
+
+* **cause-and-effect** - (define here)
+
+For example, let's say a medical researcher investigates a newly discovered variant of the coronavirus.  Initially, researchers will probably focus on describe studies.  *What is the prevalence of the variant in the population?* *What groups of individuals are most vulnerable to the variant?*  Follow-on studies will have the p (continue example here)      
 
 ## Why multivariable methods?
 
