@@ -1,0 +1,13 @@
+# (COL Watts) Quantitative explanatory variable with quantitative confounding variable {#quantitative}
+
+
+Explanatory ($X$) - quantitative
+
+Response ($Y$) - quantitative
+
+Confounding ($C$) - quantitative
+
+
+## Effect of $X$ and $Y$ adjusting for $C$.
+
+## Assessing model adequacy

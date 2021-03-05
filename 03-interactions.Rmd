@@ -1,0 +1,7 @@
+# (Kevin) Interactions {#interactions}
+
+Extend the example in the last chapter...introduce in terms of effect modification.  We have a new research question, "does the affect of $X$ on $Y$ change based on another variable of interest?"
+
+
+
+

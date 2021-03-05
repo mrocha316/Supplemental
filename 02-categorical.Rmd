@@ -1,0 +1,21 @@
+# (COL Watts) Quantitative explanatory variable with categorical confounding variable {#categorical}
+
+Introduce multiple regression by adding a categorical confounding variable
+
+Explanatory ($X$) - quantitative
+
+Response ($Y$) - quantitative
+
+Confounding ($C$) - categorical
+
+## Unadjusted effect of $X$ on $Y$
+
+short review of simple regression
+
+## Effect of $X$ and $Y$ adjusting for $C$.
+
+## Assessing model adequacy
+
+
+
+
