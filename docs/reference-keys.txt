@@ -3,7 +3,7 @@ tab:unnamed-chunk-2
 fig:unnamed-chunk-3
 fig:unnamed-chunk-4
 tab:unnamed-chunk-5
-motivation
+kevin-motivation
 goals-of-statistical-analyses-describe-predict-cause-and-effect
 why-multivariable-methods
 why-multiple-regression
@@ -22,4 +22,3 @@ activity
 quantitative
 effect-of-x-and-y-adjusting-for-c.-1
 assessing-model-adequacy-1
-kevin-motivation
