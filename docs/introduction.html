@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | Causality and Multiple Regression Supplement</title>
+  <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | Causality and Multiple Regression Supplement" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Causality and Multiple Regression Supplement" />
+  
+  <meta name="twitter:description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  
+
+<meta name="author" content="Authors TBD" />
+
+
+<meta name="date" content="2021-03-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="causality.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MA206 Supplement</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why-multiple-regression"><i class="fa fa-check"></i><b>1.2</b> Why multiple regression?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> (Kevin) Causality</a><ul>
+<li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
+<li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
+<li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies"><i class="fa fa-check"></i><b>2.3</b> Observational Studies</a></li>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#confounding"><i class="fa fa-check"></i><b>2.4</b> Confounding</a></li>
+<li class="chapter" data-level="2.5" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.5</b> Causal Diagrams</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="matching.html"><a href="matching.html"><i class="fa fa-check"></i><b>3</b> Matching</a></li>
+<li class="chapter" data-level="4" data-path="categorical.html"><a href="categorical.html"><i class="fa fa-check"></i><b>4</b> (COL Watts) Quantitative explanatory variable with categorical confounding variable</a><ul>
+<li class="chapter" data-level="4.1" data-path="categorical.html"><a href="categorical.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>4.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="categorical.html"><a href="categorical.html#effect-of-x-and-y-adjusting-for-c."><i class="fa fa-check"></i><b>4.2</b> Effect of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span>.</a></li>
+<li class="chapter" data-level="4.3" data-path="categorical.html"><a href="categorical.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>4.3</b> Assessing model adequacy</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>5</b> (Kevin) Interactions</a></li>
+<li class="chapter" data-level="6" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>6</b> Activity</a></li>
+<li class="chapter" data-level="7" data-path="quantitative.html"><a href="quantitative.html"><i class="fa fa-check"></i><b>7</b> (COL Watts) Quantitative explanatory variable with quantitative confounding variable</a><ul>
+<li class="chapter" data-level="7.1" data-path="quantitative.html"><a href="quantitative.html#effect-of-x-and-y-adjusting-for-c.-1"><i class="fa fa-check"></i><b>7.1</b> Effect of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span>.</a></li>
+<li class="chapter" data-level="7.2" data-path="quantitative.html"><a href="quantitative.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>7.2</b> Assessing model adequacy</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Causality and Multiple Regression Supplement</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="goals-of-quantitative-research-describe-predict-cause-and-effect" class="section level2">
+<h2><span class="header-section-number">1.1</span> Goals of quantitative research (describe, predict, cause-and-effect)</h2>
+<p>Researchers and practitioners in nearly every discipline employ quantitative methods to answer important questions and make decisions. Regardless if it is finance, medicine, psychology, etc., all researchers typically have one of three goals <span class="citation">(Cozby and Bates <a href="#ref-cozby2020methods">2020</a>)</span> when they conduct quantitative research:</p>
+<ul>
+<li><p><strong>describe</strong></p></li>
+<li><p><strong>predict</strong></p></li>
+<li><p><strong>cause-and-effect</strong></p></li>
+</ul>
+<p>(discuss external and internal validity here?)</p>
+<p>For example, consider medical researchers investigating a newly discovered variant of the coronavirus. Initially, they focus on describe studies. <em>How prevalent is the variant in the population? How does the prevalence vary over space and time? What groups of individuals are most vulnerable to the variant? What else is associated with the variant?</em> Together, these studies help the researchers better understand the variant and identify important variables for refined predict studies.</p>
+<p>Predict studies identify individuals most at risk for the variant or for transmitting it to others. Researchers select potential predictors as inputs to algorithms and statistical methods that transform them into estimates of each individual’s risk for the variant. These methods rely upon associations between the inputs and the variant. In addition, these methods estimate the error associated with their predictions. Researchers try to ensure error estimates obtained within their study are good estimates of the error when their methods are applied to other populations. While predict studies help us identify who is at risk, they do not tell us the effect on their risk if we change something about them (quitting smoking, lost weight, etc.) To answer these “what if?” questions, researchers use cause-and-effect studies.</p>
+<p>Cause-and-effect studies try to estimate the effect of intervening or changing some aspect of an individual. These studies are tremendously important in public policy (where they are aptly called <em>intervention studies</em>) to justify expensive legislation and regulations to reduce risk. Unlike prediction studies, which are highly algorithmic and only require researchers to identify appropriate inputs, cause-and-effect studies use subject matter knowledge of the causal structure of the inputs to select appropriate statistical models <span class="citation">(Hernán, Hsu, and Healy <a href="#ref-hernan2019second">2019</a>)</span>. For example, to assess the affect of quitting smoking on coronavirus risk, we would have to understand why some people quit smoking and others do not, as these reasons themselves may be responsible for some of the reduction in risk we observe between the two groups. Also, unlike prediction studies which rely upon what we <em>see</em>, cause-and-effect studies require us to ask what would happen if we <em>do</em> something <span class="citation">(Pearl and Mackenzie <a href="#ref-pearl2018book">2018</a>)</span>. Only human beings are capable of such counterfactual thinking (“what would have happened if”) - even our most sophisticated computer algorithms require human supervision to address cause-and-effect questions.</p>
+<p><strong>Exercises</strong></p>
+<ol style="list-style-type: decimal">
+<li>For the following studies, identify the goal (describe, predict, cause-and-effect) of the study. Briefly explain your choice:</li>
+</ol>
+<ul>
+<li><p><em>A researcher obtains school records to collect information on the extracurricular activities of students.</em></p></li>
+<li><p><em>A researcher obtains school records to determine the impact of extracurricular activities on grades.</em></p></li>
+<li><p><em>A researcher obtains school records on extracurricular activities to identify students who are at risk to graduate.</em></p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Select an area of interest to you. Write a sentence describing a study in your area of interest for each of the three goals (describe, predict, cause-and-effect)</li>
+</ol>
+</div>
+<div id="why-multiple-regression" class="section level2">
+<h2><span class="header-section-number">1.2</span> Why multiple regression?</h2>
+<p>(need to edit the below from an email)</p>
+<p>You are investigating the relationship between education and adult earnings. (Note this is almost always an observational study – a survey of sampled individuals with variables such as income, education, age, sex, etc.)</p>
+<p>Let’s assume you’ve never taken our course (or one like it). You can get pretty far investigating this data with concepts most students learn in high school. For example, you could compare adult earnings in college graduates to those of non-college graduates or find an estimate of earnings per year of education. If you are especially savy, you might recognize that college graduates and noncollege graduates are different in ways (age, sex, etc.) that are also important to adult earnings and repeat your original analyses within the different levels of these variables. To you (and most people outside our discipline), statistics is arithmetic, and it is hard to envision anything beyond arithmetic if that’s all you know. However, there are important questions you cannot answer with this limited view of statistics:</p>
+<ol style="list-style-type: decimal">
+<li><p>What range of population values for measures of association between education and adult earnings are compatible with your data?</p></li>
+<li><p>If there is no association between education and earnings, how extreme are your observed results?</p></li>
+<li><p>What is the association between education and earnings holding other important variables constant?</p></li>
+<li><p>How does the relationship between education and earnings depend upon other variables?</p></li>
+</ol>
+<p>Most people’s cynicism towards statistics is rooted in a lack of understanding that our discipline has answers to (1)-(4).</p>
+<p>Thus far in our course, we have focused on (1) and (2) for various types of independent and dependent variables. And, if someone were to ask me, “what have your students learned in your course this semester?”, my response would start with (1) and (2). These are important concepts…humans are not predisposed to think this way.</p>
+<p>However, you still cannot answer (3) and (4) if you’re in our course right now. (3) relates to confounding; (4) is interactions. The concepts of confounding and interactions are best understood before approaching multiple regression (a point we discuss at length here: <a href="https://www.overleaf.com/read/nkzpvpxwsjzq" class="uri">https://www.overleaf.com/read/nkzpvpxwsjzq</a>). However, multiple regression is the most flexible statistical model for estimating quantities in (3) and (4). Being able to answer (3) and (4) is a huge step up in a student’s capability. Comparing earnings of college graduates to noncollege graduates is meaningless if these groups are vastly different with regards to age, sex, etc. Unless you have formal education in these methods, you probably don’t know (3) and (4) are possible – it’s outside what you can do with arithmetic.</p>
+<p>Okay, so that’s some discussion on why do we teach multiple regression? Now, what do we teach about multiple regression?</p>
+<p>Broadly speaking, there are two major aspects to multiple regression: theory, application. Given our students and where this course fits into their education, I am an unabashed proponent of application being the primary focus of our course.</p>
+<p>Examples of theory - derive the least squares estimates of the regression coefficients, understand the geometric interpretation of regression, etc.</p>
+<p>Examples of application - fit and interpret a model to estimate the association between education and earnings that adjusts for age.</p>
+<p>You can have a rich understanding of one of these two aspects and be a complete novice about the other. From my experience, mathematicians are rock stars in theory but haven’t seen as much application (don’t worry, you have more than enough for this course). For example, in application, a statistician would employ multiple regression in very different ways depending on whether the primary goal of the study is (a) prediction or (b) estimating the effect of an intervention. In (a), the primary concern is making smart use of the data to obtain “good” estimates of the out-of-sample prediction error with little care to what’s in the model. In (b), the primary concern is confounding, which is a type of statistical bias, so variables are selected carefully by the researcher to reflect the intervention of interest. The distinction between (a) and (b) is beyond the scope of our course, but I’m just trying to illustrate the richness there is to both the theory and application of multiple regression.</p>
+<p>So, back to our course, I think the Michigan house prices example in Intermediate Statistical Analyses by Tintle et. al. and Dan Baller’s worksheet sums up well what I think students should get from our course. Specifically, they should get an appreciation that there are statistical models that (1) estimate measures of association while holding other variables constant and (2) see how these associations change based on other variables. For (2), an interaction between a quantitative and categorical variable is about as far as we can reasonably expect most students to get.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-cozby2020methods">
+<p>Cozby, Paul C, and Scott Bates. 2020. <em>Methods in Behavioral Research</em>. McGraw-Hill Education.</p>
+</div>
+<div id="ref-hernan2019second">
+<p>Hernán, Miguel A, John Hsu, and Brian Healy. 2019. “A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks.” <em>Chance</em> 32 (1). Taylor &amp; Francis: 42–49.</p>
+</div>
+<div id="ref-pearl2018book">
+<p>Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic books.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="causality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MA206supplement.pdf", "MA206supplement.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
