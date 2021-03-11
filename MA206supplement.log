@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.5)  10 MAR 2021 12:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.5)  11 MAR 2021 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,11 +896,11 @@ Chapter 3.
 ]
 Chapter 4.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 232.
+(Font)              scaled to size 14.4pt on input line 230.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 232.
+(Font)              scaled to size 14.4013pt on input line 230.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 232.
+(Font)              scaled to size 14.39845pt on input line 230.
 [17]
 Overfull \hbox (258.94124pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 18 \TU/lmr/m/sl/10 CHAPTER 4.  (COL WATTS) QUANTITATIVE EXPLANAT
@@ -920,7 +920,7 @@ File: ./images/crawlObstacle.jpg Graphic file (type bmp)
 File: ./images/tireObstacle.jpg Graphic file (type bmp)
 <./images/tireObstacle.jpg>
 
-Overfull \hbox (2.20631pt too wide) in paragraph at lines 256--257
+Overfull \hbox (2.20631pt too wide) in paragraph at lines 254--255
 [][] [] 
  []
 
@@ -961,10 +961,10 @@ Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
 Here is how much of TeX's memory you used:
  15898 strings out of 478931
  287596 string characters out of 5864525
- 756012 words of memory out of 5000000
+ 755168 words of memory out of 5000000
  35532 multiletter control sequences out of 15000+600000
  407954 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,8n,122p,1318b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,8n,122p,1372b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on MA206supplement.pdf (31 pages).
