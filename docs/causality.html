@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 (Kevin) Causality | Causality and Multiple Regression Supplement</title>
+  <title>Chapter 2 Causality | Causality and Multiple Regression Supplement</title>
   <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 (Kevin) Causality | Causality and Multiple Regression Supplement" />
+  <meta property="og:title" content="Chapter 2 Causality | Causality and Multiple Regression Supplement" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 (Kevin) Causality | Causality and Multiple Regression Supplement" />
+  <meta name="twitter:title" content="Chapter 2 Causality | Causality and Multiple Regression Supplement" />
   
   <meta name="twitter:description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
   
@@ -76,12 +76,17 @@
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> (Kevin) Causality</a>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
 <li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
 <li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
-<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a></li>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
+<li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
+<li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="matching.html"><a href="matching.html"><i class="fa fa-check"></i><b>3</b> Matching</a></li>
 <li class="chapter" data-level="4" data-path="categorical.html"><a href="categorical.html"><i class="fa fa-check"></i><b>4</b> (COL Watts) Quantitative explanatory variable with categorical confounding variable</a>
@@ -119,7 +124,7 @@
 
             <section class="normal" id="section-">
 <div id="causality" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> (Kevin) Causality</h1>
+<h1><span class="header-section-number">Chapter 2</span> Causality</h1>
 <p>The last few decades have seen a revolution in how statisticians view causality. A hundred years ago, when the statistical methods students learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies – there has never been a randomized controlled trial for smoking. The American Cancer Society’s observational studies of the 1960’s and 1970’s were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking. Clearly, statistical theory and practice had diverged in their understandings of causality.</p>
 <p>However, in the 1980’s and 1990’s, researchers in different disciplines began revisiting causality. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed that randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The <em>assignment mechanism</em> is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while “correlation does not imply causation” is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims in observational studies should be much richer and nuanced than this simple rule of thumb.</p>
 <p>(add citations)</p>
@@ -139,11 +144,24 @@
 <p>In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. It is about how subjects are <em>assigned</em> to the treatment groups.) Instead, other factors determine subjects’ group (treatment or control) assignment. Confounding occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias – using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not help fix bias, you just get a more precise, wrong estimate.</p>
 <p>For example, consider an observational study investigating long term health effects of smoking. In many populations, males are more likely to be smokers. In addition, males have different risks for long term health outcomes than females, regardless of whether they smoke. If we observe an association between smoking and an outcome without information on sex, we cannot distinguish the effect of smoking from the effect of sex.</p>
 <p>However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, you can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. <em>How do we identify a sufficient set of confounding variables?</em> For that question, we turn to causal diagrams.</p>
+<p>(discuss well-defined interventions?)</p>
 </div>
 <div id="causal-diagrams" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Causal Diagrams</h2>
-<p>Causal diagrams are useful tools for depicting the assignment mechanism. In many cases, following simple heuristics will identify a sufficient set of confounding variables to measure and control for.</p>
+<p>Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they identify a sufficient set of confounding variables to control for during design and analysis.</p>
+<p>Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables and a directed edge (arrow) connecting two nodes indicates the node at the arrow’s tail is a cause of the node at the arrow’s head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right – we adopt that convention here.</p>
+<p>There are three building blocks of causal diagrams.</p>
+<div id="confounding-variable" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Confounding variable</h3>
+<p>Recall a confounding variable is a common cause of the treatment and the outcome. For example,</p>
+</div>
+<div id="collider" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Collider</h3>
+</div>
+<div id="mediator" class="section level3" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Mediator</h3>
 
+</div>
 </div>
 </div>
             </section>

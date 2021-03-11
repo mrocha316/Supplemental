@@ -11,6 +11,9 @@ what-does-it-mean-for-one-thing-to-cause-another
 randomized-controlled-experiments
 observational-studies-and-confounding
 causal-diagrams
+confounding-variable
+collider
+mediator
 matching
 categorical
 unadjusted-effect-of-x-on-y

@@ -172,7 +172,7 @@ In an area of research, there is often a natural tradeoff between internal and e
 \end{enumerate}
 
 \hypertarget{causality}{%
-\chapter{(Kevin) Causality}\label{causality}}
+\chapter{Causality}\label{causality}}
 
 The last few decades have seen a revolution in how statisticians view causality. A hundred years ago, when the statistical methods students learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies -- there has never been a randomized controlled trial for smoking. The American Cancer Society's observational studies of the 1960's and 1970's were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking. Clearly, statistical theory and practice had diverged in their understandings of causality.
 
@@ -205,10 +205,27 @@ For example, consider an observational study investigating long term health effe
 
 However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, you can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. \emph{How do we identify a sufficient set of confounding variables?} For that question, we turn to causal diagrams.
 
+(discuss well-defined interventions?)
+
 \hypertarget{causal-diagrams}{%
 \section{Causal Diagrams}\label{causal-diagrams}}
 
-Causal diagrams are useful tools for depicting the assignment mechanism. In many cases, following simple heuristics will identify a sufficient set of confounding variables to measure and control for.
+Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they identify a sufficient set of confounding variables to control for during design and analysis.
+
+Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables and a directed edge (arrow) connecting two nodes indicates the node at the arrow's tail is a cause of the node at the arrow's head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right -- we adopt that convention here.
+
+There are three building blocks of causal diagrams.
+
+\hypertarget{confounding-variable}{%
+\subsection{Confounding variable}\label{confounding-variable}}
+
+Recall a confounding variable is a common cause of the treatment and the outcome. For example,
+
+\hypertarget{collider}{%
+\subsection{Collider}\label{collider}}
+
+\hypertarget{mediator}{%
+\subsection{Mediator}\label{mediator}}
 
 \hypertarget{matching}{%
 \chapter{Matching}\label{matching}}
