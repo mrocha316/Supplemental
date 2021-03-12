@@ -40,10 +40,28 @@ There are three building blocks of causal diagrams.
 
 ### Confounding variable
 
-Recall a confounding variable is a common cause of the treatment and the outcome.  For example, 
+Figure \@ref(fig:confounder) depicts the confounding variable $C$ of the effect of treatment $X$ on outcome $Y$.  We will observe an association between $X$ and $Y$ even if there is no treatment effect. The levels of $X$ differ in terms of $C$ and $C$ itself is a cause of $Y$. Without measuring and controlling for $C$, we cannot distinguish the effect of $X$ on $Y$ from the association through confounding variable $C$.  However, if $C$ is the only confounding variable, controlling for it will result in good estimates of the effect of $X$ on $Y$.  
 
+(backdoor path)
+
+![(#fig:confounder) A confounding variable $C$ on the effect of $X$ on $Y$.](./images/confounder.png)
+
+For example, let's say researchers investigate the effect of a master's degree on adult earnings.  They survey a large number of individuals and record whether they have a master's degree and their earnings. Socioeconomic status is a confounding variable.  Individuals with higher socioeconomic status are more likely to earn master's degrees.  In addition, they are more likely to have higher adult earnings, regardless of whether they have a master's degree.  For this example, let's assume socioeconomic status is the only confounding variable.  If the researchers observe an association between master's degrees and earnings without information on socioeconomic status, it is not possible to determine if the association is due to an effect of master's degrees or the effect of socioeconomic status.   
 
 ### Collider
 
+Figure \@ref(fig:collider) depicts treatment $X$ with no effect on outcome $Y$. $X$ and $Y$ are both causes of collider $Z$ (the two incoming arrows *collide*).  The box around $Z$ indicates conditioning upon $Z$ in the analysis.  In this case, there will be an association between $X$ and $Y$ even though there is no treatment effect.  Figure \@ref(fig:collider) is a common way to depict *selection bias* where an association in subjects selected for the study is not present in the general population.  In the selection bias diagram, $Z$ is an indicator of selection into the study with a box around it because researchers only observe subjects selected into the study.  
+
+![(#fig:collider) Collider $Z$ with no treatment effect of $X$ on $Y$.](./images/collider.png)
+
+A very famous example appears in @pearl2018book.  In the general population, we would not expect to see an association between an individual's talent and looks.  More talented people are not better looking and vice versa.  However, if we look only at famous Hollywood actors ($Z$), we would see an association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor.  More seriously, *selection bias* is a huge issue in medical and public health studies resulting in easily misinterpretated associations [@hernan2004structural;@cole2010illustrating;@elwert2014endogenous].
 
 ### Mediator
+
+Figure \@ref(fig:mediator) depicts mediator $M$ of the effect of treatment $X$ on outcome $Y$.  In this case, $X$ is a cause of $M$, $M$ is a cause of $Y$, and there is no effect of $X$ on $Y$ that cannot be explained by the effect of $M$ on $Y$.  A common mistake is to adjust for $M$.  If $M$ is categorical, we will not observe an association between $X$ and $Y$ within levels of $M$.  However, there is still an effect of $X$ on $Y$.  
+
+![(#fig:mediator) Mediator $M$ of the effect of treament $X$ on outcome $Y$.](./images/mediator.png)
+
+For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceeded by increased blood pressure.  Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
+
+Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects [@hernan2002causal].

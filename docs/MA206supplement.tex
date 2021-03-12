@@ -1,58 +1,43 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-]{book}
+\documentclass[]{book}
 \usepackage{lmodern}
-\usepackage{amsmath}
+\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
-\else % if luatex or xetex
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
-% Use upquote if available, for straight quotes in verbatim environments
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
-  pdftitle={Causality and Multiple Regression Supplement},
-  pdfauthor={Krista Watts and Kevin Cummiskey},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+            pdftitle={Causality and Multiple Regression Supplement},
+            pdfauthor={Krista Watts and Kevin Cummiskey},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{longtable,booktabs}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\usepackage{graphicx}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -61,24 +46,32 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{booktabs}
-\ifluatex
-  \usepackage{selnolig}  % disable illegal ligatures
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
 \fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-03-11}
+\date{2021-03-12}
 
 \begin{document}
 \maketitle
@@ -219,13 +212,45 @@ There are three building blocks of causal diagrams.
 \hypertarget{confounding-variable}{%
 \subsection{Confounding variable}\label{confounding-variable}}
 
-Recall a confounding variable is a common cause of the treatment and the outcome. For example,
+Figure \ref{fig:confounder} depicts the confounding variable \(C\) of the effect of treatment \(X\) on outcome \(Y\). We will observe an association between \(X\) and \(Y\) even if there is no treatment effect. The levels of \(X\) differ in terms of \(C\) and \(C\) itself is a cause of \(Y\). Without measuring and controlling for \(C\), we cannot distinguish the effect of \(X\) on \(Y\) from the association through confounding variable \(C\). However, if \(C\) is the only confounding variable, controlling for it will result in good estimates of the effect of \(X\) on \(Y\).
+
+(backdoor path)
+
+\begin{figure}
+\centering
+\includegraphics{./images/confounder.png}
+\caption{\label{fig:confounder} A confounding variable \(C\) on the effect of \(X\) on \(Y\).}
+\end{figure}
+
+For example, let's say researchers investigate the effect of a master's degree on adult earnings. They survey a large number of individuals and record whether they have a master's degree and their earnings. Socioeconomic status is a confounding variable. Individuals with higher socioeconomic status are more likely to earn master's degrees. In addition, they are more likely to have higher adult earnings, regardless of whether they have a master's degree. For this example, let's assume socioeconomic status is the only confounding variable. If the researchers observe an association between master's degrees and earnings without information on socioeconomic status, it is not possible to determine if the association is due to an effect of master's degrees or the effect of socioeconomic status.
 
 \hypertarget{collider}{%
 \subsection{Collider}\label{collider}}
 
+Figure \ref{fig:collider} depicts treatment \(X\) with no effect on outcome \(Y\). \(X\) and \(Y\) are both causes of collider \(Z\) (the two incoming arrows \emph{collide}). The box around \(Z\) indicates conditioning upon \(Z\) in the analysis. In this case, there will be an association between \(X\) and \(Y\) even though there is no treatment effect. Figure \ref{fig:collider} is a common way to depict \emph{selection bias} where an association in subjects selected for the study is not present in the general population. In the selection bias diagram, \(Z\) is an indicator of selection into the study with a box around it because researchers only observe subjects selected into the study.
+
+\begin{figure}
+\centering
+\includegraphics{./images/collider.png}
+\caption{\label{fig:collider} Collider \(Z\) with no treatment effect of \(X\) on \(Y\).}
+\end{figure}
+
+A very famous example appears in \citet{pearl2018book}. In the general population, we would not expect to see an association between an individual's talent and looks. More talented people are not better looking and vice versa. However, if we look only at famous Hollywood actors (\(Z\)), we would see an association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor. More seriously, \emph{selection bias} is a huge issue in medical and public health studies resulting in easily misinterpretated associations \citep{hernan2004structural, cole2010illustrating, elwert2014endogenous}.
+
 \hypertarget{mediator}{%
 \subsection{Mediator}\label{mediator}}
+
+Figure \ref{fig:mediator} depicts mediator \(M\) of the effect of treatment \(X\) on outcome \(Y\). In this case, \(X\) is a cause of \(M\), \(M\) is a cause of \(Y\), and there is no effect of \(X\) on \(Y\) that cannot be explained by the effect of \(M\) on \(Y\). A common mistake is to adjust for \(M\). If \(M\) is categorical, we will not observe an association between \(X\) and \(Y\) within levels of \(M\). However, there is still an effect of \(X\) on \(Y\).
+
+\begin{figure}
+\centering
+\includegraphics{./images/mediator.png}
+\caption{\label{fig:mediator} Mediator \(M\) of the effect of treament \(X\) on outcome \(Y\).}
+\end{figure}
+
+For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceeded by increased blood pressure. Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
+
+Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects \citep{hernan2002causal}.
 
 \hypertarget{matching}{%
 \chapter{Matching}\label{matching}}
@@ -257,7 +282,7 @@ short review of simple regression
 \hypertarget{interactions}{%
 \chapter{(Kevin) Interactions}\label{interactions}}
 
-Extend the example in the last chapter\ldots introduce in terms of effect modification. We have a new research question, ``does the affect of \(X\) on \(Y\) change based on another variable of interest?''
+Extend the example in the last chapter\ldots{}introduce in terms of effect modification. We have a new research question, ``does the affect of \(X\) on \(Y\) change based on another variable of interest?''
 
 \hypertarget{activity}{%
 \chapter{Activity}\label{activity}}
@@ -521,6 +546,6 @@ Confounding (\(C\)) - quantitative
 \hypertarget{assessing-model-adequacy-1}{%
 \section{Assessing model adequacy}\label{assessing-model-adequacy-1}}
 
-  \bibliography{book.bib,packages.bib}
+\bibliography{book.bib,packages.bib}
 
 \end{document}
