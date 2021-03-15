@@ -64,6 +64,6 @@ Figure \@ref(fig:mediator) depicts mediator $M$ of the effect of treatment $X$ o
 
 ![(#fig:mediator) Mediator $M$ of the effect of treament $X$ on outcome $Y$.](./images/mediator.png)
 
-For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceeded by increased blood pressure.  Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
+For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceded by increased blood pressure.  Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
 
 Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects [@hernan2002causal].

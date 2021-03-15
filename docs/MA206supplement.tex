@@ -1,43 +1,58 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={Causality and Multiple Regression Supplement},
-            pdfauthor={Krista Watts and Kevin Cummiskey},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={Causality and Multiple Regression Supplement},
+  pdfauthor={Krista Watts and Kevin Cummiskey},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
-\usepackage{graphicx,grffile}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -46,32 +61,24 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-03-12}
+\date{2021-03-15}
 
 \begin{document}
 \maketitle
@@ -84,7 +91,7 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-This textbook supplement is an introduction to causality in statistics and multivariable methods for students in their first college course in statistics. Traditionally, except for a terse warning from instructors that ``correlation does not imply causation'', students only encounter causality in statistics if they take graduate-level courses in certain disciplines (economics, epidemiology, etc.). However, given the ubiquity of data-driven arguments in modern society, a deeper understanding of drawing cause-and-effect conclusions from data is a core competency of college graduates and deserves attention in the liberal arts curriculum. For more on causality in the undergraduate curriculum, see our paper \citep{cummiskey2020causal} and others on this subject \citep{horton2015challenges, kaplan2018teaching, lubke2020we}.
+This etext is an introduction to causality in statistics and multivariable methods for students in their first college course in statistics. Traditionally, except for a terse warning from instructors that ``correlation does not imply causation'', students only encounter causality in statistics if they take graduate-level courses in certain disciplines (economics, epidemiology, etc.). However, given the ubiquity of data-driven arguments in modern society, a deeper understanding of drawing cause-and-effect conclusions from data is a core competency of college graduates and deserves attention in the liberal arts curriculum. For more on causality in the undergraduate curriculum, see our paper \citep{cummiskey2020causal} and others on this subject \citep{horton2015challenges, kaplan2018teaching, lubke2020we}.
 
 After introducing concepts in causality, we use an example-based approach to multiple regression emphasizing how the scientific goal of the study impacts modeling decisions and interpretation of results. Prediction and cause-and-effect are the two main scientific goals of studies using multiple regression. These goals determine how researchers use and interpret models. However, this distinction is rarely made in introductory courses. Too often, multiple regression in the introductory course focuses on prediction and much of the ``thinking'' outsourced to algorithmic searches. This narrow focus on prediction deprives students of the opportunity to exercise critical judgment and creativity. On the other hand, cause-and-effect studies require tying subject matter knowledge to developing causal models. During this process, students have to carefully consider relationships between variables (which is not particularly important in prediction), thus developing multivariable thinking, an important goal of the revised GAISE report \citep{carver2016guidelines}. Our approach to multiple regression uses the scientific goal to motivate how we think about our data and models. \citet{hernan2019second} argue for this approach in data science education; we believe it is appropriate for introductory statistics courses also.
 
@@ -107,11 +114,11 @@ Researchers and practitioners in nearly every discipline employ quantitative met
   \textbf{cause-and-effect}
 \end{itemize}
 
-For example, consider medical researchers investigating a newly discovered variant of the coronavirus. Initially, they focus on describe studies. \emph{How prevalent is the variant in the population? How does the prevalence vary over space and time? What groups of individuals are most vulnerable to the variant? What else is associated with the variant?} Together, these studies help the researchers better understand the variant and identify important variables for refined predict studies.
+For example, consider medical researchers investigating a newly discovered variant of the coronavirus. Initially, they might focus on describe studies. \emph{How prevalent is the variant in the population? How does the prevalence vary over space and time? What groups of individuals are most vulnerable to the variant? What else is associated with the variant?} Together, these studies help researchers better understand the variant and identify important variables for refined predict studies.
 
-Predict studies identify individuals most at risk for the variant or for transmitting it to others. Researchers select potential predictors as inputs to algorithms and statistical methods that transform them into estimates of each individual's risk for the variant. These methods rely upon associations between the inputs and the variant. In addition, these methods estimate the error associated with their predictions. Researchers try to ensure error estimates obtained within their study are good estimates of the error when their models are applied to other populations. While predict studies help us identify who is at risk, they do not tell us the effect if we change something about them (quit smoking, lose weight, etc.) To answer these ``what if?'' questions, researchers use cause-and-effect studies.
+Predict studies identify individuals most at risk for the variant or for transmitting it to others. Researchers select potential predictors as inputs to algorithms and statistical methods that transform them into estimates of each individual's risk for the variant. These methods rely upon associations between the inputs and the variant. In addition, these methods estimate the error associated with their predictions. Researchers try to ensure error estimates obtained within their study are good estimates of the error when their models are applied to other populations. While predict studies help us identify who is at risk, they do not tell us the effect if we change something about individuals (quit smoking, lose weight, etc.) To answer these ``what if?'' questions, researchers use cause-and-effect studies.
 
-Cause-and-effect studies try to estimate the effect of intervening or changing some aspect of an individual. These studies are tremendously important in public policy (where they are aptly called \emph{intervention studies}) to justify legislation and regulations to reduce risk. Unlike prediction studies, which are highly algorithmic and only require researchers to identify appropriate inputs, cause-and-effect studies use subject matter knowledge of the causal structure of the inputs to select appropriate statistical models \citep{hernan2019second}. For example, to assess the affect of quitting smoking on coronavirus risk, we would have to understand why some people quit smoking and others do not, as these reasons themselves may be responsible for some of the reduction in risk we observe between the two groups. Also, unlike prediction studies which rely upon what we \emph{see}, cause-and-effect studies require us to ask what would happen if we \emph{do} something \citep{pearl2018book}. Only human beings are capable of such counterfactual thinking (``what would have happened if'') - even our most sophisticated computer algorithms require human supervision to address cause-and-effect questions.
+Cause-and-effect studies try to estimate the effect of intervening or changing some aspect of an individual. These studies are tremendously important in public policy (where they are aptly called \emph{intervention studies}) to justify legislation and regulations to reduce risk. Unlike prediction studies, which are highly algorithmic and only require researchers to identify appropriate inputs, cause-and-effect studies use subject matter knowledge of the causal structure of the inputs to select appropriate statistical models \citep{hernan2019second}. For example, to assess the affect of quitting smoking on risk for the variant, we need to understand why some people quit smoking and others do not, as these reasons themselves may be responsible for some changes in risk between the two groups. Unlike prediction studies which rely upon what we \emph{see}, cause-and-effect studies require us to ask what would happen if we \emph{do} something \citep{pearl2018book}. Only human beings are capable of such counterfactual thinking (``what would have happened if'') - even our most sophisticated computer algorithms require human supervision to address cause-and-effect questions.
 
 \textbf{Exercises}
 
@@ -149,7 +156,7 @@ Cause-and-effect studies try to estimate the effect of intervening or changing s
   external validity
 \end{itemize}
 
-In an area of research, there is often a natural tradeoff between internal and external validity. Our knowledge comes from both observational studies and experiments (trials) -- rarely does a single study answer every question and the two types of studies used together increase our overall knowledge. Consider researchers investigating the effectiveness of Covid-19 vaccines. Initial vaccine trials focus on internal validity to understand its effectiveness against the virus and obtain approval for mass distribution. For example, \citet{polack2020safety} randomly assigned 43,548 persons 16 years of age or older to receive two doses of either placebo or the BNT162b2 vaccine (Pfizer). They observed eight cases of Covid-19 among participants who received BNT162b2 and 162 cases among those who received the placebo. This was a huge moment in the pandemic! However, the subjects in the study were relatively healthy and had volunteered for the trials. From this study alone, the external validity of these results is not clear and researchers want to know if the vaccine results would hold in the general public. Given the success of the trials, it would be unethical to withhold the vaccine from large segments of the population, so observational studies are required.
+In an area of research, there is often a natural tradeoff between internal and external validity. Our knowledge comes from both observational studies and experiments (trials) -- rarely does a single study answer every question and the two types of studies used together increase our overall knowledge. Consider researchers investigating the effectiveness of Covid-19 vaccines. Initial vaccine trials focused on internal validity to understand its effectiveness against the virus and obtain approval for mass distribution. For example, \citet{polack2020safety} randomly assigned 43,548 persons 16 years of age or older to receive two doses of either placebo or the BNT162b2 vaccine (Pfizer). They observed eight cases of Covid-19 among participants who received BNT162b2 and 162 cases among those who received the placebo. This was a huge moment in the pandemic! However, the subjects in the study were relatively healthy and had volunteered for the trials. From this study alone, the external validity of these results is not clear -- will the vaccine have the same effect in the general population? Given the success of the trials and the need to widely distribute, it would be unethical to withhold the vaccine from large segments of the population to conduct further trials of other populations. In this case, researchers use observational studies.
 
 \citet{dagan2021bnt162b2} conducted an observational study after the mass vaccination campaign in Israel using the health records of 4.7 million patients enrolled in its largest integrated health care organization. The researchers matched vaccine recipients to controls on important variables: age, sex, sector, neighborhood of residence, etc.. In this larger sample, they found vaccine effectiveness results consistent with the randomized trial, thus providing evidence of the vaccine's effectiveness in the general public. The authors specifically address the importance of observational studies:
 
@@ -170,6 +177,8 @@ In an area of research, there is often a natural tradeoff between internal and e
 \chapter{Causality}\label{causality}}
 
 The last few decades have seen a revolution in how statisticians view causality. A hundred years ago, when the statistical methods students learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies -- there has never been a randomized controlled trial for smoking. The \href{https://www.cancer.org/latest-news/the-study-that-helped-spur-the-us-stop-smoking-movement.html}{American Cancer Society's observational studies} beginning in the 1950's were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking \citep{hammond1954relationship, hammond1966smoking}. Clearly, statistical theory and practice had diverged in their understandings of causality.
+
+(add more citations)
 
 However, in the 1980's and 1990's, researchers in different disciplines began revisiting causality \citep{greenland1986identifiability}. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed that randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The \emph{assignment mechanism} is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while ``correlation does not imply causation'' is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims in observational studies should be much richer and nuanced than this simple rule of thumb.
 
@@ -250,7 +259,7 @@ Figure \ref{fig:mediator} depicts mediator \(M\) of the effect of treatment \(X\
 \caption{\label{fig:mediator} Mediator \(M\) of the effect of treament \(X\) on outcome \(Y\).}
 \end{figure}
 
-For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceeded by increased blood pressure. Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
+For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceded by increased blood pressure. Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
 
 Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects \citep{hernan2002causal}.
 
@@ -284,7 +293,7 @@ short review of simple regression
 \hypertarget{interactions}{%
 \chapter{(Kevin) Interactions}\label{interactions}}
 
-Extend the example in the last chapter\ldots{}introduce in terms of effect modification. We have a new research question, ``does the affect of \(X\) on \(Y\) change based on another variable of interest?''
+Extend the example in the last chapter\ldots introduce in terms of effect modification. We have a new research question, ``does the affect of \(X\) on \(Y\) change based on another variable of interest?''
 
 \hypertarget{activity}{%
 \chapter{Activity}\label{activity}}
@@ -548,6 +557,6 @@ Confounding (\(C\)) - quantitative
 \hypertarget{assessing-model-adequacy-1}{%
 \section{Assessing model adequacy}\label{assessing-model-adequacy-1}}
 
-\bibliography{book.bib,packages.bib}
+  \bibliography{book.bib,packages.bib}
 
 \end{document}
