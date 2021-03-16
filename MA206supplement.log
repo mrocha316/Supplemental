@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.16)  16 MAR 2021 14:54
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.16)  16 MAR 2021 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1021,52 +1021,48 @@ Overfull \hbox (189.63344pt too wide) has occurred while \output is active
 
 [28]
 Chapter 4.
-[29
-
-] [30
-
-]
-Chapter 5.
 File: ./images/crawlObstacle.jpg Graphic file (type bmp)
 <./images/crawlObstacle.jpg>
 File: ./images/tireObstacle.jpg Graphic file (type bmp)
 <./images/tireObstacle.jpg>
 
-Overfull \hbox (2.20631pt too wide) in paragraph at lines 525--526
+Overfull \hbox (2.20631pt too wide) in paragraph at lines 520--521
 [][] [] 
  []
 
 
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
-[31] [32]
+[29
+
+] [30]
 File: MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf>
-[33] [34]
+[31] [32]
 File: MA206supplement_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-17-1.pdf>
-[35]
+[33]
 File: MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf>
-[36] (./MA206supplement.bbl [37] [38
+[34] (./MA206supplement.bbl [35] [36
 
-] [39]) [40] (./MA206supplement.aux)
+] [37]) [38] (./MA206supplement.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
-(rerunfilecheck)             Checksum: 6DB8000A24875A06542E7C7D04297733;2984.
+(rerunfilecheck)             Checksum: D70ACB2EDF828C4AA6759E6251B2B7E3;2831.
  ) 
 Here is how much of TeX's memory you used:
- 16479 strings out of 478930
- 299319 string characters out of 5864513
- 765739 words of memory out of 5000000
- 36091 multiletter control sequences out of 15000+600000
+ 16478 strings out of 478930
+ 299305 string characters out of 5864513
+ 765695 words of memory out of 5000000
+ 36090 multiletter control sequences out of 15000+600000
  407962 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,8n,122p,1392b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MA206supplement.pdf (40 pages).
+Output written on MA206supplement.pdf (38 pages).
