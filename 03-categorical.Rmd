@@ -1,21 +1,173 @@
-# (COL Watts) Quantitative explanatory variable with categorical confounding variable {#categorical}
+# Quantitative explanatory variable with categorical confounding variable
 
-Introduce multiple regression by adding a categorical confounding variable
+```{r, include = FALSE}
+library(tidyverse)
+```
 
-Explanatory ($X$) - quantitative
+In many situations we wish to examine the relationship between a response and more than one explanatory variable.  For instance, we might have a treatment variable (X) and a response variable (Y) but the relationship between them is confounded by a third variable (C).  Recall from chapter 1 that confounding occurs when factors determining assignment to treatment groups are also causes of the response; in other words, when there are one or more variables that affect to both our treatment variable and response variable.
 
-Response ($Y$) - quantitative
+For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC.  In this example, our "treatment" is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks.   If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks.  But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone.  There is a third variable that is related to both ice cream sales and heart attacks: temperature.  People tend to buy more ice cream when it is hot; if there also tend to be more heart attacks when it is hot, temperature confounds the relationship between ice cream sales and hospital admissions for heart attack. Recall the causal diagram from chapter 1. <!--![(#fig:confounder) A confounding variable $C$ on the effect of $X$ on $Y$.](./images/confounder.png)--> If we extend it to this example, we have
 
-Confounding ($C$) - categorical
+![Causal diagram for ice cream sales and heart attacks.](./images/ice_cream_graph.png)
+
+Notice that we believe that a change in temperature *causes* a change in both ice cream sales and heart attacks.
 
 ## Unadjusted effect of $X$ on $Y$
 
-short review of simple regression
+Let’s review simple linear regression.  There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure.  If we were interested in exploring this in a (relatively) representative sample of the adult U.S. population we might use data from the CDC’s National Health and Nutrition Examination Survey (NHANES).  The data used in this example is available on the course website.  It contains data sampled from 1999 to 2006 on 12,671 Americans age 18 and older who identify as either male or female and non-Hispanic white, non-Hispanic black or Mexican American, were not pregnant or taking high blood pressure medication.  We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
+$$\widehat{SBP}=\beta_0+\beta_1*HT$$
 
-## Effect of $X$ and $Y$ adjusting for $C$.
+If we fit a regression model with height as the treatment variable and systolic blood pressure as the response, we get the following results:
+
+```{r, message = FALSE}
+bp_dat<-read_csv("./data/blood_pressure.csv")
+ht_mod=lm(SBP~HT,
+         data = bp_dat)
+summary(ht_mod)
+```
+
+We note that the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure!  In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data.   There is A LOT of data here, but we see a general increase in SBP as height increases.
+
+```{r, fig.height = 3}
+bp_dat%>%
+  ggplot(aes(x=`HT`,
+             y=`SBP`))+
+  geom_point()+
+  theme_classic()
+```
+  
+This is contrary to what we expected.  So I guess previous research was wrong.  Wait – not so fast.  Gender is a potential confounder.  
+
+## Effect of $X$ on $Y$ adjusting for $C$
+
+Men tend to be taller than women (175 cm vs 162cm).  Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG).  Gender is a possible confounder.  Below is our data, colored by gender.
+
+```{r, fig.height = 3}
+bp_dat%>%
+  ggplot(aes(x=`HT`,
+             y=`SBP`))+
+  geom_point(aes(colour = GENDER))+
+  theme_classic()
+```
+  
+Here we can see that it looks as if *within men* SBP tends to decrease as height increases.  Likewise *within women* we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for gender. We do this using something called Multiple Regression.  “Multiple” because we have multiple variables on the right hand side of the equation.  (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.)   Often we do this simply by adding the other variable to the regression equation.  But how do we add a categorical variable to a mathematical equation.  Suppose my regression model is 
+  
+$$\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER$$
+    
+What does it mean to multiply something by "male"?    When we want to include categoroical variables as explanatory variables in regression models, we often use indicator (allso called 'dummy') variables.  In this case since we are limiting our study population to only subjects who identify as male or female, our variable gender only has two levels.  We need one indicator variable to represent gender.  We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female.  Then $\beta_2$ can be interpretated as the expected increase in SBP when a subject is male.
+    
+    
+A possible multiple regression equation with SBP as our response, height as the treatment adjusting for gender as a confounder is
+
+$$\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER$$
+  
+When we add gender to the model, we get the following results.
+
+```{r}
+ht_gen_mod=lm(SBP~HT+GENDER,
+         data = bp_dat)
+summary(ht_gen_mod)
+```
+
+We see that the relationship between height and SBP is now negative.  Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG.  Gender confounds the relationship between height and blood pressure.  We can also note that the coefficient for gender is a little over 9, meaning that on average, men have a SBP 9 mmHg higher than women.
+
+Hmm, what are we forgetting…?  Model diagnostics!  
 
 ## Assessing model adequacy
 
+We have just done a theory-based test but we haven’t confirmed if the validity conditions are met.  The validity conditions for multiple regression are analogous to those for simple regression.
+1. Independence; once I have accounted for everything in the model, the responses can be considered independent of each other.
+
+2. The model is linear; when plotting the residuals vs predicted values, there does not appear to be a pattern. 
+3. The residuals have constant variance; when plotting the residuals vs predicted values, there is a constant width.
+
+4. Normality; a histogram of the residuals is approximately normal.
+
+In practice, it is difficult to check for independence in the data.  Unless there is a specific pattern to the way the data was collected, violations of this assumption may not be evident in our residual plots.  The best way to verify this assumption is to know how the data was collected.  Is it reasonable to consider it a random sample?  If, for instance, we had repeated measurements on the same people, this assumption may not be reasonable.  One way to check is to plot the residuals in the order they appear in your data.  But if the dependence is not related to the order the data was stored, issues may not be visible in this plot.
+
+To check for linearity, we look at the residuals vs fitted values plot.  Here we are looking for any pattern in the residuals.  They should be scattered roughly evenly above and below the y=0 line across the entire graph.  (To check more rigorously in multiple regression we would actually check each explanatory variable individually using something called a partial residual plot or component plus residual plot.  That is beyond the scope of this course.)
+
+To check for constant variance, we again look at the residuals vs predicted values.  We are checking to see if the variability in the residuals is approximately the same for different values of the response.  A widening of our residuals as y_hat increases, for instance, would indicate this assumption is not met.
+
+Finally, to check for normality, we look at a histogram of the residuals to see if it looks at least approximately normal.
 
 
+For our blood pressure example, we only have one observation on each person and we have a pseudo-random sample of the U.S. (Details on the exact sampling plan can be found on the CDC’s NHANES website.)   Additionally, if we plot the residuals vs their index (i.e. in the order they are in the  data) we see  no clear pattern to the residuals.   It seems reasonable that our independence validity condition is met.
 
+```{r}
+plot(1:length(ht_gen_mod$residuals),ht_gen_mod$residuals)
+```
+
+
+The plot of residuals vs fitted values from our model with both height and gender is in the following figure.  The plot does not show a pattern.  The residuals appear to be scattered roughly equally above and below the line y=0. It seems reasonable to believe that the linearity validity condition is met.
+
+```{r}
+plot(ht_gen_mod$fitted,ht_gen_mod$residuals)
+```
+
+From this same plot, we see that the variance of the residuals also seems to remain relatively constant as our predicted SBP increases.   The validity condition requiring equal variance seems reasonable.
+
+
+The histogram of our residuals looks relatively normal although it does seem to have a heavy right tail.   Our residuals may not be strictly normal.  However, linear regression is “robust” to departures from normality.  That means that slight, or even moderate, departures from normality generally do not pose a problem.  Our residuals look “normal enough” that I feel comfortable concluding that our validity conditions are met.
+
+```{r}
+hist(ht_gen_mod$resid)
+```
+
+What would we expect to see if the validity conditions were violated?  Below are some examples of model diagnostic plots that indicate a departure from our validity conditions.  We simulated the data used to create these plots so we know which conditions aren’t valid.  These are also relatively extreme examples for illustrative purposes; in real data you often won’t see patterns this obvious.  Violations of our model’s validity conditions can be especially hard to detect when we have a small sample size.
+
+First we look at independence.  The following plot of residuals in order show a clear pattern.  The residuals seem to be in triplets; first we have a positive residual, then a residual around zero, then a negative residual.  This pattern indiactes that are model is missing an important factor, like time.  Perhaps the data was a reading collected three times a day - morning, noon and night - and we expect the reading will differ based on time of day but we did not include that in the model.  Departures from independence are rarely this easy to spot.
+
+```{r, echo=FALSE}
+x=runif(33,10,20)
+x2=rep(c(3,0,-3),11)
+y=2*x+10*x2+rnorm(33,10,3)
+m1=lm(y~x)
+plot(1:33,m1$residuals)
+```
+
+<!--When we include the *time* variable in the model, we see that the pattern disappears. [I think maybe I leave this part out?]
+
+```{r, echo=FALSE}
+m1=lm(y~x+x2)
+plot(1:33,m1$residuals)
+```
+-->
+
+Next we look at the linearity assumption.  Below we see a residuals vs fitted values plot that shows a clear pattern.  Fitted values below about 150 or above about 350 tend to have positive residuals (i.e. be underestimated) whereas fitted values between 150 and 350 tend to have negative residuals (i.e. be overestimated).  This is an indication that our lineariyt assumption is violated; the right hand side of the model is not correctly specified.
+
+```{r, echo=FALSE}
+x=runif(50,10,20)
+y2=x+x^2+rnorm(50,10,3)
+m2=lm(y2~x)
+plot(m2$fitted.values,m2$residuals)
+```
+
+<!--In fact, here $Y$ was a function of $X^2$, not $X$.  When we add $X^2$ to the model, we again see that the probelm disappears.
+
+```{r, echo=FALSE}
+m2=lm(y2~x+I(x^2))
+plot(m2$fitted.values,m2$residuals)
+```
+-->
+
+Next we investigate our assumption of constant variance.  In the plot below we see a clear fanning out of the residuals; as $\hat{y}$ increases, so does the variance of the residuals.
+
+```{r, echo=FALSE}
+x=sort(runif(500,10,20))
+y3=x+rnorm(500,rep(0,500),1:500)
+m3=lm(y3~x)
+plot(m3$fitted.values,m3$residuals)
+```
+
+And finally, we investigate our normality assumption.  In the plot below, we see that are residuals are heavily skewed to the right.  The assumption ofnormality is violated.
+
+```{r echo=FALSE}
+x=runif(500,10,20)
+y4=x+rexp(500,.1)
+m4=lm(y4~x)
+hist(m4$residuals)
+```
+
+In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable.  Gender was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between gender and blood pressure from a clinical or scientific standpoint.  So gender was a confounding variable.  Notice that we treat these variables the same from a statistical standpoint.  It is possible to have multiple exposures or treatments, multiple confounders, or both.  The distinction between the two is not a statistical one; it is a scientific one.  
+<!--[Note about prediction.]-->

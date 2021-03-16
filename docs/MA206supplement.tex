@@ -42,6 +42,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -78,7 +118,7 @@
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-03-15}
+\date{2021-03-16}
 
 \begin{document}
 \maketitle
@@ -178,20 +218,14 @@ In an area of research, there is often a natural tradeoff between internal and e
 
 The last few decades have seen a revolution in how statisticians view causality. A hundred years ago, when the statistical methods students learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies -- there has never been a randomized controlled trial for smoking. The \href{https://www.cancer.org/latest-news/the-study-that-helped-spur-the-us-stop-smoking-movement.html}{American Cancer Society's observational studies} beginning in the 1950's were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking \citep{hammond1954relationship, hammond1966smoking}. Clearly, statistical theory and practice had diverged in their understandings of causality.
 
-(add more citations)
-
-However, in the 1980's and 1990's, researchers in different disciplines began revisiting causality \citep{greenland1986identifiability}. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed that randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The \emph{assignment mechanism} is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while ``correlation does not imply causation'' is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims in observational studies should be much richer and nuanced than this simple rule of thumb.
-
-(add citations)
+However, in the 1980's and 1990's, researchers in different disciplines began revisiting causality \citep{greenland1986identifiability, pearl1993bayesian, angrist1995identification}. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The \emph{assignment mechanism} is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while ``correlation does not imply causation'' is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims in observational studies should be richer and more nuanced than this simple rule of thumb.
 
 \hypertarget{what-does-it-mean-for-one-thing-to-cause-another}{%
 \section{What does it mean for one thing to cause another}\label{what-does-it-mean-for-one-thing-to-cause-another}}
 
-We say one variable (the treatment or intervention) \emph{causes} another variable (the outcome) if there is a change in the average outcome between subjects when they receive the treatment and the same subjects when they do not receive the treatment. This definition differs from \emph{association}, which is a change in the average outcome between subjects who received the treatment and different subjects who did not receive the treatment. Thus, causation is a comparison of observed outcomes and their counterfactuals (``what would have happened if the subject were in the other treatment group'').
+We say one variable (called the treatment, exposure, or intervention) \emph{causes} another variable (the outcome or response) if there is a change in the average outcome between subjects when they receive the treatment and the same subjects when they do not receive the treatment. This definition differs from \emph{association}, which is a change in the average outcome between subjects who received the treatment and different subjects who did not receive the treatment. Thus, causation is a comparison of observed outcomes and their counterfactuals (``what would have happened if the subject were in the other treatment group'').
 
-Unfortunately, in most cases, we cannot observe both outcomes for subjects. For example, when estimating the effect of smoking on long term health outcomes, it is impossible to observe the same subject as a smoker and as a nonsmoker. We only observe one of the outcomes. However, under certain circumstances, we can obtain good estimates of effects without observing both outcomes for each individual. The most famous of these is the randomized controlled experiment.
-
-(add see and do from Pearl here?)
+The central challenge in causal inference is that we cannot observe the outcomes for subjects under both levels of the treatment variable. In other words, we only get to observe each subject in either the treatment or the control group. For example, when estimating the effect of smoking on long term health outcomes, it is impossible to observe the same subject as a smoker and as a nonsmoker. However, under certain circumstances, we can obtain good estimates of effects without observing both outcomes for each individual. The most famous of these is the randomized controlled experiment.
 
 \hypertarget{randomized-controlled-experiments}{%
 \section{Randomized controlled experiments}\label{randomized-controlled-experiments}}
@@ -203,20 +237,18 @@ However, an overly restrictive view of causality followed this important discove
 \hypertarget{observational-studies-and-confounding}{%
 \section{Observational Studies and Confounding}\label{observational-studies-and-confounding}}
 
-In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. It is about how subjects are \emph{assigned} to the treatment groups.) Instead, other factors determine subjects' group (treatment or control) assignment. Confounding occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias -- using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not help fix bias, you just get a more precise, wrong estimate.
+In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. It is about how subjects are \emph{assigned} to the treatment groups.) Instead, other factors determine subjects' treatment group assignment. Confounding occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias -- using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not fix bias, you just get a more precise, wrong estimate.
 
 For example, consider an observational study investigating long term health effects of smoking. In many populations, males are more likely to be smokers. In addition, males have different risks for long term health outcomes than females, regardless of whether they smoke. If we observe an association between smoking and an outcome without information on sex, we cannot distinguish the effect of smoking from the effect of sex.
 
 However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, you can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. \emph{How do we identify a sufficient set of confounding variables?} For that question, we turn to causal diagrams.
 
-(discuss well-defined interventions?)
-
 \hypertarget{causal-diagrams}{%
 \section{Causal Diagrams}\label{causal-diagrams}}
 
-Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they identify a sufficient set of confounding variables to control for during design and analysis.
+Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they help identify a sufficient set of confounding variables to control for during design and analysis.
 
-Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables and a directed edge (arrow) connecting two nodes indicates the node at the arrow's tail is a cause of the node at the arrow's head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right -- we adopt that convention here.
+Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables. A directed edge (arrow) connecting two nodes indicates the node at the arrow's tail is a cause of the node at the arrow's head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right -- we adopt that convention here.
 
 There are three building blocks of causal diagrams.
 
@@ -268,27 +300,218 @@ Unfortunately, some researchers condition upon everything that they measure, oft
 
 Chapter on matching
 
-\hypertarget{categorical}{%
-\chapter{(COL Watts) Quantitative explanatory variable with categorical confounding variable}\label{categorical}}
+\hypertarget{quantitative-explanatory-variable-with-categorical-confounding-variable}{%
+\chapter{Quantitative explanatory variable with categorical confounding variable}\label{quantitative-explanatory-variable-with-categorical-confounding-variable}}
 
-Introduce multiple regression by adding a categorical confounding variable
+In many situations we wish to examine the relationship between a response and more than one explanatory variable. For instance, we might have a treatment variable (X) and a response variable (Y) but the relationship between them is confounded by a third variable (C). Recall from chapter 1 that confounding occurs when factors determining assignment to treatment groups are also causes of the response; in other words, when there are one or more variables that affect to both our treatment variable and response variable.
 
-Explanatory (\(X\)) - quantitative
+For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC. In this example, our ``treatment'' is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks. If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks. But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone. There is a third variable that is related to both ice cream sales and heart attacks: temperature. People tend to buy more ice cream when it is hot; if there also tend to be more heart attacks when it is hot, temperature confounds the relationship between ice cream sales and hospital admissions for heart attack. Recall the causal diagram from chapter 1. If we extend it to this example, we have
 
-Response (\(Y\)) - quantitative
+\begin{figure}
+\centering
+\includegraphics{./images/ice_cream_graph.png}
+\caption{Causal diagram for ice cream sales and heart attacks.}
+\end{figure}
 
-Confounding (\(C\)) - categorical
+Notice that we believe that a change in temperature \emph{causes} a change in both ice cream sales and heart attacks.
 
 \hypertarget{unadjusted-effect-of-x-on-y}{%
 \section{\texorpdfstring{Unadjusted effect of \(X\) on \(Y\)}{Unadjusted effect of X on Y}}\label{unadjusted-effect-of-x-on-y}}
 
-short review of simple regression
+Let's review simple linear regression. There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure. If we were interested in exploring this in a (relatively) representative sample of the adult U.S. population we might use data from the CDC's National Health and Nutrition Examination Survey (NHANES). The data used in this example is available on the course website. It contains data sampled from 1999 to 2006 on 12,671 Americans age 18 and older who identify as either male or female and non-Hispanic white, non-Hispanic black or Mexican American, were not pregnant or taking high blood pressure medication. We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
+\[\widehat{SBP}=\beta_0+\beta_1*HT\]
 
-\hypertarget{effect-of-x-and-y-adjusting-for-c.}{%
-\section{\texorpdfstring{Effect of \(X\) and \(Y\) adjusting for \(C\).}{Effect of X and Y adjusting for C.}}\label{effect-of-x-and-y-adjusting-for-c.}}
+If we fit a regression model with height as the treatment variable and systolic blood pressure as the response, we get the following results:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bp\_dat}\OtherTok{\textless{}{-}}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"./data/blood\_pressure.csv"}\NormalTok{)}
+\NormalTok{ht\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT,}
+         \AttributeTok{data =}\NormalTok{ bp\_dat)}
+\FunctionTok{summary}\NormalTok{(ht\_mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = SBP ~ HT, data = bp_dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -52.876 -13.804  -3.703   9.922 141.605 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 141.22705    2.52887  55.846  < 2e-16 ***
+## HT           -0.10276    0.01504  -6.833 8.58e-12 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 20.09 on 17486 degrees of freedom
+## Multiple R-squared:  0.002663,   Adjusted R-squared:  0.002606 
+## F-statistic: 46.69 on 1 and 17486 DF,  p-value: 8.575e-12
+\end{verbatim}
+
+We note that the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure! In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data. There is A LOT of data here, but we see a general increase in SBP as height increases.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+This is contrary to what we expected. So I guess previous research was wrong. Wait -- not so fast. Gender is a potential confounder.
+
+\hypertarget{effect-of-x-on-y-adjusting-for-c}{%
+\section{\texorpdfstring{Effect of \(X\) on \(Y\) adjusting for \(C\)}{Effect of X on Y adjusting for C}}\label{effect-of-x-on-y-adjusting-for-c}}
+
+Men tend to be taller than women (175 cm vs 162cm). Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG). Gender is a possible confounder. Below is our data, colored by gender.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =}\NormalTok{ GENDER))}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+Here we can see that it looks as if \emph{within men} SBP tends to decrease as height increases. Likewise \emph{within women} we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for gender. We do this using something called Multiple Regression. ``Multiple'' because we have multiple variables on the right hand side of the equation. (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.) Often we do this simply by adding the other variable to the regression equation. But how do we add a categorical variable to a mathematical equation. Suppose my regression model is
+
+\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER\]
+
+What does it mean to multiply something by ``male''? When we want to include categoroical variables as explanatory variables in regression models, we often use indicator (allso called `dummy') variables. In this case since we are limiting our study population to only subjects who identify as male or female, our variable gender only has two levels. We need one indicator variable to represent gender. We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female. Then \(\beta_2\) can be interpretated as the expected increase in SBP when a subject is male.
+
+A possible multiple regression equation with SBP as our response, height as the treatment adjusting for gender as a confounder is
+
+\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER\]
+
+When we add gender to the model, we get the following results.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ht\_gen\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT}\SpecialCharTok{+}\NormalTok{GENDER,}
+         \AttributeTok{data =}\NormalTok{ bp\_dat)}
+\FunctionTok{summary}\NormalTok{(ht\_gen\_mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = SBP ~ HT + GENDER, data = bp_dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -53.085 -13.547  -3.851   9.538 144.487 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 183.54338    3.24339   56.59   <2e-16 ***
+## HT           -0.37869    0.02006  -18.87   <2e-16 ***
+## GENDERM       8.30226    0.40559   20.47   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 19.85 on 17485 degrees of freedom
+## Multiple R-squared:  0.026,  Adjusted R-squared:  0.02589 
+## F-statistic: 233.4 on 2 and 17485 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+We see that the relationship between height and SBP is now negative. Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG. Gender confounds the relationship between height and blood pressure. We can also note that the coefficient for gender is a little over 9, meaning that on average, men have a SBP 9 mmHg higher than women.
+
+Hmm, what are we forgetting\ldots? Model diagnostics!
 
 \hypertarget{assessing-model-adequacy}{%
 \section{Assessing model adequacy}\label{assessing-model-adequacy}}
+
+We have just done a theory-based test but we haven't confirmed if the validity conditions are met. The validity conditions for multiple regression are analogous to those for simple regression.
+1. Independence; once I have accounted for everything in the model, the responses can be considered independent of each other.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  The model is linear; when plotting the residuals vs predicted values, there does not appear to be a pattern.
+\item
+  The residuals have constant variance; when plotting the residuals vs predicted values, there is a constant width.
+\item
+  Normality; a histogram of the residuals is approximately normal.
+\end{enumerate}
+
+In practice, it is difficult to check for independence in the data. Unless there is a specific pattern to the way the data was collected, violations of this assumption may not be evident in our residual plots. The best way to verify this assumption is to know how the data was collected. Is it reasonable to consider it a random sample? If, for instance, we had repeated measurements on the same people, this assumption may not be reasonable. One way to check is to plot the residuals in the order they appear in your data. But if the dependence is not related to the order the data was stored, issues may not be visible in this plot.
+
+To check for linearity, we look at the residuals vs fitted values plot. Here we are looking for any pattern in the residuals. They should be scattered roughly evenly above and below the y=0 line across the entire graph. (To check more rigorously in multiple regression we would actually check each explanatory variable individually using something called a partial residual plot or component plus residual plot. That is beyond the scope of this course.)
+
+To check for constant variance, we again look at the residuals vs predicted values. We are checking to see if the variability in the residuals is approximately the same for different values of the response. A widening of our residuals as y\_hat increases, for instance, would indicate this assumption is not met.
+
+Finally, to check for normality, we look at a histogram of the residuals to see if it looks at least approximately normal.
+
+For our blood pressure example, we only have one observation on each person and we have a pseudo-random sample of the U.S. (Details on the exact sampling plan can be found on the CDC's NHANES website.) Additionally, if we plot the residuals vs their index (i.e.~in the order they are in the data) we see no clear pattern to the residuals. It seems reasonable that our independence validity condition is met.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals),ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+The plot of residuals vs fitted values from our model with both height and gender is in the following figure. The plot does not show a pattern. The residuals appear to be scattered roughly equally above and below the line y=0. It seems reasonable to believe that the linearity validity condition is met.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{fitted,ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+From this same plot, we see that the variance of the residuals also seems to remain relatively constant as our predicted SBP increases. The validity condition requiring equal variance seems reasonable.
+
+The histogram of our residuals looks relatively normal although it does seem to have a heavy right tail. Our residuals may not be strictly normal. However, linear regression is ``robust'' to departures from normality. That means that slight, or even moderate, departures from normality generally do not pose a problem. Our residuals look ``normal enough'' that I feel comfortable concluding that our validity conditions are met.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{resid)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+What would we expect to see if the validity conditions were violated? Below are some examples of model diagnostic plots that indicate a departure from our validity conditions. We simulated the data used to create these plots so we know which conditions aren't valid. These are also relatively extreme examples for illustrative purposes; in real data you often won't see patterns this obvious. Violations of our model's validity conditions can be especially hard to detect when we have a small sample size.
+
+First we look at independence. The following plot of residuals in order show a clear pattern. The residuals seem to be in triplets; first we have a positive residual, then a residual around zero, then a negative residual. This pattern indiactes that are model is missing an important factor, like time. Perhaps the data was a reading collected three times a day - morning, noon and night - and we expect the reading will differ based on time of day but we did not include that in the model. Departures from independence are rarely this easy to spot.
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+--\textgreater{}
+
+Next we look at the linearity assumption. Below we see a residuals vs fitted values plot that shows a clear pattern. Fitted values below about 150 or above about 350 tend to have positive residuals (i.e.~be underestimated) whereas fitted values between 150 and 350 tend to have negative residuals (i.e.~be overestimated). This is an indication that our lineariyt assumption is violated; the right hand side of the model is not correctly specified.
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+--\textgreater{}
+
+Next we investigate our assumption of constant variance. In the plot below we see a clear fanning out of the residuals; as \(\hat{y}\) increases, so does the variance of the residuals.
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+And finally, we investigate our normality assumption. In the plot below, we see that are residuals are heavily skewed to the right. The assumption ofnormality is violated.
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable. Gender was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between gender and blood pressure from a clinical or scientific standpoint. So gender was a confounding variable. Notice that we treat these variables the same from a statistical standpoint. It is possible to have multiple exposures or treatments, multiple confounders, or both. The distinction between the two is not a statistical one; it is a scientific one.\\
 
 \hypertarget{interactions}{%
 \chapter{(Kevin) Interactions}\label{interactions}}
@@ -353,11 +576,11 @@ The file \texttt{obstacle\_course.csv} contains height (inches), IOCT times (sec
 
 Figure 1 depicts IOCT times in seconds versus height in inches. Table 1 contains information from the linear regression model.
 
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-2-1.pdf}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-2}Linear regression output for IOCT times and height.}
+\caption{\label{tab:unnamed-chunk-16}Linear regression output for IOCT times and height.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -456,8 +679,8 @@ Below are boxplots of height in inches and IOCT times in seconds by sex.
 
 \begin{figure}
 \centering
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-3-1.pdf}
-\caption{\label{fig:unnamed-chunk-3}Height (inches) and IOCT time (seconds) by sex.}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-17-1.pdf}
+\caption{\label{fig:unnamed-chunk-17}Height (inches) and IOCT time (seconds) by sex.}
 \end{figure}
 
 \begin{enumerate}
@@ -476,13 +699,13 @@ Figure 3 depicts the association between IOCT time and height by sex. Tables 2 a
 
 \begin{figure}
 \centering
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-4-1.pdf}
-\caption{\label{fig:unnamed-chunk-4}Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384).}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf}
+\caption{\label{fig:unnamed-chunk-18}Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384).}
 \end{figure}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}Regression results for female cadets.}
+\caption{\label{tab:unnamed-chunk-19}Regression results for female cadets.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -497,7 +720,7 @@ height & -1.24 & 1.64 & -0.76 & 0.45\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}Regression results for male cadets.}
+\caption{\label{tab:unnamed-chunk-19}Regression results for male cadets.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -541,21 +764,6 @@ height & 0.09 & 0.58 & 0.15 & 0.88\\
 \end{enumerate}
 
 \vspace{1in}
-
-\hypertarget{quantitative}{%
-\chapter{(COL Watts) Quantitative explanatory variable with quantitative confounding variable}\label{quantitative}}
-
-Explanatory (\(X\)) - quantitative
-
-Response (\(Y\)) - quantitative
-
-Confounding (\(C\)) - quantitative
-
-\hypertarget{effect-of-x-and-y-adjusting-for-c.-1}{%
-\section{\texorpdfstring{Effect of \(X\) and \(Y\) adjusting for \(C\).}{Effect of X and Y adjusting for C.}}\label{effect-of-x-and-y-adjusting-for-c.-1}}
-
-\hypertarget{assessing-model-adequacy-1}{%
-\section{Assessing model adequacy}\label{assessing-model-adequacy-1}}
 
   \bibliography{book.bib,packages.bib}
 
