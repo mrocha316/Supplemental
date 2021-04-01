@@ -2,7 +2,7 @@
 
 ## Goals of quantitative research (describe, predict, cause-and-effect)
 
-Researchers and practitioners in nearly every discipline employ quantitative methods to answer important questions and make decisions.  Regardless if it is finance, medicine, psychology, etc., all researchers typically have one of three goals [@cozby2020methods] when they conduct quantitative research:
+Researchers and practitioners employ quantitative methods to answer important questions and make decisions.  Regardless of the discipline or application, they typically have one of three goals [@cozby2020methods]:
 
 * **describe**
 
@@ -10,8 +10,7 @@ Researchers and practitioners in nearly every discipline employ quantitative met
 
 * **cause-and-effect**
 
-
-For example, consider medical researchers investigating a newly discovered variant of the coronavirus.  Initially, they might focus on describe studies.  *How prevalent is the variant in the population? How does the prevalence vary over space and time? What groups of individuals are most vulnerable to the variant? What else is associated with the variant?*   Together, these studies help researchers better understand the variant and identify important variables for refined predict studies.  
+Consider medical researchers investigating a newly discovered variant of the coronavirus.  Initially, they might focus on describe studies.  *How prevalent is the variant in the population? How does the prevalence vary over space and time? What groups of individuals are most vulnerable to the variant? What else is associated with the variant?*   Together, these studies help researchers better understand the variant and identify important variables for refined predict studies.  
 
 Predict studies identify individuals most at risk for the variant or for transmitting it to others. Researchers select potential predictors as inputs to algorithms and statistical methods that transform them into estimates of each individual's risk for the variant.  These methods rely upon associations between the inputs and the variant.  In addition, these methods estimate the error associated with their predictions. Researchers try to ensure error estimates obtained within their study are good estimates of the error when their models are applied to other populations.  While predict studies help us identify who is at risk, they do not tell us the effect if we change something about individuals (quit smoking, lose weight, etc.)  To answer these "what if?" questions, researchers use cause-and-effect studies.
 
@@ -31,11 +30,13 @@ Cause-and-effect studies try to estimate the effect of intervening or changing s
 
 ## Validity
 
-* internal validity
+When designing a study, researchers carefully consider its internal and external validity.
 
-* external validity
+* internal validity - How well does the study establish a cause-and-effect relationship between a treatment and outcome?
 
-In an area of research, there is often a natural tradeoff between internal and external validity.  Our knowledge comes from both observational studies and experiments (trials) -- rarely does a single study answer every question and the two types of studies used together increase our overall knowledge. Consider researchers investigating the effectiveness of Covid-19 vaccines.  Initial vaccine trials focused on internal validity to understand its effectiveness against the virus and obtain approval for mass distribution.  For example, @polack2020safety randomly assigned 43,548 persons 16 years of age or older to receive two doses of either placebo or the BNT162b2 vaccine (Pfizer).  They observed eight cases of Covid-19 among participants who received BNT162b2 and 162 cases among those who received the placebo.  This was a huge moment in the pandemic! However, the subjects in the study were relatively healthy and had volunteered for the trials.  From this study alone, the external validity of these results is not clear -- will the vaccine have the same effect in the general population?  Given the success of the trials and the need to widely distribute, it would be unethical to withhold the vaccine from large segments of the population to conduct further trials of other populations.  In this case, researchers use observational studies.
+* external validity - How broadly can the study's results be applied?
+
+Often, there is a trade off between internal and external validity when designing a study.  For example, to increase internal validity, researchers sometimes restrict the study to a subset of similar subjects to eliminate the effects of other variables.  However, in doing so, they reduce the external validity of the study if the results do not apply to the other subjects. In an area of research, our knowledge comes from many studies with different levels of internal and external validity -- rarely does a single study answer every question.  Consider the recent development of Covid-19 vaccines.  For example, initial Covid-19 vaccine trials focused on internal validity to understand its effectiveness against the virus and obtain approval for mass distribution. @polack2020safety randomly assigned 43,548 persons 16 years of age or older to receive two doses of either placebo or the BNT162b2 vaccine (Pfizer).  They observed eight cases of Covid-19 among participants who received BNT162b2 and 162 cases among those who received the placebo.  This was a huge moment in the pandemic! Randomly assigning subjects to receive the vaccine increased the internal validity of the study.  However, for ethical reasons, the subjects had to be relatively healthy and volunteer for the trials.  These limitations reduced the external validity of the study because it is not clear whether the vaccine has the same effect in the general population.  However, conducting more randomized trials on other populations has ethical implications of its own, as they would require withholding the vaccine from large segments of the population.  In this case, an observational study is more appropriate.  
 
 @dagan2021bnt162b2 conducted an observational study after the mass vaccination campaign in Israel using the health records of 4.7 million patients enrolled in its largest integrated health care organization.  The researchers matched vaccine recipients to controls on important variables: age, sex, sector, neighborhood of residence, etc.. In this larger sample, they found vaccine effectiveness results consistent with the randomized trial, thus providing evidence of the vaccine's effectiveness in the general public.  The authors specifically address the importance of observational studies:  
 
