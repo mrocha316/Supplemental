@@ -1,20 +1,28 @@
-# Quantitative explanatory variable with categorical confounding variable
+# Confounding adjustment with regression 
 
 ```{r, include = FALSE}
 library(tidyverse)
 ```
 
-In many situations we wish to examine the relationship between a response and more than one explanatory variable.  For instance, we might have a treatment variable (X) and a response variable (Y) but the relationship between them is confounded by a third variable (C).  Recall from chapter 1 that confounding occurs when factors determining assignment to treatment groups are also causes of the response; in other words, when there are one or more variables that affect to both our treatment variable and response variable.
+Recall from Chapter 2 that confounding occurs when the treatment variable depends upon another variable that is itself a cause of the outcome.  When researchers have not controlled for a confounding variable through study design, they employ statistical methods during analysis to adjust for confounding.  One of the most common techniques is multiple regression.
 
-For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC.  In this example, our "treatment" is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks.   If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks.  But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone.  There is a third variable that is related to both ice cream sales and heart attacks: temperature.  People tend to buy more ice cream when it is hot; if there also tend to be more heart attacks when it is hot, temperature confounds the relationship between ice cream sales and hospital admissions for heart attack. Recall the causal diagram from chapter 1. <!--![(#fig:confounder) A confounding variable $C$ on the effect of $X$ on $Y$.](./images/confounder.png)--> If we extend it to this example, we have
+## Quantitative explanatory variable with categorical confounding variable
+
+Let's say we have treatment variable (X) and response variable (Y) but the relationship between them is confounded by a third variable (C).  For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC.  In this example, our "treatment" is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks.   If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks.  But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone.
+
+What does it mean for ice cream sales to *cause* heart attacks? How is that different from an association between ice cream sales and heart attacks? Ice cream sales cause heart attacks if high and low ice cream sales on the same days resulted in different heart attack rates.  However, we only get to observe each day with one value of ice cream sales.  Therefore, a third variable may be a common cause of both ice cream sales and heart attacks.  In this case, we say there is an association between ice cream sales and heart attacks.
+
+In our case, the third variable is temperature.  People tend to buy more ice cream when it is hot; if there also tends to be more heart attacks when it is hot, temperature confounds the relationship between ice cream sales and hospital admissions for heart attack. Recall the confounding diagram from Chapter 2. <!--![(#fig:confounder) A confounding variable $C$ on the effect of $X$ on $Y$.](./images/confounder.png)--> If we extend it to this example, we have
 
 ![Causal diagram for ice cream sales and heart attacks.](./images/ice_cream_graph.png)
 
-Notice that we believe that a change in temperature *causes* a change in both ice cream sales and heart attacks.
+Notice that we believe that a change in temperature *causes* a change in both ice cream sales and heart attacks.  
 
-## Unadjusted effect of $X$ on $Y$
+If we control for temperature, then we will no longer see an association between ice cream sales and heart attacks.  One way to control for temperature is to restrict the analysis to only days in a very narrow temperature range.  However, restricting your analysis in this way would result in a lot of lost information.  Instead, we turn to statistical methods like regression.
 
-Let’s review simple linear regression.  There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure.  If we were interested in exploring this in a (relatively) representative sample of the adult U.S. population we might use data from the CDC’s National Health and Nutrition Examination Survey (NHANES).  The data used in this example is available on the course website.  It contains data sampled from 1999 to 2006 on 12,671 Americans age 18 and older who identify as either male or female and non-Hispanic white, non-Hispanic black or Mexican American, were not pregnant or taking high blood pressure medication.  We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
+### Unadjusted effect of $X$ on $Y$
+
+There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure.  In this section, we investigate this belief using data gathered from 1999 to 2006 by the CDC’s National Health and Nutrition Examination Survey (NHANES), a (relatively) representative sample of the adult U.S. population.  The data contains variables on 12,671 Americans age 18 and older who identify as either male or female and non-Hispanic white, non-Hispanic black or Mexican American, were not pregnant or taking high blood pressure medication.  We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
 $$\widehat{SBP}=\beta_0+\beta_1*HT$$
 
 If we fit a regression model with height as the treatment variable and systolic blood pressure as the response, we get the following results:
@@ -26,7 +34,7 @@ ht_mod=lm(SBP~HT,
 summary(ht_mod)
 ```
 
-We note that the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure!  In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data.   There is A LOT of data here, but we see a general increase in SBP as height increases.
+Note the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure!  In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data.   There is A LOT of data here, but we see a general increase in SBP as height increases.
 
 ```{r, fig.height = 3}
 bp_dat%>%
@@ -38,7 +46,7 @@ bp_dat%>%
   
 This is contrary to what we expected.  So I guess previous research was wrong.  Wait – not so fast.  Gender is a potential confounder.  
 
-## Effect of $X$ on $Y$ adjusting for $C$
+### Effect of $X$ on $Y$ adjusting for $C$
 
 Men tend to be taller than women (175 cm vs 162cm).  Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG).  Gender is a possible confounder.  Below is our data, colored by gender.
 
@@ -50,11 +58,11 @@ bp_dat%>%
   theme_classic()
 ```
   
-Here we can see that it looks as if *within men* SBP tends to decrease as height increases.  Likewise *within women* we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for gender. We do this using something called Multiple Regression.  “Multiple” because we have multiple variables on the right hand side of the equation.  (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.)   Often we do this simply by adding the other variable to the regression equation.  But how do we add a categorical variable to a mathematical equation.  Suppose my regression model is 
+Here we can see that it looks as if *within men* SBP tends to decrease as height increases.  Likewise, *within women* we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for gender. We do this using multiple regression.  “Multiple” because we have multiple variables on the right hand side of the equation.  (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.)   Often we do this simply by adding the other variable to the regression equation.  But how do we add a categorical variable to a mathematical equation.  Suppose my regression model is 
   
 $$\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER$$
     
-What does it mean to multiply something by "male"?    When we want to include categoroical variables as explanatory variables in regression models, we often use indicator (allso called 'dummy') variables.  In this case since we are limiting our study population to only subjects who identify as male or female, our variable gender only has two levels.  We need one indicator variable to represent gender.  We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female.  Then $\beta_2$ can be interpretated as the expected increase in SBP when a subject is male.
+What does it mean to multiply something by "male"?    When we want to include categoroical variables as explanatory variables in regression models, we often use indicator (also called 'dummy') variables.  In this case since we are limiting our study population to only subjects who identify as male or female, our variable gender only has two levels.  We need one indicator variable to represent gender.  We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female.  Then $\beta_2$ can be interpretated as the expected increase in SBP when a subject is male.
     
     
 A possible multiple regression equation with SBP as our response, height as the treatment adjusting for gender as a confounder is
@@ -73,7 +81,7 @@ We see that the relationship between height and SBP is now negative.  Specifical
 
 Hmm, what are we forgetting…?  Model diagnostics!  
 
-## Assessing model adequacy
+### Assessing model adequacy
 
 We have just done a theory-based test but we haven’t confirmed if the validity conditions are met.  The validity conditions for multiple regression are analogous to those for simple regression.
 1. Independence; once I have accounted for everything in the model, the responses can be considered independent of each other.
@@ -171,3 +179,7 @@ hist(m4$residuals)
 
 In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable.  Gender was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between gender and blood pressure from a clinical or scientific standpoint.  So gender was a confounding variable.  Notice that we treat these variables the same from a statistical standpoint.  It is possible to have multiple exposures or treatments, multiple confounders, or both.  The distinction between the two is not a statistical one; it is a scientific one.  
 <!--[Note about prediction.]-->
+
+## Quantitative explanatory variable with quantitative confounding variable
+
+
