@@ -1,39 +1,47 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={Causality and Multiple Regression Supplement},
-            pdfauthor={Krista Watts and Kevin Cummiskey},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={Causality and Multiple Regression Supplement},
+  pdfauthor={Krista Watts and Kevin Cummiskey},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -75,9 +83,16 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
-\usepackage{graphicx,grffile}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -86,32 +101,24 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-04-02}
+\date{2021-04-06}
 
 \begin{document}
 \maketitle
@@ -295,8 +302,8 @@ Unfortunately, some researchers condition upon everything that they measure, oft
 
 Recall from Chapter 2 that confounding occurs when the treatment variable depends upon another variable that is itself a cause of the outcome. When researchers have not controlled for a confounding variable through study design, they employ statistical methods during analysis to adjust for confounding. One of the most common techniques is multiple regression.
 
-\hypertarget{quantitative-explanatory-variable-with-categorical-confounding-variable}{%
-\section{Quantitative explanatory variable with categorical confounding variable}\label{quantitative-explanatory-variable-with-categorical-confounding-variable}}
+\hypertarget{categorical-confounding-variable}{%
+\section{Categorical confounding variable}\label{categorical-confounding-variable}}
 
 Let's say we have treatment variable (X) and response variable (Y) but the relationship between them is confounded by a third variable (C). For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC. In this example, our ``treatment'' is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks. If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks. But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone.
 
@@ -317,17 +324,17 @@ If we control for temperature, then we will no longer see an association between
 \hypertarget{unadjusted-effect-of-x-on-y}{%
 \subsection{\texorpdfstring{Unadjusted effect of \(X\) on \(Y\)}{Unadjusted effect of X on Y}}\label{unadjusted-effect-of-x-on-y}}
 
-There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure. In this section, we investigate this belief using data gathered from 1999 to 2006 by the CDC's National Health and Nutrition Examination Survey (NHANES), a (relatively) representative sample of the adult U.S. population. The data contains variables on 12,671 Americans age 18 and older who identify as either male or female and non-Hispanic white, non-Hispanic black or Mexican American, were not pregnant or taking high blood pressure medication. We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
+There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure. In this section, we investigate this belief using data gathered from 1999 to 2006 by the CDC's National Health and Nutrition Examination Survey (NHANES), a (relatively) representative sample of the adult U.S. population. The data contains variables on 12,671 Americans age 18 and older who were not pregnant or taking high blood pressure medication. We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
 \[\widehat{SBP}=\beta_0+\beta_1*HT\]
 
 If we fit a regression model with height as the treatment variable and systolic blood pressure as the response, we get the following results:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp_dat<-}\KeywordTok{read_csv}\NormalTok{(}\StringTok{"./data/blood_pressure.csv"}\NormalTok{)}
-\NormalTok{ht_mod=}\KeywordTok{lm}\NormalTok{(SBP}\OperatorTok{~}\NormalTok{HT,}
-         \DataTypeTok{data =}\NormalTok{ bp_dat)}
-\KeywordTok{summary}\NormalTok{(ht_mod)}
+\NormalTok{bp\_dat}\OtherTok{\textless{}{-}}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"./data/blood\_pressure.csv"}\NormalTok{)}
+\NormalTok{ht\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT,}
+         \AttributeTok{data =}\NormalTok{ bp\_dat)}
+\FunctionTok{summary}\NormalTok{(ht\_mod)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -356,59 +363,59 @@ Note the coefficient on height is actually positive, meaning that taller people 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp_dat}\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{`}\DataTypeTok{HT}\StringTok{`}\NormalTok{,}
-             \DataTypeTok{y=}\StringTok{`}\DataTypeTok{SBP}\StringTok{`}\NormalTok{))}\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}
+\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-4-1.pdf}
 
-This is contrary to what we expected. So I guess previous research was wrong. Wait -- not so fast. Gender is a potential confounder.
+This is contrary to what we expected. So I guess previous research was wrong. Wait -- not so fast. Biological sex is a potential confounder.
 
 \hypertarget{effect-of-x-on-y-adjusting-for-c}{%
 \subsection{\texorpdfstring{Effect of \(X\) on \(Y\) adjusting for \(C\)}{Effect of X on Y adjusting for C}}\label{effect-of-x-on-y-adjusting-for-c}}
 
-Men tend to be taller than women (175 cm vs 162cm). Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG). Gender is a possible confounder. Below is our data, colored by gender.
+Men tend to be taller than women (175 cm vs 162cm). Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG). Therefore, Sex is a possible confounder. Below is our data, colored by Sex.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp_dat}\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{`}\DataTypeTok{HT}\StringTok{`}\NormalTok{,}
-             \DataTypeTok{y=}\StringTok{`}\DataTypeTok{SBP}\StringTok{`}\NormalTok{))}\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{colour =}\NormalTok{ GENDER))}\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}
+\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
+             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =}\NormalTok{ SEX))}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-5-1.pdf}
 
-Here we can see that it looks as if \emph{within men} SBP tends to decrease as height increases. Likewise, \emph{within women} we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for gender. We do this using multiple regression. ``Multiple'' because we have multiple variables on the right hand side of the equation. (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.) Often we do this simply by adding the other variable to the regression equation. But how do we add a categorical variable to a mathematical equation. Suppose my regression model is
+Here, we see SBP tends to decrease as height increases \emph{within men}. Likewise, \emph{within women}, we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for Sex. We do this using multiple regression. ``Multiple'' because we have multiple variables on the right hand side of the equation. (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.) Often we do this simply by adding the other variable to the regression equation. But how do we add a categorical variable to a mathematical equation. Suppose my regression model is
 
-\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER\]
+\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*SEX\]
 
-What does it mean to multiply something by ``male''? When we want to include categoroical variables as explanatory variables in regression models, we often use indicator (also called `dummy') variables. In this case since we are limiting our study population to only subjects who identify as male or female, our variable gender only has two levels. We need one indicator variable to represent gender. We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female. Then \(\beta_2\) can be interpretated as the expected increase in SBP when a subject is male.
+What does it mean to multiply something by ``male''? When we want to include categorical variables as explanatory variables in regression models, we often use indicator (also called `dummy') variables. In this case, biological sex has two levels, male and female, and we need one indicator variable to represent Sex. We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female. \(\beta_2\) is interpreted as the expected increase in SBP when a subject is male.
 
-A possible multiple regression equation with SBP as our response, height as the treatment adjusting for gender as a confounder is
+A possible multiple regression equation with SBP as our response, height as the treatment adjusting for Sex as a confounder is
 
-\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*GENDER\]
+\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*SEX\]
 
-When we add gender to the model, we get the following results.
+When we add Sex to the model, we get the following results.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ht_gen_mod=}\KeywordTok{lm}\NormalTok{(SBP}\OperatorTok{~}\NormalTok{HT}\OperatorTok{+}\NormalTok{GENDER,}
-         \DataTypeTok{data =}\NormalTok{ bp_dat)}
-\KeywordTok{summary}\NormalTok{(ht_gen_mod)}
+\NormalTok{ht\_gen\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT}\SpecialCharTok{+}\NormalTok{SEX,}
+         \AttributeTok{data =}\NormalTok{ bp\_dat)}
+\FunctionTok{summary}\NormalTok{(ht\_gen\_mod)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ## 
 ## Call:
-## lm(formula = SBP ~ HT + GENDER, data = bp_dat)
+## lm(formula = SBP ~ HT + SEX, data = bp_dat)
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
@@ -418,7 +425,7 @@ When we add gender to the model, we get the following results.
 ##              Estimate Std. Error t value Pr(>|t|)    
 ## (Intercept) 183.54338    3.24339   56.59   <2e-16 ***
 ## HT           -0.37869    0.02006  -18.87   <2e-16 ***
-## GENDERM       8.30226    0.40559   20.47   <2e-16 ***
+## SEXM          8.30226    0.40559   20.47   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -427,30 +434,22 @@ When we add gender to the model, we get the following results.
 ## F-statistic: 233.4 on 2 and 17485 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
-We see that the relationship between height and SBP is now negative. Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG. Gender confounds the relationship between height and blood pressure. We can also note that the coefficient for gender is a little over 9, meaning that on average, men have a SBP 9 mmHg higher than women.
+We see that the relationship between height and SBP is now negative. Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG. Sex confounds the relationship between height and blood pressure. We can also note that the coefficient for Sex is a little over 9, meaning that on average, men have a SBP 9 mmHG higher than women.
 
-Hmm, what are we forgetting\ldots{}? Model diagnostics!
+Hmm, what are we forgetting\ldots? Model diagnostics!
 
 \hypertarget{assessing-model-adequacy}{%
 \subsection{Assessing model adequacy}\label{assessing-model-adequacy}}
 
-We have just done a theory-based test but we haven't confirmed if the validity conditions are met. The validity conditions for multiple regression are analogous to those for simple regression.
+We have just done a theory-based test but we have not assessed whether the validity conditions are met. The validity conditions for multiple regression are analogous to those for simple regression.
 1. Independence; once I have accounted for everything in the model, the responses can be considered independent of each other.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  The model is linear; when plotting the residuals vs predicted values, there does not appear to be a pattern.
-\item
-  The residuals have constant variance; when plotting the residuals vs predicted values, there is a constant width.
-\item
-  Normality; a histogram of the residuals is approximately normal.
-\end{enumerate}
+2. The model is linear; when plotting the residuals vs predicted values, there does not appear to be a pattern.
+3. The residuals have constant variance; when plotting the residuals vs predicted values, there is a constant width.
+4. Normality; a histogram of the residuals is approximately normal.
 
 In practice, it is difficult to check for independence in the data. Unless there is a specific pattern to the way the data was collected, violations of this assumption may not be evident in our residual plots. The best way to verify this assumption is to know how the data was collected. Is it reasonable to consider it a random sample? If, for instance, we had repeated measurements on the same people, this assumption may not be reasonable. One way to check is to plot the residuals in the order they appear in your data. But if the dependence is not related to the order the data was stored, issues may not be visible in this plot.
 
-To check for linearity, we look at the residuals vs fitted values plot. Here we are looking for any pattern in the residuals. They should be scattered roughly evenly above and below the y=0 line across the entire graph. (To check more rigorously in multiple regression we would actually check each explanatory variable individually using something called a partial residual plot or component plus residual plot. That is beyond the scope of this course.)
+To check for linearity, we look at the residuals vs fitted values plot. Here we are looking for any pattern in the residuals. They should be scattered roughly evenly above and below the \(y=0\) line across the entire graph. (To check more rigorously in multiple regression we would actually check each explanatory variable individually using something called a partial residual plot or component plus residual plot. That is beyond the scope of this course.)
 
 To check for constant variance, we again look at the residuals vs predicted values. We are checking to see if the variability in the residuals is approximately the same for different values of the response. A widening of our residuals as y\_hat increases, for instance, would indicate this assumption is not met.
 
@@ -460,60 +459,62 @@ For our blood pressure example, we only have one observation on each person and 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{residuals),ht_gen_mod}\OperatorTok{$}\NormalTok{residuals)}
+\FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals),ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-7-1.pdf}
 
-The plot of residuals vs fitted values from our model with both height and gender is in the following figure. The plot does not show a pattern. The residuals appear to be scattered roughly equally above and below the line y=0. It seems reasonable to believe that the linearity validity condition is met.
+The following figure depicts the residuals vs fitted values from our model with both height and Sex. The residuals do not show a pattern and are scattered roughly equally above and below the \(y = 0\) line. It seems reasonable to believe that the linearity validity condition is met.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{fitted,ht_gen_mod}\OperatorTok{$}\NormalTok{residuals)}
+\FunctionTok{plot}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{fitted,ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-8-1.pdf}
 
-From this same plot, we see that the variance of the residuals also seems to remain relatively constant as our predicted SBP increases. The validity condition requiring equal variance seems reasonable.
+From this same plot, we see the variance of the residuals is relatively constant as our predicted SBP increases. The validity condition requiring equal variance seems reasonable.
 
 The histogram of our residuals looks relatively normal although it does seem to have a heavy right tail. Our residuals may not be strictly normal. However, linear regression is ``robust'' to departures from normality. That means that slight, or even moderate, departures from normality generally do not pose a problem. Our residuals look ``normal enough'' that I feel comfortable concluding that our validity conditions are met.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{hist}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{resid)}
+\FunctionTok{hist}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{resid)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-9-1.pdf}
 
-What would we expect to see if the validity conditions were violated? Below are some examples of model diagnostic plots that indicate a departure from our validity conditions. We simulated the data used to create these plots so we know which conditions aren't valid. These are also relatively extreme examples for illustrative purposes; in real data you often won't see patterns this obvious. Violations of our model's validity conditions can be especially hard to detect when we have a small sample size.
+What would we expect to see if the validity conditions were violated? Below are some examples of model diagnostic plots that indicate a departure from our validity conditions. We simulated the data used to create these plots so we know which conditions are not valid. These are also relatively extreme examples for illustrative purposes; in real data you often will not see patterns this obvious. Violations of our model's validity conditions can be especially hard to detect when we have a small sample size.
 
-First we look at independence. The following plot of residuals in order show a clear pattern. The residuals seem to be in triplets; first we have a positive residual, then a residual around zero, then a negative residual. This pattern indiactes that are model is missing an important factor, like time. Perhaps the data was a reading collected three times a day - morning, noon and night - and we expect the reading will differ based on time of day but we did not include that in the model. Departures from independence are rarely this easy to spot.
+First, we look at independence. The following plot of residuals in order show a clear pattern. The residuals seem to be in triplets; first we have a positive residual, then a residual around zero, then a negative residual. This pattern indicates that are model is missing an important factor, like time. Perhaps the data was a reading collected three times a day - morning, noon and night - and we expect the reading will differ based on time of day but we did not include that in the model. Departures from independence are rarely this easy to spot.
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 --\textgreater{}
 
-Next we look at the linearity assumption. Below we see a residuals vs fitted values plot that shows a clear pattern. Fitted values below about 150 or above about 350 tend to have positive residuals (i.e.~be underestimated) whereas fitted values between 150 and 350 tend to have negative residuals (i.e.~be overestimated). This is an indication that our lineariyt assumption is violated; the right hand side of the model is not correctly specified.
+Next we look at the linearity assumption. Below we see a residuals vs fitted values plot that shows a clear pattern. Fitted values below about 150 or above about 350 tend to have positive residuals (i.e.~be underestimated) whereas fitted values between 150 and 350 tend to have negative residuals (i.e.~be overestimated). This is an indication that our linearity assumption is violated; the right hand side of the model is not correctly specified.
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-12-1.pdf}
 
 --\textgreater{}
 
-Next we investigate our assumption of constant variance. In the plot below we see a clear fanning out of the residuals; as \(\hat{y}\) increases, so does the variance of the residuals.
+Next we investigate our assumption of constant variance. In the plot below, we see a clear fanning out of the residuals; as \(\hat{y}\) increases, the variance of the residuals decreases.
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-14-1.pdf}
 
-And finally, we investigate our normality assumption. In the plot below, we see that are residuals are heavily skewed to the right. The assumption ofnormality is violated.
+And finally, we investigate our normality assumption. In the plot below, we see that are residuals are heavily skewed to the right. The assumption of normality is violated.
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-15-1.pdf}
 
-In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable. Gender was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between gender and blood pressure from a clinical or scientific standpoint. So gender was a confounding variable. Notice that we treat these variables the same from a statistical standpoint. It is possible to have multiple exposures or treatments, multiple confounders, or both. The distinction between the two is not a statistical one; it is a scientific one.\\
+In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable. Sex was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between Sex and blood pressure from a clinical or scientific standpoint. So Sex was a confounding variable. Notice that we treat these variables the same from a statistical standpoint. It is possible to have multiple exposures or treatments, multiple confounders, or both. The distinction between the two is not a statistical one; it is a scientific one.\\
 
 \hypertarget{quantitative-explanatory-variable-with-quantitative-confounding-variable}{%
 \section{Quantitative explanatory variable with quantitative confounding variable}\label{quantitative-explanatory-variable-with-quantitative-confounding-variable}}
+
+TO BE WRITTEN
 
 \hypertarget{activity}{%
 \chapter{Activity}\label{activity}}
@@ -762,6 +763,6 @@ height & 0.09 & 0.58 & 0.15 & 0.88\\
 
 \vspace{1in}
 
-\bibliography{book.bib,packages.bib}
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | Causality and Multiple Regression Supplement</title>
   <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | Causality and Multiple Regression Supplement" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-04-02" />
+<meta name="date" content="2021-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="activity.html"/>
 
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,25 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,22 +134,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a><ul>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
 <li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
 <li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
-<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a><ul>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
 <li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a><ul>
-<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Quantitative explanatory variable with categorical confounding variable</a><ul>
+<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>3.1.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
@@ -179,63 +186,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 
-<div id="refs" class="references">
-<div>
-<p>Angrist, Joshua, and Guido Imbens. 1995. “Identification and Estimation of Local Average Treatment Effects.” National Bureau of Economic Research Cambridge, Mass., USA.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-angrist1995identification" class="csl-entry">
+Angrist, Joshua, and Guido Imbens. 1995. <span>“Identification and Estimation of Local Average Treatment Effects.”</span> National Bureau of Economic Research Cambridge, Mass., USA.
 </div>
-<div>
-<p>Carver, Robert, Michelle Everson, John Gabrosek, Nicholas Horton, Robin Lock, Megan Mocko, Allan Rossman, et al. 2016. “Guidelines for Assessment and Instruction in Statistics Education (Gaise) College Report 2016.” AMSTAT.</p>
+<div id="ref-carver2016guidelines" class="csl-entry">
+Carver, Robert, Michelle Everson, John Gabrosek, Nicholas Horton, Robin Lock, Megan Mocko, Allan Rossman, et al. 2016. <span>“Guidelines for Assessment and Instruction in Statistics Education (GAISE) College Report 2016.”</span>
 </div>
-<div>
-<p>Cole, Stephen R, Robert W Platt, Enrique F Schisterman, Haitao Chu, Daniel Westreich, David Richardson, and Charles Poole. 2010. “Illustrating Bias Due to Conditioning on a Collider.” <em>International Journal of Epidemiology</em> 39 (2). Oxford University Press: 417–20.</p>
+<div id="ref-cole2010illustrating" class="csl-entry">
+Cole, Stephen R, Robert W Platt, Enrique F Schisterman, Haitao Chu, Daniel Westreich, David Richardson, and Charles Poole. 2010. <span>“Illustrating Bias Due to Conditioning on a Collider.”</span> <em>International Journal of Epidemiology</em> 39 (2): 417–20.
 </div>
-<div>
-<p>Cozby, Paul C, and Scott Bates. 2020. <em>Methods in Behavioral Research</em>. McGraw-Hill Education.</p>
+<div id="ref-cozby2020methods" class="csl-entry">
+Cozby, Paul C, and Scott Bates. 2020. <em>Methods in Behavioral Research</em>. McGraw-Hill Education.
 </div>
-<div>
-<p>Cummiskey, Kevin, Bryan Adams, James Pleuss, Dusty Turner, Nicholas Clark, and Krista Watts. 2020. “Causal Inference in Introductory Statistics Courses.” <em>Journal of Statistics Education</em> 28 (1). Taylor &amp; Francis: 2–8.</p>
+<div id="ref-cummiskey2020causal" class="csl-entry">
+Cummiskey, Kevin, Bryan Adams, James Pleuss, Dusty Turner, Nicholas Clark, and Krista Watts. 2020. <span>“Causal Inference in Introductory Statistics Courses.”</span> <em>Journal of Statistics Education</em> 28 (1): 2–8.
 </div>
-<div>
-<p>Dagan, Noa, Noam Barda, Eldad Kepten, Oren Miron, Shay Perchik, Mark A Katz, Miguel A Hernán, Marc Lipsitch, Ben Reis, and Ran D Balicer. 2021. “BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting.” <em>New England Journal of Medicine</em>. Mass Medical Soc.</p>
+<div id="ref-dagan2021bnt162b2" class="csl-entry">
+Dagan, Noa, Noam Barda, Eldad Kepten, Oren Miron, Shay Perchik, Mark A Katz, Miguel A Hernán, Marc Lipsitch, Ben Reis, and Ran D Balicer. 2021. <span>“BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting.”</span> <em>New England Journal of Medicine</em>.
 </div>
-<div>
-<p>Elwert, Felix, and Christopher Winship. 2014. “Endogenous Selection Bias: The Problem of Conditioning on a Collider Variable.” <em>Annual Review of Sociology</em> 40. Annual Reviews: 31–53.</p>
+<div id="ref-elwert2014endogenous" class="csl-entry">
+Elwert, Felix, and Christopher Winship. 2014. <span>“Endogenous Selection Bias: The Problem of Conditioning on a Collider Variable.”</span> <em>Annual Review of Sociology</em> 40: 31–53.
 </div>
-<div>
-<p>Greenland, Sander, and James M Robins. 1986. “Identifiability, Exchangeability, and Epidemiological Confounding.” <em>International Journal of Epidemiology</em> 15 (3). Oxford University Press: 413–19.</p>
+<div id="ref-greenland1986identifiability" class="csl-entry">
+Greenland, Sander, and James M Robins. 1986. <span>“Identifiability, Exchangeability, and Epidemiological Confounding.”</span> <em>International Journal of Epidemiology</em> 15 (3): 413–19.
 </div>
-<div>
-<p>Hammond, E Cuyler, and Daniel Horn. 1954. “The Relationship Between Human Smoking Habits and Death Rates: A Follow-up Study of 187,766 Men.” <em>Journal of the American Medical Association</em> 155 (15). American Medical Association: 1316–28.</p>
+<div id="ref-hammond1954relationship" class="csl-entry">
+Hammond, E Cuyler, and Daniel Horn. 1954. <span>“The Relationship Between Human Smoking Habits and Death Rates: A Follow-up Study of 187,766 Men.”</span> <em>Journal of the American Medical Association</em> 155 (15): 1316–28.
 </div>
-<div>
-<p>Hammond, E Cuyler, and others. 1966. “Smoking in Relation to the Death Rates of One Million Men and Women.” <em>Natl Cancer Inst Monogr</em> 19 (166): 127–204.</p>
+<div id="ref-hammond1966smoking" class="csl-entry">
+Hammond, E Cuyler, and others. 1966. <span>“Smoking in Relation to the Death Rates of One Million Men and Women.”</span> <em>Natl Cancer Inst Monogr</em> 19 (166): 127–204.
 </div>
-<div>
-<p>Hernán, Miguel A, Sonia Hernández-Dı'az, and James M Robins. 2004. “A Structural Approach to Selection Bias.” <em>Epidemiology</em>. JSTOR, 615–25.</p>
+<div id="ref-hernan2004structural" class="csl-entry">
+Hernán, Miguel A, Sonia Hernández-Dı́az, and James M Robins. 2004. <span>“A Structural Approach to Selection Bias.”</span> <em>Epidemiology</em>, 615–25.
 </div>
-<div>
-<p>Hernán, Miguel A, Sonia Hernández-Dı'az, Martha M Werler, and Allen A Mitchell. 2002. “Causal Knowledge as a Prerequisite for Confounding Evaluation: An Application to Birth Defects Epidemiology.” <em>American Journal of Epidemiology</em> 155 (2). Oxford University Press: 176–84.</p>
+<div id="ref-hernan2002causal" class="csl-entry">
+Hernán, Miguel A, Sonia Hernández-Dı́az, Martha M Werler, and Allen A Mitchell. 2002. <span>“Causal Knowledge as a Prerequisite for Confounding Evaluation: An Application to Birth Defects Epidemiology.”</span> <em>American Journal of Epidemiology</em> 155 (2): 176–84.
 </div>
-<div>
-<p>Hernán, Miguel A, John Hsu, and Brian Healy. 2019. “A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks.” <em>Chance</em> 32 (1). Taylor &amp; Francis: 42–49.</p>
+<div id="ref-hernan2019second" class="csl-entry">
+Hernán, Miguel A, John Hsu, and Brian Healy. 2019. <span>“A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks.”</span> <em>Chance</em> 32 (1): 42–49.
 </div>
-<div>
-<p>Horton, Nicholas J. 2015. “Challenges and Opportunities for Statistics and Statistical Education: Looking Back, Looking Forward.” <em>The American Statistician</em> 69 (2). Taylor &amp; Francis: 138–45.</p>
+<div id="ref-horton2015challenges" class="csl-entry">
+Horton, Nicholas J. 2015. <span>“Challenges and Opportunities for Statistics and Statistical Education: Looking Back, Looking Forward.”</span> <em>The American Statistician</em> 69 (2): 138–45.
 </div>
-<div>
-<p>Kaplan, Daniel. 2018. “Teaching Stats for Data Science.” <em>The American Statistician</em> 72 (1). Taylor &amp; Francis: 89–96.</p>
+<div id="ref-kaplan2018teaching" class="csl-entry">
+Kaplan, Daniel. 2018. <span>“Teaching Stats for Data Science.”</span> <em>The American Statistician</em> 72 (1): 89–96.
 </div>
-<div>
-<p>Lübke, Karsten, Matthias Gehrke, Jörg Horst, and Gero Szepannek. 2020. “Why We Should Teach Causal Inference: Examples in Linear Regression with Simulated Data.” <em>Journal of Statistics Education</em> 28 (2). Taylor &amp; Francis: 133–39.</p>
+<div id="ref-lubke2020we" class="csl-entry">
+Lübke, Karsten, Matthias Gehrke, Jörg Horst, and Gero Szepannek. 2020. <span>“Why We Should Teach Causal Inference: Examples in Linear Regression with Simulated Data.”</span> <em>Journal of Statistics Education</em> 28 (2): 133–39.
 </div>
-<div>
-<p>Pearl, Judea. 1993. “[Bayesian Analysis in Expert Systems]: Comment: Graphical Models, Causality and Intervention.” <em>Statistical Science</em> 8 (3). JSTOR: 266–69.</p>
+<div id="ref-pearl1993bayesian" class="csl-entry">
+Pearl, Judea. 1993. <span>“[Bayesian Analysis in Expert Systems]: Comment: Graphical Models, Causality and Intervention.”</span> <em>Statistical Science</em> 8 (3): 266–69.
 </div>
-<div>
-<p>Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic books.</p>
+<div id="ref-pearl2018book" class="csl-entry">
+Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic books.
 </div>
-<div>
-<p>Polack, Fernando P, Stephen J Thomas, Nicholas Kitchin, Judith Absalon, Alejandra Gurtman, Stephen Lockhart, John L Perez, et al. 2020. “Safety and Efficacy of the Bnt162b2 mRNA Covid-19 Vaccine.” <em>New England Journal of Medicine</em> 383 (27). Mass Medical Soc: 2603–15.</p>
+<div id="ref-polack2020safety" class="csl-entry">
+Polack, Fernando P, Stephen J Thomas, Nicholas Kitchin, Judith Absalon, Alejandra Gurtman, Stephen Lockhart, John L Perez, et al. 2020. <span>“Safety and Efficacy of the BNT162b2 mRNA Covid-19 Vaccine.”</span> <em>New England Journal of Medicine</em> 383 (27): 2603–15.
 </div>
 </div>
 </div>

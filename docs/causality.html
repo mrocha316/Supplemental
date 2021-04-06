@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Causality | Causality and Multiple Regression Supplement</title>
   <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Causality | Causality and Multiple Regression Supplement" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-04-02" />
+<meta name="date" content="2021-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="confounding-adjustment-with-regression.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,25 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,22 +134,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a><ul>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
 <li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
 <li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
-<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a><ul>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
 <li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a><ul>
-<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Quantitative explanatory variable with categorical confounding variable</a><ul>
+<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>3.1.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
@@ -176,94 +183,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="causality" class="section level1">
+<div id="causality" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Causality</h1>
-<p>There was a revolution over the last three decades in how scientists view causality. A hundred years ago, when the statistical methods we learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies – there has never been a randomized controlled trial for smoking. The <a href="https://www.cancer.org/latest-news/the-study-that-helped-spur-the-us-stop-smoking-movement.html">American Cancer Society’s observational studies</a> beginning in the 1950’s were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking <span class="citation">(Hammond and Horn <a href="#ref-hammond1954relationship">1954</a>; Hammond and others <a href="#ref-hammond1966smoking">1966</a>)</span>. Clearly, statistical theory and practice had diverged in their understandings of causality.</p>
-<p>However, in the 1980’s and 1990’s, researchers in different disciplines began revisiting causality <span class="citation">(Greenland and Robins <a href="#ref-greenland1986identifiability">1986</a>; Pearl <a href="#ref-pearl1993bayesian">1993</a>; Angrist and Imbens <a href="#ref-angrist1995identification">1995</a>)</span>. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The <em>assignment mechanism</em> is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while “correlation does not imply causation” is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims should be richer and more nuanced than this simple rule of thumb.</p>
-<div id="what-does-it-mean-for-one-thing-to-cause-another" class="section level2">
+<p>There was a revolution over the last three decades in how scientists view causality. A hundred years ago, when the statistical methods we learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies – there has never been a randomized controlled trial for smoking. The <a href="https://www.cancer.org/latest-news/the-study-that-helped-spur-the-us-stop-smoking-movement.html">American Cancer Society’s observational studies</a> beginning in the 1950’s were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking <span class="citation">(<a href="references.html#ref-hammond1954relationship" role="doc-biblioref">Hammond and Horn 1954</a>; <a href="references.html#ref-hammond1966smoking" role="doc-biblioref">Hammond and others 1966</a>)</span>. Clearly, statistical theory and practice had diverged in their understandings of causality.</p>
+<p>However, in the 1980’s and 1990’s, researchers in different disciplines began revisiting causality <span class="citation">(<a href="references.html#ref-greenland1986identifiability" role="doc-biblioref">Greenland and Robins 1986</a>; <a href="references.html#ref-pearl1993bayesian" role="doc-biblioref">Pearl 1993</a>; <a href="references.html#ref-angrist1995identification" role="doc-biblioref">Angrist and Imbens 1995</a>)</span>. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The <em>assignment mechanism</em> is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while “correlation does not imply causation” is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims should be richer and more nuanced than this simple rule of thumb.</p>
+<div id="what-does-it-mean-for-one-thing-to-cause-another" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> What does it mean for one thing to cause another</h2>
 <p>We say one variable (called the treatment, exposure, or intervention) <em>causes</em> another variable (the outcome or response) if there is a change in the average outcome between subjects when they receive the treatment and the same subjects when they do not receive the treatment. This definition differs from <em>association</em>, which is a change in the average outcome between subjects who received the treatment and different subjects who did not receive the treatment. Thus, causation is a comparison of observed outcomes and their counterfactuals (“what would have happened if the subject were in the other treatment group”).</p>
 <p>The central challenge in causal inference is that we cannot observe the outcomes for subjects under both levels of the treatment variable. In other words, we only get to observe each subject in either the treatment or the control group. For example, when estimating the effect of smoking on long term health outcomes, it is impossible to observe the same subject as a smoker and as a nonsmoker. However, under certain circumstances, we can obtain good estimates of effects without observing both outcomes for each individual. The most famous of these is the randomized controlled experiment.</p>
 </div>
-<div id="randomized-controlled-experiments" class="section level2">
+<div id="randomized-controlled-experiments" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Randomized controlled experiments</h2>
 <p>One of the most important scientific discoveries of the early 20th century was the randomized controlled trial (RCT). In its simplest form, researchers randomly assign subjects to receive the treatment or be in the control group. If they observe a difference in average outcomes between the two groups, then we would say the treatment caused the outcome. <em>Why does assigning subjects to groups by the simple action of flipping a coin result in such a radical difference in how we interpret the results?</em> The answer lies in the definition of causation above. Causation compares the outcomes between the same subjects. When we randomize the treatment, we end up comparing the outcomes between one group of subjects with the treatment and another group of subjects without the treatment who we expect to be very similar. In fact, when we have large enough sample sizes, it would be very unusual for the two groups to differ much. We refer to the two groups as <em>exchangeble</em>. In other words, we would expect the control group to have had similar results as the treatment group if they were the treatment group, and vice versa.</p>
 <p>However, an overly restrictive view of causality followed this important discovery. That is, causality can <em>only</em> be shown with RCTs. This placed a huge limitation on the types of research questions statistics could address. Frequently, RCTs are not ethical, feasible, or desirable. Imagine enrolling in a study where you could be randomly assigned to be a smoker for the next 20 years. Towards the end of the 20th century, researchers began taking a more expansive view of causality in observational studies.</p>
 </div>
-<div id="observational-studies-and-confounding" class="section level2">
+<div id="observational-studies-and-confounding" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Observational Studies and Confounding</h2>
 <p>In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. It is about how subjects are <em>assigned</em> to the treatment groups.) Instead, other factors determine subjects’ treatment group assignment. Confounding occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias – using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not fix bias, you just get a more precise, wrong estimate.</p>
 <p>For example, consider an observational study investigating long term health effects of smoking. In many populations, males are more likely to be smokers. In addition, males have different risks for long term health outcomes than females, regardless of whether they smoke. If we observe an association between smoking and an outcome without information on sex, we cannot distinguish the effect of smoking from the effect of sex.</p>
 <p>However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, you can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. <em>How do we identify a sufficient set of confounding variables?</em> For that question, we turn to causal diagrams.</p>
 </div>
-<div id="causal-diagrams" class="section level2">
+<div id="causal-diagrams" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Causal Diagrams</h2>
 <p>Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they help identify a sufficient set of confounding variables to control for during design and analysis.</p>
 <p>Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables. A directed edge (arrow) connecting two nodes indicates the node at the arrow’s tail is a cause of the node at the arrow’s head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right – we adopt that convention here.</p>
 <p>There are three building blocks of causal diagrams.</p>
-<div id="confounding-variable" class="section level3">
+<div id="confounding-variable" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Confounding variable</h3>
 <p>Figure <a href="causality.html#fig:confounder">2.1</a> depicts the confounding variable <span class="math inline">\(C\)</span> of the effect of treatment <span class="math inline">\(X\)</span> on outcome <span class="math inline">\(Y\)</span>. We will observe an association between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> even if there is no treatment effect. The levels of <span class="math inline">\(X\)</span> differ in terms of <span class="math inline">\(C\)</span> and <span class="math inline">\(C\)</span> itself is a cause of <span class="math inline">\(Y\)</span>. Without measuring and controlling for <span class="math inline">\(C\)</span>, we cannot distinguish the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> from the association through confounding variable <span class="math inline">\(C\)</span>. However, if <span class="math inline">\(C\)</span> is the only confounding variable, controlling for it will result in good estimates of the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p>
 <p>(backdoor path)</p>
 <div class="figure"><span id="fig:confounder"></span>
-<img src="images/confounder.png" alt=" A confounding variable C on the effect of X on Y." />
+<img src="images/confounder.png" alt="" />
 <p class="caption">Figure 2.1:  A confounding variable <span class="math inline">\(C\)</span> on the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p>
 </div>
 <p>For example, let’s say researchers investigate the effect of a master’s degree on adult earnings. They survey a large number of individuals and record whether they have a master’s degree and their earnings. Socioeconomic status is a confounding variable. Individuals with higher socioeconomic status are more likely to earn master’s degrees. In addition, they are more likely to have higher adult earnings, regardless of whether they have a master’s degree. For this example, let’s assume socioeconomic status is the only confounding variable. If the researchers observe an association between master’s degrees and earnings without information on socioeconomic status, it is not possible to determine if the association is due to an effect of master’s degrees or the effect of socioeconomic status.</p>
 </div>
-<div id="collider" class="section level3">
+<div id="collider" class="section level3" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> Collider</h3>
 <p>Figure <a href="causality.html#fig:collider">2.2</a> depicts treatment <span class="math inline">\(X\)</span> with no effect on outcome <span class="math inline">\(Y\)</span>. <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are both causes of collider <span class="math inline">\(Z\)</span> (the two incoming arrows <em>collide</em>). The box around <span class="math inline">\(Z\)</span> indicates conditioning upon <span class="math inline">\(Z\)</span> in the analysis. In this case, there will be an association between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> even though there is no treatment effect. Figure <a href="causality.html#fig:collider">2.2</a> is a common way to depict <em>selection bias</em> where an association in subjects selected for the study is not present in the general population. In the selection bias diagram, <span class="math inline">\(Z\)</span> is an indicator of selection into the study with a box around it because researchers only observe subjects selected into the study.</p>
 <div class="figure"><span id="fig:collider"></span>
-<img src="images/collider.png" alt=" Collider Z with no treatment effect of X on Y." />
+<img src="images/collider.png" alt="" />
 <p class="caption">Figure 2.2:  Collider <span class="math inline">\(Z\)</span> with no treatment effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p>
 </div>
-<p>A very famous example appears in <span class="citation">Pearl and Mackenzie (<a href="#ref-pearl2018book">2018</a>)</span>. In the general population, we would not expect to see an association between an individual’s talent and looks. More talented people are not better looking and vice versa. However, if we look only at famous Hollywood actors (<span class="math inline">\(Z\)</span>), we would see an association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor. More seriously, <em>selection bias</em> is a huge issue in medical and public health studies resulting in easily misinterpretated associations <span class="citation">(Hernán, Hernández-Dı'az, and Robins <a href="#ref-hernan2004structural">2004</a>; Cole et al. <a href="#ref-cole2010illustrating">2010</a>; Elwert and Winship <a href="#ref-elwert2014endogenous">2014</a>)</span>.</p>
+<p>A very famous example appears in <span class="citation"><a href="references.html#ref-pearl2018book" role="doc-biblioref">Pearl and Mackenzie</a> (<a href="references.html#ref-pearl2018book" role="doc-biblioref">2018</a>)</span>. In the general population, we would not expect to see an association between an individual’s talent and looks. More talented people are not better looking and vice versa. However, if we look only at famous Hollywood actors (<span class="math inline">\(Z\)</span>), we would see an association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor. More seriously, <em>selection bias</em> is a huge issue in medical and public health studies resulting in easily misinterpretated associations <span class="citation">(<a href="references.html#ref-hernan2004structural" role="doc-biblioref">Hernán, Hernández-Dı́az, and Robins 2004</a>; <a href="references.html#ref-cole2010illustrating" role="doc-biblioref">Cole et al. 2010</a>; <a href="references.html#ref-elwert2014endogenous" role="doc-biblioref">Elwert and Winship 2014</a>)</span>.</p>
 </div>
-<div id="mediator" class="section level3">
+<div id="mediator" class="section level3" number="2.4.3">
 <h3><span class="header-section-number">2.4.3</span> Mediator</h3>
 <p>Figure <a href="causality.html#fig:mediator">2.3</a> depicts mediator <span class="math inline">\(M\)</span> of the effect of treatment <span class="math inline">\(X\)</span> on outcome <span class="math inline">\(Y\)</span>. In this case, <span class="math inline">\(X\)</span> is a cause of <span class="math inline">\(M\)</span>, <span class="math inline">\(M\)</span> is a cause of <span class="math inline">\(Y\)</span>, and there is no effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> that cannot be explained by the effect of <span class="math inline">\(M\)</span> on <span class="math inline">\(Y\)</span>. A common mistake is to adjust for <span class="math inline">\(M\)</span>. If <span class="math inline">\(M\)</span> is categorical, we will not observe an association between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> within levels of <span class="math inline">\(M\)</span>. However, there is still an effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p>
 <div class="figure"><span id="fig:mediator"></span>
-<img src="images/mediator.png" alt=" Mediator M of the effect of treament X on outcome Y." />
+<img src="images/mediator.png" alt="" />
 <p class="caption">Figure 2.3:  Mediator <span class="math inline">\(M\)</span> of the effect of treament <span class="math inline">\(X\)</span> on outcome <span class="math inline">\(Y\)</span>.</p>
 </div>
 <p>For example, let’s say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceded by increased blood pressure. Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.</p>
-<p>Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects <span class="citation">(Hernán et al. <a href="#ref-hernan2002causal">2002</a>)</span>.</p>
+<p>Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects <span class="citation">(<a href="references.html#ref-hernan2002causal" role="doc-biblioref">Hernán et al. 2002</a>)</span>.</p>
 
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-angrist1995identification">
-<p>Angrist, Joshua, and Guido Imbens. 1995. “Identification and Estimation of Local Average Treatment Effects.” National Bureau of Economic Research Cambridge, Mass., USA.</p>
-</div>
-<div id="ref-cole2010illustrating">
-<p>Cole, Stephen R, Robert W Platt, Enrique F Schisterman, Haitao Chu, Daniel Westreich, David Richardson, and Charles Poole. 2010. “Illustrating Bias Due to Conditioning on a Collider.” <em>International Journal of Epidemiology</em> 39 (2). Oxford University Press: 417–20.</p>
-</div>
-<div id="ref-elwert2014endogenous">
-<p>Elwert, Felix, and Christopher Winship. 2014. “Endogenous Selection Bias: The Problem of Conditioning on a Collider Variable.” <em>Annual Review of Sociology</em> 40. Annual Reviews: 31–53.</p>
-</div>
-<div id="ref-greenland1986identifiability">
-<p>Greenland, Sander, and James M Robins. 1986. “Identifiability, Exchangeability, and Epidemiological Confounding.” <em>International Journal of Epidemiology</em> 15 (3). Oxford University Press: 413–19.</p>
-</div>
-<div id="ref-hammond1954relationship">
-<p>Hammond, E Cuyler, and Daniel Horn. 1954. “The Relationship Between Human Smoking Habits and Death Rates: A Follow-up Study of 187,766 Men.” <em>Journal of the American Medical Association</em> 155 (15). American Medical Association: 1316–28.</p>
-</div>
-<div id="ref-hammond1966smoking">
-<p>Hammond, E Cuyler, and others. 1966. “Smoking in Relation to the Death Rates of One Million Men and Women.” <em>Natl Cancer Inst Monogr</em> 19 (166): 127–204.</p>
-</div>
-<div id="ref-hernan2004structural">
-<p>Hernán, Miguel A, Sonia Hernández-Dı'az, and James M Robins. 2004. “A Structural Approach to Selection Bias.” <em>Epidemiology</em>. JSTOR, 615–25.</p>
-</div>
-<div id="ref-hernan2002causal">
-<p>Hernán, Miguel A, Sonia Hernández-Dı'az, Martha M Werler, and Allen A Mitchell. 2002. “Causal Knowledge as a Prerequisite for Confounding Evaluation: An Application to Birth Defects Epidemiology.” <em>American Journal of Epidemiology</em> 155 (2). Oxford University Press: 176–84.</p>
-</div>
-<div id="ref-pearl1993bayesian">
-<p>Pearl, Judea. 1993. “[Bayesian Analysis in Expert Systems]: Comment: Graphical Models, Causality and Intervention.” <em>Statistical Science</em> 8 (3). JSTOR: 266–69.</p>
-</div>
-<div id="ref-pearl2018book">
-<p>Pearl, Judea, and Dana Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Basic books.</p>
 </div>
 </div>
             </section>

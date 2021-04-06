@@ -17,8 +17,10 @@ causal-diagrams
 confounding-variable
 collider
 mediator
-quantitative-explanatory-variable-with-categorical-confounding-variable
+confounding-adjustment-with-regression
+categorical-confounding-variable
 unadjusted-effect-of-x-on-y
 effect-of-x-on-y-adjusting-for-c
 assessing-model-adequacy
+quantitative-explanatory-variable-with-quantitative-confounding-variable
 activity
