@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Confounding adjustment with regression | Causality and Multiple Regression Supplement</title>
   <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Confounding adjustment with regression | Causality and Multiple Regression Supplement" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="causality.html"/>
 <link rel="next" href="activity.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -54,26 +53,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,32 +132,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
-<ul>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a><ul>
 <li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
 <li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
 <li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
-<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
-<ul>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
 <li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a>
-<ul>
+<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a><ul>
+<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>3.1.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a></li>
+<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative confounding variable</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>4</b> Activity</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -183,29 +176,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="confounding-adjustment-with-regression" class="section level1" number="3">
+<div id="confounding-adjustment-with-regression" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Confounding adjustment with regression</h1>
 <p>Recall from Chapter 2 that confounding occurs when the treatment variable depends upon another variable that is itself a cause of the outcome. When researchers have not controlled for a confounding variable through study design, they employ statistical methods during analysis to adjust for confounding. One of the most common techniques is multiple regression.</p>
-<div id="categorical-confounding-variable" class="section level2" number="3.1">
+<div id="categorical-confounding-variable" class="section level2">
 <h2><span class="header-section-number">3.1</span> Categorical confounding variable</h2>
 <p>Let’s say we have treatment variable (X) and response variable (Y) but the relationship between them is confounded by a third variable (C). For instance, suppose we want to investigate the relationship between ice cream sales and hospital admissions for heart attacks in the summer in NYC. In this example, our “treatment” is volume of ice cream sales on any given day in NYC and our response is number of hospital admissions that day for heart attacks. If we only look at those two variables, we might see a strong correlation; as ice cream sales increase, so do heart attacks. But it would be a mistake to infer that eating ice cream causes heart attacks from this analysis alone.</p>
 <p>What does it mean for ice cream sales to <em>cause</em> heart attacks? How is that different from an association between ice cream sales and heart attacks? Ice cream sales cause heart attacks if high and low ice cream sales on the same days resulted in different heart attack rates. However, we only get to observe each day with one value of ice cream sales. Therefore, a third variable may be a common cause of both ice cream sales and heart attacks. In this case, we say there is an association between ice cream sales and heart attacks.</p>
 <p>In our case, the third variable is temperature. People tend to buy more ice cream when it is hot; if there also tends to be more heart attacks when it is hot, temperature confounds the relationship between ice cream sales and hospital admissions for heart attack. Recall the confounding diagram from Chapter 2. <!--![ A confounding variable $C$ on the effect of $X$ on $Y$.](./images/confounder.png)--> If we extend it to this example, we have</p>
 <div class="figure">
-<img src="images/ice_cream_graph.png" alt="" />
+<img src="images/ice_cream_graph.png" alt="Causal diagram for ice cream sales and heart attacks." />
 <p class="caption">Causal diagram for ice cream sales and heart attacks.</p>
 </div>
 <p>Notice that we believe that a change in temperature <em>causes</em> a change in both ice cream sales and heart attacks.</p>
 <p>If we control for temperature, then we will no longer see an association between ice cream sales and heart attacks. One way to control for temperature is to restrict the analysis to only days in a very narrow temperature range. However, restricting your analysis in this way would result in a lot of lost information. Instead, we turn to statistical methods like regression.</p>
-<div id="unadjusted-effect-of-x-on-y" class="section level3" number="3.1.1">
+<div id="unadjusted-effect-of-x-on-y" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></h3>
 <p>There exists a belief that height is protective against high blood pressure; that is, taller people tend to have lower blood pressure. In this section, we investigate this belief using data gathered from 1999 to 2006 by the CDC’s National Health and Nutrition Examination Survey (NHANES), a (relatively) representative sample of the adult U.S. population. The data contains variables on 12,671 Americans age 18 and older who were not pregnant or taking high blood pressure medication. We are interested in estimating the effect of height (HT) on mean systolic blood pressure (SBP). We could model this with the following regression equation.
 <span class="math display">\[\widehat{SBP}=\beta_0+\beta_1*HT\]</span></p>
 <p>If we fit a regression model with height as the treatment variable and systolic blood pressure as the response, we get the following results:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="confounding-adjustment-with-regression.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bp_dat<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">&quot;./data/blood_pressure.csv&quot;</span>)</span>
-<span id="cb1-2"><a href="confounding-adjustment-with-regression.html#cb1-2" aria-hidden="true" tabindex="-1"></a>ht_mod<span class="ot">=</span><span class="fu">lm</span>(SBP<span class="sc">~</span>HT,</span>
-<span id="cb1-3"><a href="confounding-adjustment-with-regression.html#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> bp_dat)</span>
-<span id="cb1-4"><a href="confounding-adjustment-with-regression.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ht_mod)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">bp_dat&lt;-<span class="kw">read_csv</span>(<span class="st">&quot;./data/blood_pressure.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">ht_mod=<span class="kw">lm</span>(SBP<span class="op">~</span>HT,</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">         <span class="dt">data =</span> bp_dat)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">summary</span>(ht_mod)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = SBP ~ HT, data = bp_dat)
@@ -225,32 +218,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.002663,   Adjusted R-squared:  0.002606 
 ## F-statistic: 46.69 on 1 and 17486 DF,  p-value: 8.575e-12</code></pre>
 <p>Note the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure! In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data. There is A LOT of data here, but we see a general increase in SBP as height increases.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="confounding-adjustment-with-regression.html#cb3-1" aria-hidden="true" tabindex="-1"></a>bp_dat<span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="confounding-adjustment-with-regression.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">HT</span><span class="st">`</span>,</span>
-<span id="cb3-3"><a href="confounding-adjustment-with-regression.html#cb3-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span><span class="st">`</span><span class="at">SBP</span><span class="st">`</span>))<span class="sc">+</span></span>
-<span id="cb3-4"><a href="confounding-adjustment-with-regression.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb3-5"><a href="confounding-adjustment-with-regression.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">bp_dat<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="st">`</span><span class="dt">HT</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">             <span class="dt">y=</span><span class="st">`</span><span class="dt">SBP</span><span class="st">`</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_classic</span>()</a></code></pre></div>
 <p><img src="MA206supplement_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>This is contrary to what we expected. So I guess previous research was wrong. Wait – not so fast. Biological sex is a potential confounder.</p>
 </div>
-<div id="effect-of-x-on-y-adjusting-for-c" class="section level3" number="3.1.2">
+<div id="effect-of-x-on-y-adjusting-for-c" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></h3>
 <p>Men tend to be taller than women (175 cm vs 162cm). Men also tend to have higher mean systolic blood pressure (122 vs 118 mmHG). Therefore, Sex is a possible confounder. Below is our data, colored by Sex.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="confounding-adjustment-with-regression.html#cb4-1" aria-hidden="true" tabindex="-1"></a>bp_dat<span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="confounding-adjustment-with-regression.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">HT</span><span class="st">`</span>,</span>
-<span id="cb4-3"><a href="confounding-adjustment-with-regression.html#cb4-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span><span class="st">`</span><span class="at">SBP</span><span class="st">`</span>))<span class="sc">+</span></span>
-<span id="cb4-4"><a href="confounding-adjustment-with-regression.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> SEX))<span class="sc">+</span></span>
-<span id="cb4-5"><a href="confounding-adjustment-with-regression.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">bp_dat<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="st">`</span><span class="dt">HT</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">             <span class="dt">y=</span><span class="st">`</span><span class="dt">SBP</span><span class="st">`</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> SEX))<span class="op">+</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_classic</span>()</a></code></pre></div>
 <p><img src="MA206supplement_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Here, we see SBP tends to decrease as height increases <em>within men</em>. Likewise, <em>within women</em>, we see the same. If we want to estimate the effect of height on blood pressure, we must first adjust for Sex. We do this using multiple regression. “Multiple” because we have multiple variables on the right hand side of the equation. (This could be multiple explanatory variables or, as we have here a single explanatory variable with one or more confounding variables.) Often we do this simply by adding the other variable to the regression equation. But how do we add a categorical variable to a mathematical equation. Suppose my regression model is</p>
 <p><span class="math display">\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*SEX\]</span></p>
-<p>What does it mean to multiply something by “male?” When we want to include categorical variables as explanatory variables in regression models, we often use indicator (also called ‘dummy’) variables. In this case, biological sex has two levels, male and female, and we need one indicator variable to represent Sex. We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female. <span class="math inline">\(\beta_2\)</span> is interpreted as the expected increase in SBP when a subject is male.</p>
+<p>What does it mean to multiply something by “male”? When we want to include categorical variables as explanatory variables in regression models, we often use indicator (also called ‘dummy’) variables. In this case, biological sex has two levels, male and female, and we need one indicator variable to represent Sex. We will let our indicator variable equal 1 if a subject was male and 0 if the subject was female. <span class="math inline">\(\beta_2\)</span> is interpreted as the expected increase in SBP when a subject is male.</p>
 <p>A possible multiple regression equation with SBP as our response, height as the treatment adjusting for Sex as a confounder is</p>
 <p><span class="math display">\[\widehat{SBP}=\beta_0+\beta_1*HT+\beta_2*SEX\]</span></p>
 <p>When we add Sex to the model, we get the following results.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="confounding-adjustment-with-regression.html#cb5-1" aria-hidden="true" tabindex="-1"></a>ht_gen_mod<span class="ot">=</span><span class="fu">lm</span>(SBP<span class="sc">~</span>HT<span class="sc">+</span>SEX,</span>
-<span id="cb5-2"><a href="confounding-adjustment-with-regression.html#cb5-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> bp_dat)</span>
-<span id="cb5-3"><a href="confounding-adjustment-with-regression.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ht_gen_mod)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">ht_gen_mod=<span class="kw">lm</span>(SBP<span class="op">~</span>HT<span class="op">+</span>SEX,</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">         <span class="dt">data =</span> bp_dat)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">summary</span>(ht_gen_mod)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = SBP ~ HT + SEX, data = bp_dat)
@@ -273,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We see that the relationship between height and SBP is now negative. Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG. Sex confounds the relationship between height and blood pressure. We can also note that the coefficient for Sex is a little over 9, meaning that on average, men have a SBP 9 mmHG higher than women.</p>
 <p>Hmm, what are we forgetting…? Model diagnostics!</p>
 </div>
-<div id="assessing-model-adequacy" class="section level3" number="3.1.3">
+<div id="assessing-model-adequacy" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Assessing model adequacy</h3>
 <p>We have just done a theory-based test but we have not assessed whether the validity conditions are met. The validity conditions for multiple regression are analogous to those for simple regression.
 1. Independence; once I have accounted for everything in the model, the responses can be considered independent of each other.
@@ -285,14 +278,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To check for constant variance, we again look at the residuals vs predicted values. We are checking to see if the variability in the residuals is approximately the same for different values of the response. A widening of our residuals as y_hat increases, for instance, would indicate this assumption is not met.</p>
 <p>Finally, to check for normality, we look at a histogram of the residuals to see if it looks at least approximately normal.</p>
 <p>For our blood pressure example, we only have one observation on each person and we have a pseudo-random sample of the U.S. (Details on the exact sampling plan can be found on the CDC’s NHANES website.) Additionally, if we plot the residuals vs their index (i.e. in the order they are in the data) we see no clear pattern to the residuals. It seems reasonable that our independence validity condition is met.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="confounding-adjustment-with-regression.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(ht_gen_mod<span class="sc">$</span>residuals),ht_gen_mod<span class="sc">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ht_gen_mod<span class="op">$</span>residuals),ht_gen_mod<span class="op">$</span>residuals)</a></code></pre></div>
 <p><img src="MA206supplement_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>The following figure depicts the residuals vs fitted values from our model with both height and Sex. The residuals do not show a pattern and are scattered roughly equally above and below the <span class="math inline">\(y = 0\)</span> line. It seems reasonable to believe that the linearity validity condition is met.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="confounding-adjustment-with-regression.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ht_gen_mod<span class="sc">$</span>fitted,ht_gen_mod<span class="sc">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">plot</span>(ht_gen_mod<span class="op">$</span>fitted,ht_gen_mod<span class="op">$</span>residuals)</a></code></pre></div>
 <p><img src="MA206supplement_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>From this same plot, we see the variance of the residuals is relatively constant as our predicted SBP increases. The validity condition requiring equal variance seems reasonable.</p>
 <p>The histogram of our residuals looks relatively normal although it does seem to have a heavy right tail. Our residuals may not be strictly normal. However, linear regression is “robust” to departures from normality. That means that slight, or even moderate, departures from normality generally do not pose a problem. Our residuals look “normal enough” that I feel comfortable concluding that our validity conditions are met.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="confounding-adjustment-with-regression.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ht_gen_mod<span class="sc">$</span>resid)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hist</span>(ht_gen_mod<span class="op">$</span>resid)</a></code></pre></div>
 <p><img src="MA206supplement_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>What would we expect to see if the validity conditions were violated? Below are some examples of model diagnostic plots that indicate a departure from our validity conditions. We simulated the data used to create these plots so we know which conditions are not valid. These are also relatively extreme examples for illustrative purposes; in real data you often will not see patterns this obvious. Violations of our model’s validity conditions can be especially hard to detect when we have a small sample size.</p>
 <p>First, we look at independence. The following plot of residuals in order show a clear pattern. The residuals seem to be in triplets; first we have a positive residual, then a residual around zero, then a negative residual. This pattern indicates that are model is missing an important factor, like time. Perhaps the data was a reading collected three times a day - morning, noon and night - and we expect the reading will differ based on time of day but we did not include that in the model. Departures from independence are rarely this easy to spot.</p>
@@ -315,8 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--[Note about prediction.]--></p>
 </div>
 </div>
-<div id="quantitative-explanatory-variable-with-quantitative-confounding-variable" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Quantitative explanatory variable with quantitative confounding variable</h2>
+<div id="quantitative-confounding-variable" class="section level2">
+<h2><span class="header-section-number">3.2</span> Quantitative confounding variable</h2>
 <p>TO BE WRITTEN</p>
 
 </div>

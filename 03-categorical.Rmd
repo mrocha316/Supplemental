@@ -176,6 +176,6 @@ hist(m4$residuals)
 In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable.  Sex was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between Sex and blood pressure from a clinical or scientific standpoint.  So Sex was a confounding variable.  Notice that we treat these variables the same from a statistical standpoint.  It is possible to have multiple exposures or treatments, multiple confounders, or both.  The distinction between the two is not a statistical one; it is a scientific one.  
 <!--[Note about prediction.]-->
 
-## Quantitative explanatory variable with quantitative confounding variable
+## Quantitative confounding variable
 
 TO BE WRITTEN
