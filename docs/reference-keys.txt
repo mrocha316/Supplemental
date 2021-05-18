@@ -22,5 +22,5 @@ categorical-confounding-variable
 unadjusted-effect-of-x-on-y
 effect-of-x-on-y-adjusting-for-c
 assessing-model-adequacy
-quantitative-explanatory-variable-with-quantitative-confounding-variable
+quantitative-confounding-variable
 activity
