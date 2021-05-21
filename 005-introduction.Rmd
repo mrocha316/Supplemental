@@ -16,18 +16,6 @@ Predict studies identify individuals most at risk for the variant or for transmi
 
 Cause-and-effect studies try to estimate the effect of intervening or changing some aspect of an individual.  These studies are tremendously important in public policy (where they are aptly called *intervention studies*) to justify legislation and regulations to reduce risk.  Unlike prediction studies, which are highly algorithmic and only require researchers to identify appropriate inputs, cause-and-effect studies use subject matter knowledge of the causal structure of the inputs to select appropriate statistical models [@hernan2019second].  For example, to assess the affect of quitting smoking on risk for the variant, we need to understand why some people quit smoking and others do not, as these reasons themselves may be responsible for some changes in risk between the two groups. Unlike prediction studies which rely upon what we *see*, cause-and-effect studies require us to ask what would happen if we *do* something [@pearl2018book].  Only human beings are capable of such counterfactual thinking ("what would have happened if") - even our most sophisticated computer algorithms require human supervision to address cause-and-effect questions.
 
-**Exercises**
-
-1. For the following studies, identify the goal (describe, predict, cause-and-effect) of the study.  Briefly explain your choice:
-
-* *A researcher obtains school records to collect information on the extracurricular activities of students.*
-
-* *A researcher obtains school records to determine the impact of extracurricular activities on grades.*
-
-* *A researcher obtains school records on extracurricular activities to identify students who are at risk to graduate.*
-
-2.  Select an area of interest to you.  Write a sentence describing a study in your area of interest for each of the three goals (describe, predict, cause-and-effect)
-
 ## Validity
 
 When designing a study, researchers carefully consider its internal and external validity.
@@ -42,7 +30,18 @@ Often, there is a trade off between internal and external validity when designin
 
 > "Although randomized clinical trials [experiments] are considered the “gold standard” for evaluating intervention effects, they have notable limitations of sample size and subgroup analysis, restrictive inclusion criteria, and a highly controlled setting that may not be replicated in a mass vaccine rollout." 
 
+
 **Exercises**
 
-1. Read the article ["Dozens to be deliberately infected with coronavirus in UK ‘human challenge’ trials"](https://www.nature.com/articles/d41586-020-02821-4) in Nature News. Write a paragraph discussing issues of internal and external validity.
+1. For the following studies, identify the goal (describe, predict, cause-and-effect) of the study.  Briefly explain your choice:
+
+* *A researcher obtains school records to collect information on the extracurricular activities of students.*
+
+* *A researcher obtains school records to determine the impact of extracurricular activities on grades.*
+
+* *A researcher obtains school records on extracurricular activities to identify students who are at risk to graduate.*
+
+2.  Select an area of interest to you.  Write a sentence describing a study in your area of interest for each of the three goals (describe, predict, cause-and-effect).
+
+3. Read the article ["Dozens to be deliberately infected with coronavirus in UK ‘human challenge’ trials"](https://www.nature.com/articles/d41586-020-02821-4) in Nature News. Write a paragraph discussing issues of internal and external validity.
 

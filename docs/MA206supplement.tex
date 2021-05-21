@@ -1,47 +1,39 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-]{book}
+\documentclass[]{book}
 \usepackage{lmodern}
-\usepackage{amsmath}
+\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
-\else % if luatex or xetex
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
-% Use upquote if available, for straight quotes in verbatim environments
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
-  pdftitle={Causality and Multiple Regression Supplement},
-  pdfauthor={Krista Watts and Kevin Cummiskey},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+            pdftitle={Causality and Multiple Regression Supplement},
+            pdfauthor={Krista Watts and Kevin Cummiskey},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -83,16 +75,9 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\usepackage{graphicx}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -101,24 +86,32 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{booktabs}
-\ifluatex
-  \usepackage{selnolig}  % disable illegal ligatures
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
 \fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-05-18}
+\date{2021-05-21}
 
 \begin{document}
 \maketitle
@@ -160,32 +153,6 @@ Predict studies identify individuals most at risk for the variant or for transmi
 
 Cause-and-effect studies try to estimate the effect of intervening or changing some aspect of an individual. These studies are tremendously important in public policy (where they are aptly called \emph{intervention studies}) to justify legislation and regulations to reduce risk. Unlike prediction studies, which are highly algorithmic and only require researchers to identify appropriate inputs, cause-and-effect studies use subject matter knowledge of the causal structure of the inputs to select appropriate statistical models \citep{hernan2019second}. For example, to assess the affect of quitting smoking on risk for the variant, we need to understand why some people quit smoking and others do not, as these reasons themselves may be responsible for some changes in risk between the two groups. Unlike prediction studies which rely upon what we \emph{see}, cause-and-effect studies require us to ask what would happen if we \emph{do} something \citep{pearl2018book}. Only human beings are capable of such counterfactual thinking (``what would have happened if'') - even our most sophisticated computer algorithms require human supervision to address cause-and-effect questions.
 
-\textbf{Exercises}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  For the following studies, identify the goal (describe, predict, cause-and-effect) of the study. Briefly explain your choice:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \emph{A researcher obtains school records to collect information on the extracurricular activities of students.}
-\item
-  \emph{A researcher obtains school records to determine the impact of extracurricular activities on grades.}
-\item
-  \emph{A researcher obtains school records on extracurricular activities to identify students who are at risk to graduate.}
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Select an area of interest to you. Write a sentence describing a study in your area of interest for each of the three goals (describe, predict, cause-and-effect)
-\end{enumerate}
-
 \hypertarget{validity}{%
 \section{Validity}\label{validity}}
 
@@ -212,55 +179,72 @@ Often, there is a trade off between internal and external validity when designin
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
+  For the following studies, identify the goal (describe, predict, cause-and-effect) of the study. Briefly explain your choice:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \emph{A researcher obtains school records to collect information on the extracurricular activities of students.}
+\item
+  \emph{A researcher obtains school records to determine the impact of extracurricular activities on grades.}
+\item
+  \emph{A researcher obtains school records on extracurricular activities to identify students who are at risk to graduate.}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Select an area of interest to you. Write a sentence describing a study in your area of interest for each of the three goals (describe, predict, cause-and-effect).
+\item
   Read the article \href{https://www.nature.com/articles/d41586-020-02821-4}{``Dozens to be deliberately infected with coronavirus in UK `human challenge' trials''} in Nature News. Write a paragraph discussing issues of internal and external validity.
 \end{enumerate}
 
 \hypertarget{causality}{%
 \chapter{Causality}\label{causality}}
 
-In inserted this text to see if it chnages on github.
 There was a revolution over the last three decades in how scientists view causality. A hundred years ago, when the statistical methods we learn in introductory courses were developed, causality was considered outside the realm of statistics, except for the case of randomized controlled experiments. In other words, statistics could only answer questions of association, but not of causality. However, this limited view of statistics was at odds with its usage in every day research. For example, the greatest public health triumph of the 20th century was the reduction in cigarette smoking, which exploded after World War II with their mass production and marketing. The statistical evidence of the health effects of smoking comes entirely from observational studies -- there has never been a randomized controlled trial for smoking. The \href{https://www.cancer.org/latest-news/the-study-that-helped-spur-the-us-stop-smoking-movement.html}{American Cancer Society's observational studies} beginning in the 1950's were huge undertakings and provided compelling evidence of the harmful effects of cigarette smoking \citep{hammond1954relationship, hammond1966smoking}. Clearly, statistical theory and practice had diverged in their understandings of causality.
 
-However, in the 1980's and 1990's, researchers in different disciplines began revisiting causality \citep{greenland1986identifiability, pearl1993bayesian, angrist1995identification}. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The \emph{assignment mechanism} is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects could be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while ``correlation does not imply causation'' is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims should be richer and more nuanced than this simple rule of thumb.
+However, in the 1980's and 1990's, researchers in different disciplines began revisiting causality \citep{greenland1986identifiability, pearl1993bayesian, angrist1995identification}. They developed mathematical language for expressing causation, which cannot be uniquely expressed using the traditional language of association. In addition, they showed randomized controlled trials are special cases of more general situations when the researcher has full knowledge of the assignment mechanism. The \emph{assignment mechanism} is the process in which subjects are assigned to different levels of the treatment. Lastly, they showed that causal effects can be estimated from observational studies under a wide variety of circumstances when the assignment mechanism is known. Today, while ``correlation does not imply causation'' is still useful advice when assessing causal claims in observational studies, statistical theory and practice suggest our assessment of causal claims should be richer and more nuanced than this simple rule of thumb.
 
 \hypertarget{what-does-it-mean-for-one-thing-to-cause-another}{%
 \section{What does it mean for one thing to cause another}\label{what-does-it-mean-for-one-thing-to-cause-another}}
 
 We say one variable (called the treatment, exposure, or intervention) \emph{causes} another variable (the outcome or response) if there is a change in the average outcome between subjects when they receive the treatment and the same subjects when they do not receive the treatment. This definition differs from \emph{association}, which is a change in the average outcome between subjects who received the treatment and different subjects who did not receive the treatment. Thus, causation is a comparison of observed outcomes and their counterfactuals (``what would have happened if the subject were in the other treatment group'').
 
-The central challenge in causal inference is that we cannot observe the outcomes for subjects under both levels of the treatment variable. In other words, we only get to observe each subject in either the treatment or the control group. For example, when estimating the effect of smoking on long term health outcomes, it is impossible to observe the same subject as a smoker and as a nonsmoker. However, under certain circumstances, we can obtain good estimates of effects without observing both outcomes for each individual. The most famous of these is the randomized controlled experiment.
+The central challenge in assessing causality is that we cannot observe the outcomes for subjects under both levels of the treatment variable. In other words, we only get to observe each subject in either the treatment or the control group. For example, when estimating the effect of smoking on long term health outcomes, it is impossible to observe the same subject as a smoker and as a nonsmoker. However, under certain circumstances, we can obtain good estimates of effects without observing both outcomes for each individual. The most famous of these is the randomized controlled experiment.
 
 \hypertarget{randomized-controlled-experiments}{%
 \section{Randomized controlled experiments}\label{randomized-controlled-experiments}}
 
-One of the most important scientific discoveries of the early 20th century was the randomized controlled trial (RCT). In its simplest form, researchers randomly assign subjects to receive the treatment or be in the control group. If they observe a difference in average outcomes between the two groups, then we would say the treatment caused the outcome. \emph{Why does assigning subjects to groups by the simple action of flipping a coin result in such a radical difference in how we interpret the results?} The answer lies in the definition of causation above. Causation compares the outcomes between the same subjects. When we randomize the treatment, we end up comparing the outcomes between one group of subjects with the treatment and another group of subjects without the treatment who we expect to be very similar. In fact, when we have large enough sample sizes, it would be very unusual for the two groups to differ much. We refer to the two groups as \emph{exchangeble}. In other words, we would expect the control group to have had similar results as the treatment group if they were the treatment group, and vice versa.
+One of the most important scientific discoveries of the early 20th century was the randomized controlled trial (RCT). In its simplest form, researchers randomly assign subjects to receive the treatment or be in the control group. If they observe a difference in average outcomes between the two groups, then we would say the treatment caused the outcome. \emph{Why does assigning subjects to groups by the simple action of flipping a coin result in such a radical difference in how we interpret the results?} The answer lies in the definition of causation above. Causation compares the outcomes between the same subjects. When we randomize the treatment, we compare the outcome in one group of subjects with the treatment to another group of subjects without the treatment who we expect to be very similar. In fact, when we have large enough sample sizes, it would be very unusual for the two groups to differ much. We refer to the two groups as \emph{exchangeble}. In other words, we would expect the control group to have had similar results as the treatment group if they were the treatment group, and vice versa.
 
-However, an overly restrictive view of causality followed this important discovery. That is, causality can \emph{only} be shown with RCTs. This placed a huge limitation on the types of research questions statistics could address. Frequently, RCTs are not ethical, feasible, or desirable. Imagine enrolling in a study where you could be randomly assigned to be a smoker for the next 20 years. Towards the end of the 20th century, researchers began taking a more expansive view of causality in observational studies.
+However, an overly restrictive view of causality followed this important discovery. That is, causality can \emph{only} be shown with RCTs. This placed a huge limitation on the types of research questions statistics could address. Frequently, RCTs are not ethical, feasible, or desirable. Would you enroll in a study where you could be randomly assigned to be a smoker for the next 20 years? Towards the end of the 20th century, researchers began taking a more expansive view of causality in observational studies.
 
 \hypertarget{observational-studies-and-confounding}{%
 \section{Observational Studies and Confounding}\label{observational-studies-and-confounding}}
 
-In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. It is about how subjects are \emph{assigned} to the treatment groups.) Instead, other factors determine subjects' treatment group assignment. Confounding occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias -- using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not fix bias, you just get a more precise, wrong estimate.
+In observational studies, researchers do not intervene on the assignment of subjects to treatment and control groups. (Note: a common misconception is that observational studies do not have treatment and control groups. This is not true. The distinction between randomized controlled experiments and observational studies is about how subjects are \emph{assigned} to the treatment groups.) Instead, other factors determine subjects' treatment group assignment. For example, adolescents with a history of abuse, family violence, and stressful life events are more likely to smoke \citep{ellickson2001high, simantov2000health}.
+
+\emph{Confounding} occurs when these other factors determining assignment are themselves causes of the outcome. In other words, the treatment and control groups are different in ways that are important to the outcome. The two groups are not exchangeable. An observed association between the treatment and outcome could mean (1) the treatment caused the outcome, (2) other factors causing group assignment caused the outcome, or (3) both. Furthermore, with only information on the treatment and outcome, it is not possible to identify which of the three is the correct explanation. Confounding is a form of statistical bias -- using the observed association as an estimate of the treatment effect will be systemically off. Increasing the sample size does not fix bias, you just get a more precise, wrong estimate.
 
 For example, consider an observational study investigating long term health effects of smoking. In many populations, males are more likely to be smokers. In addition, males have different risks for long term health outcomes than females, regardless of whether they smoke. If we observe an association between smoking and an outcome without information on sex, we cannot distinguish the effect of smoking from the effect of sex.
 
-However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, you can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. \emph{How do we identify a sufficient set of confounding variables?} For that question, we turn to causal diagrams.
+However, researchers in the late 20th century had a key insight. If we know the assignment mechanism and measure a sufficient set of confounding variables, we can obtain good estimates of treatment effects from observational studies. This was huge! Observational studies and RCTs are not fundamentally different. Estimating effects requires understanding the assignment mechanism, and RCTs are just a special case with a simple, known assignment mechanism. Given this insight, researchers became more comfortable making causal claims from observational studies when they have knowledge of the assignment mechanism. \emph{How do we identify a sufficient set of confounding variables?} For that question, we turn to causal diagrams.
 
 \hypertarget{causal-diagrams}{%
 \section{Causal Diagrams}\label{causal-diagrams}}
 
-Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. In addition, using simple heuristics for causal diagrams, they help identify a sufficient set of confounding variables to control for during design and analysis.
+Causal diagrams are useful tools for depicting the assignment mechanism (also called the causal model). Experts use subject matter knowledge in their field to specify the causal model. They typically specify the causal model prior to collecting data to identify confounding variables to measure. Importantly, there is no way to determine the presence of unmeasured confounding using the data. Using simple heuristics for causal diagrams, they help identify a sufficient set of confounding variables to control for during design and analysis.
 
 Causal diagrams are directed, acyclic graphs (DAGs) where the nodes are variables. A directed edge (arrow) connecting two nodes indicates the node at the arrow's tail is a cause of the node at the arrow's head. The graphs are directed because the arrows point in one direction. They are acyclic because you can never get back to where you started by following arrows. The convention in many disciplines is to order the variables temporally from left to right -- we adopt that convention here.
 
-There are three building blocks of causal diagrams.
+There are three types of variables that are the building blocks of causal diagrams.
 
 \hypertarget{confounding-variable}{%
 \subsection{Confounding variable}\label{confounding-variable}}
 
-Figure \ref{fig:confounder} depicts the confounding variable \(C\) of the effect of treatment \(X\) on outcome \(Y\). We will observe an association between \(X\) and \(Y\) even if there is no treatment effect. The levels of \(X\) differ in terms of \(C\) and \(C\) itself is a cause of \(Y\). Without measuring and controlling for \(C\), we cannot distinguish the effect of \(X\) on \(Y\) from the association through confounding variable \(C\). However, if \(C\) is the only confounding variable, controlling for it will result in good estimates of the effect of \(X\) on \(Y\).
-
-(backdoor path)
+Figure \ref{fig:confounder} depicts the confounding variable \(C\) of the effect of treatment \(X\) on outcome \(Y\). We say there is a \emph{backdoor path} between \(X\) and \(Y\) through \(C\). We will observe an association between \(X\) and \(Y\) even if there is no treatment effect. The levels of \(X\) differ in terms of \(C\) and \(C\) itself is a cause of \(Y\). Without measuring and controlling for \(C\), we cannot distinguish the effect of \(X\) on \(Y\) from the association through confounding variable \(C\). However, if \(C\) is the only confounding variable, controlling for it will result in good estimates of the effect of \(X\) on \(Y\). When we control for \(C\), we say the backdoor path from \(X\) to \(Y\) is ``blocked''.
 
 \begin{figure}
 \centering
@@ -281,12 +265,12 @@ Figure \ref{fig:collider} depicts treatment \(X\) with no effect on outcome \(Y\
 \caption{\label{fig:collider} Collider \(Z\) with no treatment effect of \(X\) on \(Y\).}
 \end{figure}
 
-A very famous example appears in \citet{pearl2018book}. In the general population, we would not expect to see an association between an individual's talent and looks. More talented people are not better looking and vice versa. However, if we look only at famous Hollywood actors (\(Z\)), we would see an association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor. More seriously, \emph{selection bias} is a huge issue in medical and public health studies resulting in easily misinterpretated associations \citep{hernan2004structural, cole2010illustrating, elwert2014endogenous}.
+A very famous example appears in \citet{pearl2018book}. In the general population, we would not expect to see an association between an individual's talent and looks. More talented people are not better looking and vice versa. However, if we look only at famous Hollywood actors (\(Z\)), we would see a negative association between talent and looks in this group because an individual needs either talent or looks (or both) to become a famous Hollywood actor. Being less talented makes it more likely the actor is good looking because there must be some reason they became a famous Hollywood actor. More seriously, \emph{selection bias} is a huge issue in medical and public health studies resulting in easily misinterpretated associations \citep{hernan2004structural, cole2010illustrating, elwert2014endogenous}. For example, several studies have found a protective effect of smoking on Covid-19 infections (see Exercises).
 
 \hypertarget{mediator}{%
 \subsection{Mediator}\label{mediator}}
 
-Figure \ref{fig:mediator} depicts mediator \(M\) of the effect of treatment \(X\) on outcome \(Y\). In this case, \(X\) is a cause of \(M\), \(M\) is a cause of \(Y\), and there is no effect of \(X\) on \(Y\) that cannot be explained by the effect of \(M\) on \(Y\). A common mistake is to adjust for \(M\). If \(M\) is categorical, we will not observe an association between \(X\) and \(Y\) within levels of \(M\). However, there is still an effect of \(X\) on \(Y\).
+Figure \ref{fig:mediator} depicts mediator \(M\) of the effect of treatment \(X\) on outcome \(Y\). In this case, \(X\) is a cause of \(M\), \(M\) is a cause of \(Y\), and there is no effect of \(X\) on \(Y\) that cannot be explained by the effect of \(M\) on \(Y\). A common mistake is to adjust for \(M\). If we adjust for \(M\), we will not observe an association between \(X\) and \(Y\) when there is an effect of \(X\) on \(Y\).
 
 \begin{figure}
 \centering
@@ -294,9 +278,50 @@ Figure \ref{fig:mediator} depicts mediator \(M\) of the effect of treatment \(X\
 \caption{\label{fig:mediator} Mediator \(M\) of the effect of treament \(X\) on outcome \(Y\).}
 \end{figure}
 
-For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceded by increased blood pressure. Even if there is an effect of the medication on the adverse reason, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions.
+For example, let's say researchers are investigating an adverse reaction to a medication using a treatment group and a control group where the adverse reactions are always preceded by increased blood pressure. Even if there is an effect of the medication on the adverse reaction, when we condition upon experiencing increased blood pressure, we will not observe an association between the medication and adverse reactions. Unfortunately, some researchers condition upon everything they measure, often resulting in poor estimates of effects \citep{hernan2002causal}.
 
-Unfortunately, some researchers condition upon everything that they measure, often resulting in poor estimates of effects \citep{hernan2002causal}.
+\textbf{Exercises}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You investigate the effect of a college education on adult earnings by surveying 1000 adults in your area and ask them if they have a bachelor's degree (Y/N) and their yearly income in dollars. You find the college graduates earn about \$30,000 more per year on average than the high school graduates.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Name the treatment and outcome variables in your study.
+\item
+  Is this an observational study or randomized controlled experiment? Explain.
+\item
+  Explain what it means for college education to cause higher adult earnings. In addition, explain how this differs from college education being associated with higher adult earnings.
+\item
+  Identify and explain a potential confounding variable in your study. (Be sure to explain how your confonding variable is a common cause of both the treatment and outcome).
+\item
+  Draw a causal diagram depicting the relationship between the treatment, outcome, and your confounding variable.
+\item
+  You also ask whether the individual has a Master's degree (Y/N). What type of variable is having a Master's degree? Redraw your diagram with this variable included in it.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Several studies have found a negative association between smoking and Covid-19 infection. Read \href{https://rss.onlinelibrary.wiley.com/doi/10.1111/1740-9713.01413}{``The spectre of Berkson's paradox: Collider bias in Covid-19 research''} and answer the following questions.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Explain what it means for smoking to cause a reduction in Covid-19 infections.
+\item
+  What type of variable is hospitalization in Figure 2?
+\item
+  Explain why many studies observe a negative association between smoking and Covid-19 infection.
+\end{enumerate}
 
 \hypertarget{confounding-adjustment-with-regression}{%
 \chapter{Confounding adjustment with regression}\label{confounding-adjustment-with-regression}}
@@ -332,10 +357,10 @@ If we fit a regression model with height as the treatment variable and systolic 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp\_dat}\OtherTok{\textless{}{-}}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"./data/blood\_pressure.csv"}\NormalTok{)}
-\NormalTok{ht\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT,}
-         \AttributeTok{data =}\NormalTok{ bp\_dat)}
-\FunctionTok{summary}\NormalTok{(ht\_mod)}
+\NormalTok{bp_dat<-}\KeywordTok{read_csv}\NormalTok{(}\StringTok{"./data/blood_pressure.csv"}\NormalTok{)}
+\NormalTok{ht_mod=}\KeywordTok{lm}\NormalTok{(SBP}\OperatorTok{~}\NormalTok{HT,}
+         \DataTypeTok{data =}\NormalTok{ bp_dat)}
+\KeywordTok{summary}\NormalTok{(ht_mod)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -364,11 +389,11 @@ Note the coefficient on height is actually positive, meaning that taller people 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
-             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
+\NormalTok{bp_dat}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{`}\DataTypeTok{HT}\StringTok{`}\NormalTok{,}
+             \DataTypeTok{y=}\StringTok{`}\DataTypeTok{SBP}\StringTok{`}\NormalTok{))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -383,11 +408,11 @@ Men tend to be taller than women (175 cm vs 162cm). Men also tend to have higher
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bp\_dat}\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\StringTok{\textasciigrave{}}\AttributeTok{HT}\StringTok{\textasciigrave{}}\NormalTok{,}
-             \AttributeTok{y=}\StringTok{\textasciigrave{}}\AttributeTok{SBP}\StringTok{\textasciigrave{}}\NormalTok{))}\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =}\NormalTok{ SEX))}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
+\NormalTok{bp_dat}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{`}\DataTypeTok{HT}\StringTok{`}\NormalTok{,}
+             \DataTypeTok{y=}\StringTok{`}\DataTypeTok{SBP}\StringTok{`}\NormalTok{))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{colour =}\NormalTok{ SEX))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -407,9 +432,9 @@ When we add Sex to the model, we get the following results.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ht\_gen\_mod}\OtherTok{=}\FunctionTok{lm}\NormalTok{(SBP}\SpecialCharTok{\textasciitilde{}}\NormalTok{HT}\SpecialCharTok{+}\NormalTok{SEX,}
-         \AttributeTok{data =}\NormalTok{ bp\_dat)}
-\FunctionTok{summary}\NormalTok{(ht\_gen\_mod)}
+\NormalTok{ht_gen_mod=}\KeywordTok{lm}\NormalTok{(SBP}\OperatorTok{~}\NormalTok{HT}\OperatorTok{+}\NormalTok{SEX,}
+         \DataTypeTok{data =}\NormalTok{ bp_dat)}
+\KeywordTok{summary}\NormalTok{(ht_gen_mod)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -437,7 +462,7 @@ When we add Sex to the model, we get the following results.
 
 We see that the relationship between height and SBP is now negative. Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG. Sex confounds the relationship between height and blood pressure. We can also note that the coefficient for Sex is a little over 9, meaning that on average, men have a SBP 9 mmHG higher than women.
 
-Hmm, what are we forgetting\ldots? Model diagnostics!
+Hmm, what are we forgetting\ldots{}? Model diagnostics!
 
 \hypertarget{assessing-model-adequacy}{%
 \subsection{Assessing model adequacy}\label{assessing-model-adequacy}}
@@ -460,7 +485,7 @@ For our blood pressure example, we only have one observation on each person and 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals),ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
+\KeywordTok{plot}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{residuals),ht_gen_mod}\OperatorTok{$}\NormalTok{residuals)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -470,7 +495,7 @@ The following figure depicts the residuals vs fitted values from our model with 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{fitted,ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{residuals)}
+\KeywordTok{plot}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{fitted,ht_gen_mod}\OperatorTok{$}\NormalTok{residuals)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -482,7 +507,7 @@ The histogram of our residuals looks relatively normal although it does seem to 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(ht\_gen\_mod}\SpecialCharTok{$}\NormalTok{resid)}
+\KeywordTok{hist}\NormalTok{(ht_gen_mod}\OperatorTok{$}\NormalTok{resid)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -515,7 +540,171 @@ In our example, researchers were specifically interested in the relationship bet
 \hypertarget{quantitative-confounding-variable}{%
 \section{Quantitative confounding variable}\label{quantitative-confounding-variable}}
 
-TO BE WRITTEN
+Confounding variables can, of course, be quantitative as well. Here we will explore the situation where you have a quantitative treatment variable \((X)\), a quantitative response variable \((Y)\), and a quantitative confounding variable \((C)\). In fact, the ice cream example from the chapter 4 was just such a situation.
+
+\hypertarget{unadjusted-effect-of-x-on-y-1}{%
+\subsection{\texorpdfstring{Unadjusted effect of \(X\) on \(Y\)}{Unadjusted effect of X on Y}}\label{unadjusted-effect-of-x-on-y-1}}
+
+The file wage\_data.csv {[}ROB, can you either post this to course website or\ldots{}? Actually, there isn't really an ``or'' I guess.{]} on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the ``top 2\%''. {[}Do you think I should cite info for pverty line and top 2\%?{]} We wish to explore the relationship between family size and earnings. A scatterplot indicates that there does appear to be a positive relationship between the two variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wage_dat<-}\KeywordTok{read_csv}\NormalTok{(}\StringTok{"./data/wage_data.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   Education = col_character(),
+##   Sex = col_character(),
+##   MaritalStatus = col_character(),
+##   Race = col_character(),
+##   FamilyMakeup = col_character()
+## )
+\end{verbatim}
+
+\begin{verbatim}
+## See spec(...) for full column specifications.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wage_dat}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{FamilySize, }\DataTypeTok{y=}\NormalTok{Earnings))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Family Size"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Annual Earnings"}\NormalTok{, }\DataTypeTok{title =} \StringTok{"Family Size versus Annual Earnings"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+If we were to consider only the treatment variable FamilySize and the response variable Earnings, we could use the following regression equation:
+\[\widehat{Earnings} = \beta_0+\beta_1*FamilySize\]
+Fitting this in R, we get the following results:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{size_mod =}\StringTok{ }\KeywordTok{lm}\NormalTok{(Earnings}\OperatorTok{~}\NormalTok{FamilySize, }\DataTypeTok{data =}\NormalTok{ wage_dat)}
+\KeywordTok{summary}\NormalTok{(size_mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Earnings ~ FamilySize, data = wage_dat)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -41825 -28222 -13021  13383 141580 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    49012       4212  11.636  < 2e-16 ***
+## FamilySize      4802       1272   3.775 0.000179 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 39120 on 498 degrees of freedom
+## Multiple R-squared:  0.02782,    Adjusted R-squared:  0.02587 
+## F-statistic: 14.25 on 1 and 498 DF,  p-value: 0.0001792
+\end{verbatim}
+
+We see that there is a very significant effect of family size on earnings; for every additional member of the family, we expect to earn about \$48702 more.
+
+\hypertarget{effect-of-x-on-y-adjusting-for-c-1}{%
+\subsection{\texorpdfstring{Effect of \(X\) on \(Y\) adjusting for \(C\)}{Effect of X on Y adjusting for C}}\label{effect-of-x-on-y-adjusting-for-c-1}}
+
+However, there are a number of factors that are related to both earnings and family size, perhaps in a causal way. We will look at age. We expect to earn more as we age and get more experience in the workforce and possibly even more education. We also expect that, in general, family size will increase - or at least stay the same - as we get older. We can visually inspect our data to check this. Below is a graph of earnings versus age.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wage_dat}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{`}\DataTypeTok{Age}\StringTok{`}\NormalTok{,}
+             \DataTypeTok{y=}\StringTok{`}\DataTypeTok{Earnings}\StringTok{`}\NormalTok{))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{, }\DataTypeTok{se=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+Age is a potential \emph{confounder}. When we add age to the model with family size, we have the following regression model:
+
+\[\widehat{Earnings}=\beta_0+\beta_1*FamilySize+\beta_2*Age\]
+When we estimate the coefficents for this model in R, we get the following results.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{size_age_mod =}\StringTok{ }\KeywordTok{lm}\NormalTok{(Earnings}\OperatorTok{~}\NormalTok{FamilySize}\OperatorTok{+}\NormalTok{Age, }\DataTypeTok{data =}\NormalTok{ wage_dat)}
+\KeywordTok{summary}\NormalTok{(size_age_mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Earnings ~ FamilySize + Age, data = wage_dat)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -48975 -26711 -12103  14107 145564 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  26643.8     8322.0   3.202  0.00145 ** 
+## FamilySize    5534.1     1283.0   4.314 1.94e-05 ***
+## Age            449.7      144.7   3.107  0.00199 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 38790 on 497 degrees of freedom
+## Multiple R-squared:  0.04635,    Adjusted R-squared:  0.04251 
+## F-statistic: 12.08 on 2 and 497 DF,  p-value: 7.551e-06
+\end{verbatim}
+
+We see that there is still a significant positive effect of family size on earnings, although it's magnitude is slightly larger. We expect to earn about \$5534 less per year for every additional member of the family \emph{after adjusting for age}. We also note that the coefficient for age is 449.7, meaning that, for every year older a person is, we expect them to earn \$450 more on average, after adjusting for family size. Of course, the relationship between family size and earnings is a complex one that would require a much more extensive analysis to fully understand.
+
+\hypertarget{assessing-model-adequacy-1}{%
+\subsection{Assessing model adequacy}\label{assessing-model-adequacy-1}}
+
+Just like with previous regression models, these results might not mean much if our validity conditions aren't met.
+
+Here, we may be willing to believe that our assumption of independence is met by the way the data was collected. The CEPR data is from the CPS, a monthly survey\ldots{}.{[}ROB - put stuff here please!{]} and this subset is a random sample of the overall CPS from {[}ROB!{]}
+
+To check for linearity and equal variance, we can plot the predicted values vs.~the residuals.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{size_age_mod}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{fortify}\NormalTok{(wage_dat)}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ .fitted, }\DataTypeTok{y =}\NormalTok{ .resid))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{( }\DataTypeTok{x =} \StringTok{"Predicted Values"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Residuals"}\NormalTok{, }\DataTypeTok{title =} \StringTok{"Residuals vs. predicted values"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+The linearity and constant variance conditions appear to be met. Although we have some large positive residuals, there does not appear to be a pattern and the width is relatively constant.
+
+Our histogram, however, shows that the residuals seem to be skewed relatively heavily to the right. Our fourth validity condition, normality of the residuals, is likely not met. Although we can be comfortable in our estimates of the regression coefficients, we should be careful about drawing any conclusions about their statistical significance. (For a much more in depth assumption about assessing model adequacy, to include methods to handle violations of the validity conditions, take MA376!)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(size_age_mod}\OperatorTok{$}\NormalTok{residuals)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf}
 
 \hypertarget{activity}{%
 \chapter{Activity}\label{activity}}
@@ -575,11 +764,11 @@ The file \texttt{obstacle\_course.csv} contains height (inches), IOCT times (sec
 
 Figure 1 depicts IOCT times in seconds versus height in inches. Table 1 contains information from the linear regression model.
 
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-22-1.pdf}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-16}Linear regression output for IOCT times and height.}
+\caption{\label{tab:unnamed-chunk-22}Linear regression output for IOCT times and height.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -678,8 +867,8 @@ Below are boxplots of height in inches and IOCT times in seconds by sex.
 
 \begin{figure}
 \centering
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-17-1.pdf}
-\caption{\label{fig:unnamed-chunk-17}Height (inches) and IOCT time (seconds) by sex.}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf}
+\caption{\label{fig:unnamed-chunk-23}Height (inches) and IOCT time (seconds) by sex.}
 \end{figure}
 
 \begin{enumerate}
@@ -698,13 +887,13 @@ Figure 3 depicts the association between IOCT time and height by sex. Tables 2 a
 
 \begin{figure}
 \centering
-\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf}
-\caption{\label{fig:unnamed-chunk-18}Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384).}
+\includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-24-1.pdf}
+\caption{\label{fig:unnamed-chunk-24}Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384).}
 \end{figure}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-19}Regression results for female cadets.}
+\caption{\label{tab:unnamed-chunk-25}Regression results for female cadets.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -719,7 +908,7 @@ height & -1.24 & 1.64 & -0.76 & 0.45\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-19}Regression results for male cadets.}
+\caption{\label{tab:unnamed-chunk-25}Regression results for male cadets.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r}
 \hline
@@ -764,6 +953,6 @@ height & 0.09 & 0.58 & 0.15 & 0.88\\
 
 \vspace{1in}
 
-  \bibliography{book.bib,packages.bib}
+\bibliography{book.bib,packages.bib}
 
 \end{document}
