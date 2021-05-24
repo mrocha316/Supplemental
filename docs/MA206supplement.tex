@@ -111,7 +111,7 @@
 
 \title{Causality and Multiple Regression Supplement}
 \author{Krista Watts and Kevin Cummiskey}
-\date{2021-05-21}
+\date{2021-05-24}
 
 \begin{document}
 \maketitle
@@ -705,6 +705,31 @@ Our histogram, however, shows that the residuals seem to be skewed relatively he
 \end{Shaded}
 
 \includegraphics{MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\hypertarget{interactions}{%
+\chapter{Interactions}\label{interactions}}
+
+Last chapter, we investigate how one variable affects another variable after adjusting for both categorical and quantitative confounding variables. In the first example in that chapter, the research question of interest is: \emph{what is the effect of height on blood pressure?} Sex is a confounding variable because taller individuals are more likely to be male and (2) males are more likely have higher blood pressure, regardless of height. Therefore, we include Sex in the model and the blood pressure coefficient is the primary quantity of interest.
+
+Often, the research question of interest is about whether a third variable changes the effect of one variable on another variable. In the blood pressure example, we might ask: \emph{is the effect of height on blood pressure different for males and females?} This research question is fundamentally different than those in the last chapter because the primary interest is in how Sex \emph{changes} the relationship between height and blood pressure. If the relationship between height and blood pressure is different for males and females, then we say there is an interaction between Sex and height. Alternatively, some disciplines refer to Sex as an \emph{effect modifier} because Sex \emph{changes} or \emph{modifies} the relationship between height and blood pressure.
+
+Identify which of the following research questions involve interactions.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Does studying affect WPR grades?
+\item
+  Does sleep change the effect of studying on WPR grades?
+\item
+  How much will a 500 square foot addition to a house increase its sales price?
+\item
+  How different is the change in sales price for a 500 square foot addition comparing the town of Cornwall to the city of Newburgh?
+\end{enumerate}
+
+Of the questions above, b) and d) are research questions involving interactions. In a), the primary question of interest is the effect of a treatment variable (time studying) on an outcome variable (WPR grade). In b), we are interested in the interaction between sleep and time studying. In other words, we want to know if the amount of sleep modifies the effect of studying on WPR grades. It seems likely that studying is more effective when you get more sleep and evidence of this interaction tells us something about how the brain retains knowledge. c) and d) follow a similar pattern as a) and b). In c), we are interested in the effect of house size on sales price. In d), we are interested in the interaction between house size and location. In other words, we want to know if the location of the house changes the relationship between size and sales price.
+
+A very common misconception is that an interaction between two variables implies the two variables are associated with each other. To see why this is not the case, consider research question d) above. An interaction between house size and location means the average sales price per one square foot increase in house size is different in Cornwall than Newburgh. An association between house size and location means houses are, on average, bigger in either Cornwall or Newburgh. Clearly, houses being more expensive per square foot increase in size in one location (an interaction) does not imply the houses are bigger in either location (association).
 
 \hypertarget{activity}{%
 \chapter{Activity}\label{activity}}
