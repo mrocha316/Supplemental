@@ -158,7 +158,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.2.3</b> Assessing model adequacy</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>4</b> Interactions</a></li>
+<li class="chapter" data-level="4" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>4</b> Interactions</a><ul>
+<li class="chapter" data-level="4.1" data-path="interactions.html"><a href="interactions.html#main-effect-of-house-size-on-sales-price"><i class="fa fa-check"></i><b>4.1</b> Main effect of house size on sales price</a></li>
+<li class="chapter" data-level="4.2" data-path="interactions.html"><a href="interactions.html#interaction-between-house-size-and-location"><i class="fa fa-check"></i><b>4.2</b> Interaction between house size and location</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>5</b> Activity</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -183,18 +186,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="interactions" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Interactions</h1>
-<p>Last chapter, we investigate how one variable affects another variable after adjusting for both categorical and quantitative confounding variables. In the first example in that chapter, the research question of interest is: <em>what is the effect of height on blood pressure?</em> Sex is a confounding variable because taller individuals are more likely to be male and (2) males are more likely have higher blood pressure, regardless of height. Therefore, we include Sex in the model and the blood pressure coefficient is the primary quantity of interest.</p>
-<p>Often, the research question of interest is about whether a third variable changes the effect of one variable on another variable. In the blood pressure example, we might ask: <em>is the effect of height on blood pressure different for males and females?</em> This research question is fundamentally different than those in the last chapter because the primary interest is in how Sex <em>changes</em> the relationship between height and blood pressure. If the relationship between height and blood pressure is different for males and females, then we say there is an interaction between Sex and height. Alternatively, some disciplines refer to Sex as an <em>effect modifier</em> because Sex <em>changes</em> or <em>modifies</em> the relationship between height and blood pressure.</p>
+<p>Last chapter, we investigate the effect of a treatment on an outcome. In this chapter, we investigate how the effect of a treatment on an outcome changes with another variable. If the effect changes with this variable, we say there is an <em>interaction</em> between this variable and the treatment. The distinction between the two types of research questions is important.</p>
+<p>Last chapter, the research question of interest is: <em>what is the effect of height on blood pressure?</em> Instead, we might ask: <em>is the effect of height on blood pressure different for males and females?</em> In other words, is there an interaction between height and Sex. This research question is fundamentally different because the primary interest is in how Sex <em>changes</em> the relationship between height and blood pressure. (Note some disciplines refer to Sex as an <em>effect modifier</em> because Sex <em>changes</em> or <em>modifies</em> the relationship between height and blood pressure.)</p>
 <p>Identify which of the following research questions involve interactions.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Does studying affect WPR grades?</p></li>
-<li><p>Does sleep change the effect of studying on WPR grades?</p></li>
-<li><p>How much will a 500 square foot addition to a house increase its sales price?</p></li>
-<li><p>How different is the change in sales price for a 500 square foot addition comparing the town of Cornwall to the city of Newburgh?</p></li>
+<li><p>How does studying affect academic performance?</p></li>
+<li><p>Does the effect of studying on academic performance depend upon sleep?</p></li>
+<li><p>How much does a 500 square foot addition to a house increase its sales price?</p></li>
+<li><p>Is the increase in sales price for a 400 square foot addition different in the Town of Cornwall than the City of Newburgh?</p></li>
 </ol>
-<p>Of the questions above, b) and d) are research questions involving interactions. In a), the primary question of interest is the effect of a treatment variable (time studying) on an outcome variable (WPR grade). In b), we are interested in the interaction between sleep and time studying. In other words, we want to know if the amount of sleep modifies the effect of studying on WPR grades. It seems likely that studying is more effective when you get more sleep and evidence of this interaction tells us something about how the brain retains knowledge. c) and d) follow a similar pattern as a) and b). In c), we are interested in the effect of house size on sales price. In d), we are interested in the interaction between house size and location. In other words, we want to know if the location of the house changes the relationship between size and sales price.</p>
+<p>Above, b) and d) are research questions involving interactions. In a), the primary question of interest is the effect of a treatment variable (time studying) on an outcome variable (academic performance). In b), we are interested in the interaction between sleep and time studying. In other words, we want to know if the amount of sleep modifies the effect of studying on academic performance. It seems likely that studying is more effective when you get more sleep and evidence of this interaction tells us something about how the brain retains knowledge. c) and d) follow a similar pattern. In c), we are interested in the effect of house size on sales price. In d), we are interested in the interaction between house size and location. In other words, we want to know if the location of the house changes the relationship between size and sales price.</p>
 <p>A very common misconception is that an interaction between two variables implies the two variables are associated with each other. To see why this is not the case, consider research question d) above. An interaction between house size and location means the average sales price per one square foot increase in house size is different in Cornwall than Newburgh. An association between house size and location means houses are, on average, bigger in either Cornwall or Newburgh. Clearly, houses being more expensive per square foot increase in size in one location (an interaction) does not imply the houses are bigger in either location (association).</p>
+<p>In the next section, we investigate an example of an interaction between house size and location in real estate transactions. Newburgh, New York is a small city (population: 30,000) along the Hudson River about 60 miles north of New York City. Nearby, the town of Cornwall, New York (population: 13,000) is also along the Hudson River with similar commute times to NYC. Despite their similar locations, real estate prices in the two locations are very different. The file houses.csv contains records of 356 single family homes with three or four bedrooms sold in Cornwall or Newburgh from May 2020 to May 2021 (source: redfin.com). The figure below depicts the sales price versus house size by location.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">houses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;./data/houses.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">houses <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">SQUARE FEET</span><span class="st">`</span>, </a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">             <span class="dt">y =</span> PRICE,</a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">             <span class="dt">color =</span> CITY)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;House size (sq ft)&quot;</span>,</a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">       <span class="dt">y =</span> <span class="st">&quot;Sales price ($)&quot;</span>,</a>
+<a class="sourceLine" id="cb22-10" data-line-number="10">       <span class="dt">color =</span> <span class="st">&quot;Location&quot;</span>)</a></code></pre></div>
+<p><img src="MA206supplement_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div id="main-effect-of-house-size-on-sales-price" class="section level2">
+<h2><span class="header-section-number">4.1</span> Main effect of house size on sales price</h2>
+<p>First, let’s estimate the effect of house size on sales price using the model below. We’ll refer to <span class="math inline">\(\beta_1\)</span> in this model as the <em>main effect</em> of house size.</p>
+<p><span class="math display">\[\widehat{Price} = \beta_0 + \beta_1 Size\]</span></p>
+<p>where <span class="math inline">\(Price\)</span> is the sales price of the house in dollars and <span class="math inline">\(Size\)</span> is the size of the house in square feet.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">model_main_effect &lt;-<span class="st"> </span>houses <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">lm</span>(PRICE <span class="op">~</span><span class="st"> `</span><span class="dt">SQUARE FEET</span><span class="st">`</span>, <span class="dt">data =</span> .)</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="kw">summary</span>(model_main_effect)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = PRICE ~ `SQUARE FEET`, data = .)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -279057  -38960    2236   46628  274449 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   36757.744  14889.155   2.469    0.014 *  
+## `SQUARE FEET`   146.683      7.963  18.421   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 78710 on 354 degrees of freedom
+## Multiple R-squared:  0.4894, Adjusted R-squared:  0.488 
+## F-statistic: 339.3 on 1 and 354 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>From the model output, the estimate of the main effect of house size on sales price is $146.68 per square foot increase. In other words, the average sales price increases by $146.68 per square foot increase in house size. If a homeowner adds a 20ft x 20ft addition, they can expect to increase the sales price of their home by about $60000.</p>
+</div>
+<div id="interaction-between-house-size-and-location" class="section level2">
+<h2><span class="header-section-number">4.2</span> Interaction between house size and location</h2>
+<p>In the last section, we found the average sales price increases by $146.68 for each square foot increase in house size. In this section, we ask whether there is an interaction between house size and location. In other words, is the increase in average sales price per square foot increase in house size the same in Newburgh as Cornwall?</p>
+<p>The figure below depicts the sales price versus house size with a regression line for each location and shows some evidence of the following.</p>
+<ul>
+<li><p>The average sales price increases with house size because the lines have positive slopes. <em>We would say there is a main effect of house size</em>.</p></li>
+<li><p>The average sales price is lower in Newburgh than Cornwall because the blue line is lower than the red line. <em>We would say there is a main effect of location</em>.</p></li>
+<li><p>There is an interaction between house size and location because the two lines are not parallel. In other words, the increase in average sales price per square foot of house size is smaller in Newburgh than Cornwall. The slopes of the Newburgh and Cornwall lines are $129.5 and $168.84 per square foot increase, respectively. This is a huge difference! A homeowner in Newburgh building a 20ft x 20ft addition would expect to increase their sales price by about $16000 less than a homeowner in Cornwall building the same addition.</p></li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">houses <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">SQUARE FEET</span><span class="st">`</span>, </a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">             <span class="dt">y =</span> PRICE,</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">             <span class="dt">color =</span> CITY)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;House size (sq ft)&quot;</span>,</a>
+<a class="sourceLine" id="cb25-7" data-line-number="7">       <span class="dt">y =</span> <span class="st">&quot;Sales price ($)&quot;</span>,</a>
+<a class="sourceLine" id="cb25-8" data-line-number="8">       <span class="dt">color =</span> <span class="st">&quot;Location&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="MA206supplement_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>We can construct confidence intervals and perform hypothesis tests on the interaction (difference in slopes) between house size and location using a regression model. Below is a regression model with an interaction between house size and location. The quantity of interest in our analysis is <span class="math inline">\(\beta_3\)</span>, the coefficient on the interaction term.</p>
+<p><span class="math display">\[\widehat{Price} = \beta_0 + \beta_1 Size + \beta_2 Location + \beta_3 Location * Size\]</span></p>
+<p>where <span class="math inline">\(Location\)</span> equals one if the house is in Newburgh and equals zero if in Cornwall. Interpretations of each term in the model are:</p>
+<ul>
+<li><p><span class="math inline">\(\beta_0\)</span>: the average sales price of a house in Cornwall with zero square feet.</p></li>
+<li><p><span class="math inline">\(\beta_1\)</span>: the change in average sales price for a one square foot increase in size for a house in Cornwall.</p></li>
+<li><p><span class="math inline">\(\beta_2\)</span>: the difference in average sales price comparing a zero square foot home in Newburgh to a zero square foot home in Cornwall.</p></li>
+<li><p><span class="math inline">\(\beta_3\)</span>: the difference in the change in average sales price for a one square foot increase in size comparing Newburgh to Cornwall.</p></li>
+</ul>
+<p>Generally, we are not interested in <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\beta_2\)</span> when the research question is about an interaction. Too often, even experienced researchers misinterpret these coefficients. For example, <span class="math inline">\(\beta_2\)</span> in this model is <strong>not</strong> the effect of location.</p>
+<p>Why is <span class="math inline">\(\beta_3\)</span> the quantity of interest in this study? Recall we want to determine the difference between the slopes of the Newburgh and Cornwall lines. In the model above, the expected sales price of a home in Newburgh is: <span class="math display">\[\widehat{Price}_{newburgh} = \beta_0 + \beta_1 Size + \beta_2 * (1) + \beta_3 * (1) * Size = (\beta_0 + \beta_2) + (\beta_1 + \beta_3) Size\]</span> The slope of the Newburgh line is <span class="math inline">\(\beta_1 + \beta_3\)</span>. The expected sales price of a home in Cornwall is: <span class="math display">\[\widehat{Price}_{cornwall} = \beta_0 + \beta_1 Size + \beta_2 * (0) + \beta_3 * (0) * Size = \beta_0 + \beta_1 Size\]</span> The slope of the Cornwall line is <span class="math inline">\(\beta_1\)</span>. Therefore, the difference in slopes comparing Newburgh to Cornwall is <span class="math inline">\((\beta_1 + \beta_3) - \beta_1 = \beta_3\)</span>.</p>
+<p>The R code below fits the interaction model.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">model_interaction &lt;-<span class="st"> </span>houses <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">  </span><span class="kw">lm</span>(PRICE <span class="op">~</span><span class="st"> `</span><span class="dt">SQUARE FEET</span><span class="st">`</span><span class="op">*</span>CITY, <span class="dt">data =</span> .)</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="kw">summary</span>(model_interaction)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = PRICE ~ `SQUARE FEET` * CITY, data = .)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -248040  -33210    5729   46740  281326 
+## 
+## Coefficients:
+##                            Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                60123.88   34377.89   1.749   0.0812 .  
+## `SQUARE FEET`                168.84      16.92   9.976   &lt;2e-16 ***
+## CITYNewburgh               -8718.48   37440.43  -0.233   0.8160    
+## `SQUARE FEET`:CITYNewburgh   -39.34      18.76  -2.096   0.0368 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 71350 on 352 degrees of freedom
+## Multiple R-squared:  0.5828, Adjusted R-squared:  0.5792 
+## F-statistic: 163.9 on 3 and 352 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>We see the change in average sales price per square foot increase in house size is about $40 smaller in Newburgh than in Cornwall. The <span class="math inline">\(p\)</span>-value for this coefficient indicates there is strong evidence of an interaction between house size and location.</p>
+<p>Note the coefficient on <span class="math inline">\(CITY\)</span> has a large <span class="math inline">\(p\)</span>-value. Many researchers misinterpret this to mean there is no effect of location on sales price. From the figure, it is very clear sales prices are higher on average in Cornwall than Newburgh for houses of similar size. The large <span class="math inline">\(p\)</span>-value for the <span class="math inline">\(CITY\)</span> coefficient simply tells us that there is not evidence houses <em>with zero square feet</em> are more expensive in Newburgh than Cornwall. It is a meaningless quantity often misinterpreted as something important.</p>
 
+</div>
 </div>
             </section>
 

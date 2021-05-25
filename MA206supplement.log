@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.22)  25 MAY 2021 08:38
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.22)  25 MAY 2021 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,7 +456,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count306
 ) (./MA206supplement.aux
 
-LaTeX Warning: Label `tab:unnamed-chunk-26' multiply defined.
+LaTeX Warning: Label `tab:unnamed-chunk-34' multiply defined.
 
 )
 \openout1 = `MA206supplement.aux'.
@@ -970,50 +970,91 @@ UNDING VARIABLE \TU/lmr/m/n/10 35
 Chapter 4.
 [37
 
-] [38]
+]
+File: MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[38] [39] [40]
+File: MA206supplement_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-27-1.pdf>
+[41]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 879--879
+[]\TU/lmtt/m/n/10 ##                            Estimate Std. Error t value Pr(
+>|t|)[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 879--879
+[]\TU/lmtt/m/n/10 ## (Intercept)                60123.88   34377.89   1.749   0
+.0812 .[] 
+ []
+
+
+Overfull \hbox (22.5pt too wide) in paragraph at lines 879--879
+[]\TU/lmtt/m/n/10 ## []SQUARE FEET[]                168.84      16.92   9.976  
+ <2e-16 ***[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 879--879
+[]\TU/lmtt/m/n/10 ## CITYNewburgh               -8718.48   37440.43  -0.233   0
+.8160[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 879--879
+[]\TU/lmtt/m/n/10 ## []SQUARE FEET[]:CITYNewburgh   -39.34      18.76  -2.096  
+ 0.0368 *[] 
+ []
+
+[42] [43] [44
+
+]
 Chapter 5.
 File: ./images/crawlObstacle.jpg Graphic file (type bmp)
 <./images/crawlObstacle.jpg>
 File: ./images/tireObstacle.jpg Graphic file (type bmp)
 <./images/tireObstacle.jpg>
 
-Overfull \hbox (2.20631pt too wide) in paragraph at lines 743--744
+Overfull \hbox (2.20631pt too wide) in paragraph at lines 894--895
 [][] [] 
  []
 
 
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
-[39
+[45] [46]
+File: MA206supplement_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-31-1.pdf>
+[47] [48]
+File: MA206supplement_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-32-1.pdf>
+[49]
+File: MA206supplement_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-33-1.pdf>
+[50] (./MA206supplement.bbl [51] [52
 
-] [40]
-File: MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (t
-ype pdf)
-<use MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf>
-[41] [42]
-File: MA206supplement_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (t
-ype pdf)
-<use MA206supplement_files/figure-latex/unnamed-chunk-24-1.pdf>
-[43]
-File: MA206supplement_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (t
-ype pdf)
-<use MA206supplement_files/figure-latex/unnamed-chunk-25-1.pdf>
-[44] (./MA206supplement.bbl [45] [46
-
-] [47]) [48] (./MA206supplement.aux)
+] [53]) [54] (./MA206supplement.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
-(rerunfilecheck)             Checksum: B5BFF3E6D5E90358D0DE0D44F09A410D;2793.
+(rerunfilecheck)             Checksum: 250B683C3CBFF082E64F41981F52B9AC;3354.
  ) 
 Here is how much of TeX's memory you used:
- 16100 strings out of 478943
- 294751 string characters out of 5866130
- 750516 words of memory out of 5000000
- 35667 multiletter control sequences out of 15000+600000
+ 16115 strings out of 478943
+ 295519 string characters out of 5866130
+ 753655 words of memory out of 5000000
+ 35680 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,8n,122p,1727b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MA206supplement.pdf (48 pages).
+Output written on MA206supplement.pdf (54 pages).

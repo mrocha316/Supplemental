@@ -198,7 +198,6 @@ $$\widehat{Earnings} = \beta_0+\beta_1*FamilySize$$
 Fitting this in R, we get the following results:
 
 ```{r}
-
 size_mod = lm(Earnings~FamilySize, data = wage_dat)
 summary(size_mod)
 ```
