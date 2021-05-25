@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-05-24" />
+<meta name="date" content="2021-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative confounding variable</a><ul>
+<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y-1"><i class="fa fa-check"></i><b>3.2.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.2.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c-1"><i class="fa fa-check"></i><b>3.2.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.2.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.2.3</b> Assessing model adequacy</a></li>
@@ -313,12 +313,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--[Note about prediction.]--></p>
 </div>
 </div>
-<div id="quantitative-confounding-variable" class="section level2">
-<h2><span class="header-section-number">3.2</span> Quantitative confounding variable</h2>
+<div id="quantitative-explanatory-variable-with-quantitative-confounding-variable" class="section level2">
+<h2><span class="header-section-number">3.2</span> Quantitative explanatory variable with quantitative confounding variable</h2>
 <p>Confounding variables can, of course, be quantitative as well. Here we will explore the situation where you have a quantitative treatment variable <span class="math inline">\((X)\)</span>, a quantitative response variable <span class="math inline">\((Y)\)</span>, and a quantitative confounding variable <span class="math inline">\((C)\)</span>. In fact, the ice cream example from the chapter 4 was just such a situation.</p>
 <div id="unadjusted-effect-of-x-on-y-1" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></h3>
-<p>The file wage_data.csv [ROB, can you either post this to course website or…? Actually, there isn’t really an “or” I guess.] on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the “top 2%”. [Do you think I should cite info for pverty line and top 2%?] We wish to explore the relationship between family size and earnings. A scatterplot indicates that there does appear to be a positive relationship between the two variables.</p>
+<p>The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the “top 2%”. [Do you think I should cite info for poverty line and top 2%?] We wish to explore the relationship between family size and earnings. A scatterplot indicates that there does appear to be a positive relationship between the two variables.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">wage_dat&lt;-<span class="kw">read_csv</span>(<span class="st">&quot;./data/wage_data.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
@@ -400,7 +400,7 @@ When we estimate the coefficents for this model in R, we get the following resul
 <div id="assessing-model-adequacy-1" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Assessing model adequacy</h3>
 <p>Just like with previous regression models, these results might not mean much if our validity conditions aren’t met.</p>
-<p>Here, we may be willing to believe that our assumption of independence is met by the way the data was collected. The CEPR data is from the CPS, a monthly survey….[ROB - put stuff here please!] and this subset is a random sample of the overall CPS from [ROB!]</p>
+<p>Here, we may be willing to believe that our assumption of independence is met by the way the data was collected. The CEPR data is from the Current Population Survey’s Annual Social and Economic Supplement (CPS ASEC or March Supplement). Surveyors use a random sample to survey about 60,000 occupied households by both telephone and in person surveys. Households come from all 50 states and the District of Columbia and are only in the sample pool for a limited time. Since respondents responses to survey questions are not dependent on another respondents, independence can be assumed.</p>
 <p>To check for linearity and equal variance, we can plot the predicted values vs. the residuals.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">size_age_mod<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">fortify</span>(wage_dat)<span class="op">%&gt;%</span></a>

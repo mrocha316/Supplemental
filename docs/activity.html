@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-05-24" />
+<meta name="date" content="2021-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative confounding variable</a><ul>
+<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y-1"><i class="fa fa-check"></i><b>3.2.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.2.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c-1"><i class="fa fa-check"></i><b>3.2.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.2.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.2.3</b> Assessing model adequacy</a></li>
@@ -207,14 +207,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div style="page-break-after: always;"></div>
 <p>Figure 1 depicts IOCT times in seconds versus height in inches. Table 1 contains information from the linear regression model.</p>
-<div class="figure"><span id="fig:unnamed-chunk-22"></span>
-<img src="MA206supplement_files/figure-html/unnamed-chunk-22-1.png" alt="Indoor Obstacle Course Test (IOCT) times versus height (n = 384)" width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-23"></span>
+<img src="MA206supplement_files/figure-html/unnamed-chunk-23-1.png" alt="Indoor Obstacle Course Test (IOCT) times versus height (n = 384)" width="672" />
 <p class="caption">
 Figure 5.1: Indoor Obstacle Course Test (IOCT) times versus height (n = 384)
 </p>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-22">Table 5.1: </span>Linear regression output for IOCT times and height.</caption>
+<caption><span id="tab:unnamed-chunk-23">Table 5.1: </span>Linear regression output for IOCT times and height.</caption>
 <thead>
 <tr class="header">
 <th align="left">term</th>
@@ -277,8 +277,8 @@ Figure 5.1: Indoor Obstacle Course Test (IOCT) times versus height (n = 384)
 </ol>
 
 <p>Below are boxplots of height in inches and IOCT times in seconds by sex.</p>
-<div class="figure"><span id="fig:unnamed-chunk-23"></span>
-<img src="MA206supplement_files/figure-html/unnamed-chunk-23-1.png" alt="Height (inches) and IOCT time (seconds) by sex." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-24"></span>
+<img src="MA206supplement_files/figure-html/unnamed-chunk-24-1.png" alt="Height (inches) and IOCT time (seconds) by sex." width="672" />
 <p class="caption">
 Figure 5.2: Height (inches) and IOCT time (seconds) by sex.
 </p>
@@ -289,14 +289,14 @@ Figure 5.2: Height (inches) and IOCT time (seconds) by sex.
 
 <div style="page-break-after: always;"></div>
 <p>Figure 3 depicts the association between IOCT time and height by sex. Tables 2 and 3 depict regression results for female and male cadets, respectively.</p>
-<div class="figure"><span id="fig:unnamed-chunk-24"></span>
-<img src="MA206supplement_files/figure-html/unnamed-chunk-24-1.png" alt="Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384)." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<img src="MA206supplement_files/figure-html/unnamed-chunk-25-1.png" alt="Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384)." width="672" />
 <p class="caption">
 Figure 5.3: Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 384).
 </p>
 </div>
 <table>
-<caption><span id="tab:unnamed-chunk-25">Table 5.2: </span>Regression results for female cadets.</caption>
+<caption><span id="tab:unnamed-chunk-26">Table 5.2: </span>Regression results for female cadets.</caption>
 <thead>
 <tr class="header">
 <th align="left">term</th>
@@ -324,7 +324,7 @@ Figure 5.3: Indoor Obstacle Course Test (IOCT) times versus height by sex (n = 3
 </tbody>
 </table>
 <table>
-<caption><span id="tab:unnamed-chunk-25">Table 5.2: </span>Regression results for male cadets.</caption>
+<caption><span id="tab:unnamed-chunk-26">Table 5.2: </span>Regression results for male cadets.</caption>
 <thead>
 <tr class="header">
 <th align="left">term</th>

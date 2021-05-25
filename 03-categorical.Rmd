@@ -176,14 +176,14 @@ hist(m4$residuals)
 In our example, researchers were specifically interested in the relationship between height and blood pressure so height was our treatment variable.  Sex was related to both height and blood pressure so we need to include it in our model, but we are not particularly interested in the relationship between Sex and blood pressure from a clinical or scientific standpoint.  So Sex was a confounding variable.  Notice that we treat these variables the same from a statistical standpoint.  It is possible to have multiple exposures or treatments, multiple confounders, or both.  The distinction between the two is not a statistical one; it is a scientific one.  
 <!--[Note about prediction.]-->
 
-## Quantitative confounding variable
+##  Quantitative explanatory variable with quantitative confounding variable
 
 Confounding variables can, of course, be quantitative as well.  Here we will explore the situation where you have a quantitative treatment variable $(X)$, a quantitative response variable $(Y)$, and a quantitative confounding variable $(C)$.  In fact, the ice cream example from the chapter 4 was just such a situation.
 
 
 ### Unadjusted effect of $X$ on $Y$
 
-The file wage_data.csv [ROB, can you either post this to course website or...?  Actually, there isn't really an "or" I guess.] on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the "top 2\%". [Do you think I should cite info for pverty line and top 2%?] We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
+The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the "top 2\%". [Do you think I should cite info for poverty line and top 2%?] We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
 
 ```{r}
 wage_dat<-read_csv("./data/wage_data.csv")
@@ -232,7 +232,7 @@ We see that there is still a significant positive effect of family size on earni
 
 Just like with previous regression models, these results might not mean much if our validity conditions aren't met.
 
-Here, we may be willing to believe that our assumption of independence is met by the way the data was collected.  The CEPR data is from the CPS, a monthly survey....[ROB - put stuff here please!] and this subset is a random sample of the overall CPS from [ROB!]
+Here, we may be willing to believe that our assumption of independence is met by the way the data was collected.  The CEPR data is from the Current Population Survey's Annual Social and Economic Supplement (CPS ASEC or March Supplement).  Surveyors use a random sample to survey about 60,000 occupied households by both telephone and in person surveys.  Households come from all 50 states and the District of Columbia and are only in the sample pool for a limited time. Since respondents responses to survey questions are not dependent on another respondents, independence can be assumed.
 
 To check for linearity and equal variance, we can plot the predicted values vs. the residuals.  
 ```{r, fig.height = 3}
@@ -251,4 +251,3 @@ Our histogram, however, shows that the residuals seem to be skewed relatively he
 ```{r, fig.height = 3}
 hist(size_age_mod$residuals)
 ```
-

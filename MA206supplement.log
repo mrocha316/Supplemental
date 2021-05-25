@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.22)  24 MAY 2021 16:26
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.22)  25 MAY 2021 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,7 +456,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count306
 ) (./MA206supplement.aux
 
-LaTeX Warning: Label `tab:unnamed-chunk-25' multiply defined.
+LaTeX Warning: Label `tab:unnamed-chunk-26' multiply defined.
 
 )
 \openout1 = `MA206supplement.aux'.
@@ -923,7 +923,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 538--539
  []
 
 
-Underfull \vbox (badness 3019) has occurred while \output is active []
+Underfull \hbox (badness 7397) in paragraph at lines 541--541
+[]\TU/lmr/bx/n/14.4 Quantitative explanatory variable with
+ []
 
 [30]
 File: MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (t
@@ -932,10 +934,22 @@ ype pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Overfull \hbox (148.59343pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
+UNDING VARIABLE \TU/lmr/m/n/10 31
+ []
+
 [31] [32]
 File: MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf>
+
+Overfull \hbox (148.59343pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
+UNDING VARIABLE \TU/lmr/m/n/10 33
+ []
+
 [33] [34]
 File: MA206supplement_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (t
 ype pdf)
@@ -944,7 +958,13 @@ File: MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7116) has occurred while \output is active []
+
+
+Overfull \hbox (148.59343pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
+UNDING VARIABLE \TU/lmr/m/n/10 35
+ []
 
 [35] [36]
 Chapter 4.
@@ -967,17 +987,17 @@ Underfull \vbox (badness 1038) has occurred while \output is active []
 [39
 
 ] [40]
-File: MA206supplement_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (t
-ype pdf)
-<use MA206supplement_files/figure-latex/unnamed-chunk-22-1.pdf>
-[41] [42]
 File: MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf>
-[43]
+[41] [42]
 File: MA206supplement_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-24-1.pdf>
+[43]
+File: MA206supplement_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (t
+ype pdf)
+<use MA206supplement_files/figure-latex/unnamed-chunk-25-1.pdf>
 [44] (./MA206supplement.bbl [45] [46
 
 ] [47]) [48] (./MA206supplement.aux)
@@ -985,12 +1005,12 @@ ype pdf)
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
-(rerunfilecheck)             Checksum: A64167188F13596561105C7C89AA2C8C;2586.
+(rerunfilecheck)             Checksum: B5BFF3E6D5E90358D0DE0D44F09A410D;2793.
  ) 
 Here is how much of TeX's memory you used:
  16100 strings out of 478943
- 294712 string characters out of 5866130
- 750477 words of memory out of 5000000
+ 294751 string characters out of 5866130
+ 750516 words of memory out of 5000000
  35667 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
