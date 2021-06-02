@@ -1,29 +1,32 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.22)  25 MAY 2021 12:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7300 64-bit) (preloaded format=xelatex 2021.5.18)  2 JUN 2021 09:06
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**MA206supplement.tex
-(./MA206supplement.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> (/Users/kfcummiskey/Library/TinyTeX/texmf-dis
-t/tex/latex/base/book.cls
-Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+**./MA206supplement.tex
+(MA206supplement.tex
+LaTeX2e <2020-02-02> patch level 1
+L3 programming layer <2020-02-08>
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book
+.cls"
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\bk10
+.clo"
+File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@chapter=\count176
-\c@section=\count177
-\c@subsection=\count178
-\c@subsubsection=\count179
-\c@paragraph=\count180
-\c@subparagraph=\count181
-\c@figure=\count182
-\c@table=\count183
+\c@part=\count163
+\c@chapter=\count164
+\c@section=\count165
+\c@subsection=\count166
+\c@subsubsection=\count167
+\c@paragraph=\count168
+\c@subparagraph=\count169
+\c@figure=\count170
+\c@table=\count171
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+\bibindent=\dimen134
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmoder
+n.sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -57,300 +60,381 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\a
+msmath.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\a
+mstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\a
+msgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen139
-)) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+\@emptytoks=\toks14
+\ex@=\dimen135
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\a
+msbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen140
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen136
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\a
+msopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count184
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count185
-\leftroot@=\count186
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count187
-\DOTSCASE@=\count188
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen141
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count189
-\c@MaxMatrixCols=\count190
+\inf@bad=\count172
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count173
+\leftroot@=\count174
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count175
+\DOTSCASE@=\count176
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count177
+\c@MaxMatrixCols=\count178
 \dotsspace@=\muskip16
-\c@parentequation=\count191
-\dspbrk@lvl=\count192
-\tag@help=\toks17
-\row@=\count193
-\column@=\count194
-\maxfields@=\count195
-\andhelp@=\toks18
-\eqnshift@=\dimen142
-\alignsep@=\dimen143
-\tagshift@=\dimen144
-\tagwidth@=\dimen145
-\totwidth@=\dimen146
-\lineht@=\dimen147
-\@envbody=\toks19
+\c@parentequation=\count179
+\dspbrk@lvl=\count180
+\tag@help=\toks15
+\row@=\count181
+\column@=\count182
+\maxfields@=\count183
+\andhelp@=\toks16
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks17
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.st
-y
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-m
-ath.sty (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3
-.sty
-Package: expl3 2021-02-18 L3 programming layer (loader) 
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\i
+fxetex.sty"
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xe
-tex.def
-File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
-(|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count196
-\l__color_backend_stack_int=\count197
-\g__graphics_track_int=\count198
-\l__pdf_internal_box=\box49
-\g__pdf_backend_object_int=\count199
-\g__pdf_backend_annotation_int=\count266
-\g__pdf_backend_link_int=\count267
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\i
+ftex.sty"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\i
+fluatex.sty"
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/unicode-m
+ath\unicode-math.sty"
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\
+expl3.sty"
+Package: expl3 2020-02-08 L3 programming layer (loader) 
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend
+\l3backend-xdvipdfmx.def"
+File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count184
+\l__pdf_internal_box=\box47
+\g__pdf_backend_object_int=\count185
+\g__pdf_backend_annotation_int=\count186
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-m
-ath-xetex.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/unicode-m
+ath\unicode-math-xetex.sty"
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpar
-se.sty
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpar
-se-2020-10-01.sty
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpar
-se-generic.tex)))
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3
-keys2e.sty
-Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.st
-y
-Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3package
+s/xparse\xparse.sty"
+Package: xparse 2020-02-08 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count187
+\g__xparse_grabber_int=\count188
+\l__xparse_m_args_int=\count189
+\l__xparse_v_nesting_int=\count190
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3package
+s/l3keys2e\l3keys2e.sty"
+Package: l3keys2e 2020-02-08 LaTeX2e option processing using LaTeX3 keys
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\
+fontspec.sty"
+Package: fontspec 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTeX
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xete
-x.sty
-Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\
+fontspec-xetex.sty"
+Package: fontspec-xetex 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count268
-\l__fontspec_language_int=\count269
-\l__fontspec_strnum_int=\count270
-\l__fontspec_tmp_int=\count271
-\l__fontspec_tmpa_int=\count272
-\l__fontspec_tmpb_int=\count273
-\l__fontspec_tmpc_int=\count274
-\l__fontspec_em_int=\count275
-\l__fontspec_emdef_int=\count276
-\l__fontspec_strong_int=\count277
-\l__fontspec_strongdef_int=\count278
-\l__fontspec_tmpa_dim=\dimen148
-\l__fontspec_tmpb_dim=\dimen149
-\l__fontspec_tmpc_dim=\dimen150
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cf
-g))) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
+\l__fontspec_script_int=\count191
+\l__fontspec_language_int=\count192
+\l__fontspec_strnum_int=\count193
+\l__fontspec_tmp_int=\count194
+\l__fontspec_tmpa_int=\count195
+\l__fontspec_tmpb_int=\count196
+\l__fontspec_tmpc_int=\count197
+\l__fontspec_em_int=\count198
+\l__fontspec_emdef_int=\count199
+\l__fontspec_strong_int=\count266
+\l__fontspec_strongdef_int=\count267
+\l__fontspec_tmpa_dim=\dimen144
+\l__fontspec_tmpb_dim=\dimen145
+\l__fontspec_tmpc_dim=\dimen146
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\font
+enc.sty"
+Package: fontenc 2020/01/25 v2.0m Standard LaTeX package
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\
+fontspec.cfg")))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fix-
+cm.sty"
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1e
+nc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count279
-\g__um_fonts_used_int=\count280
-\l__um_primecount_int=\count281
+\g__um_fam_int=\count268
+\g__um_fonts_used_int=\count269
+\l__um_primecount_int=\count270
 \g__um_primekern_muskip=\muskip17
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-m
-ath-table.tex))) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/upquo
-te/upquote.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/unicode-m
+ath\unicode-math-table.tex")))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/upquote\u
+pquote.sty"
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\text
+comp.sty"
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.s
-ty
-Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype
+\microtype.sty"
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\
+keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmd
-s.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+\MT@toks=\toks20
+\MT@count=\count271
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen147
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count272
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype
+\microtype-xetex.def"
+File: microtype-xetex.def 2019/11/18 v2.7d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 258.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype
+\microtype.cfg"
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\p
+arskip.sty"
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions
+\kvoptions.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds
+\ltxcmds.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetke
+ys\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\
+etoolbox.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count273
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xc
+olor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-
+cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-
+def\xetex.def"
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xurl\xurl
+.sty"
+Package: xurl 2020/01/24 v 0.09 modify URL breaks
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.s
+ty"
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\
+bookmark.sty"
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\
+hyperref.sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmd
+s\pdftexcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.
-sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infware
+rr\infwarerr.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.
-sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefin
-ekeys.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefin
+ekeys\kvdefinekeys.sty"
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.
-sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfesca
+pe\pdfescape.sty"
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\h
+ycolor.sty"
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacr
-o.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmac
+ro\letltxmacro.sty"
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\a
+uxhook.sty"
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.st
-y
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+\@linkdim=\dimen148
+\Hy@linkcounter=\count274
+\Hy@pagecounter=\count275
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\
+pd1enc.def"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 )
-\@linkdim=\dimen151
-\Hy@linkcounter=\count282
-\Hy@pagecounter=\count283
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
-)
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-lang
-patches.def
-File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
-nguages
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.st
-y
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc
+\intcalc.sty"
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.st
-y
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmd
+s\etexcmds.sty"
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count284
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count276
+Package hyperref Info: Option `unicode' set `true' on input line 4421.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\
+puenc.def"
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4073.
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count285
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen152
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count277
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen149
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\
+bitset.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcal
-c.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintc
+alc\bigintcalc.sty"
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count286
-\Field@Width=\dimen153
-\Fld@charsize=\dimen154
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
-ge
-with kernel methods
+\Fld@menulength=\count278
+\Field@Width=\dimen150
+\Fld@charsize=\dimen151
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegsh
+i\atbegshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count287
-\c@Item=\count288
-\c@Hfootnote=\count289
+\Hy@abspage=\count279
+\c@Item=\count280
+\c@Hfootnote=\count281
 )
 Package hyperref Info: Driver (autodetected): hxetex.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.
-sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\
+hxetex.def"
+File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/stringe
+nc\stringenc.sty"
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box50
-\c@Hy@AnnotLevel=\count290
-\HyField@AnnotCount=\count291
-\Fld@listcount=\count292
-\c@bookmark@seq@number=\count293
+\pdfm@box=\box48
+\c@Hy@AnnotLevel=\count282
+\HyField@AnnotCount=\count283
+\Fld@listcount=\count284
+\c@bookmark@seq@number=\count285
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfi
-lecheck.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfile
+check\rerunfilecheck.sty"
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
-with kernel methods
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend
+\atveryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/unique
-counter.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquec
+ounter\uniquecounter.sty"
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -358,143 +442,159 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 35.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
-
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: xetex.def on input line 147.
-
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
-)) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.s
-ty
-Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count294
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\
+bkm-dvipdfm.def"
+File: bkm-dvipdfm.def 2019/12/03 v1.28 bookmark driver for dvipdfm (HO)
+\BKM@id=\count286
+))
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyvrb\
+fancyvrb.sty"
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count287
 \FV@InFile=\read2
-\FV@TabBox=\box51
-\c@FancyVerbLine=\count295
-\FV@StepNumber=\count296
+\FV@TabBox=\box49
+\c@FancyVerbLine=\count288
+\FV@StepNumber=\count289
 \FV@OutFile=\write3
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/framed\fr
+amed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip53
-\fb@frw=\dimen155
-\fb@frh=\dimen156
-\FrameRule=\dimen157
-\FrameSep=\dimen158
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+\fb@frw=\dimen152
+\fb@frh=\dimen153
+\FrameRule=\dimen154
+\FrameSep=\dimen155
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\lon
+gtable.sty"
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count297
-\LTcapwidth=\dimen159
-\LT@head=\box52
-\LT@firsthead=\box53
-\LT@foot=\box54
-\LT@lastfoot=\box55
-\LT@cols=\count298
-\LT@rows=\count299
-\c@LT@tables=\count300
-\c@LT@chunks=\count301
-\LT@p@ftn=\toks22
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.st
-y
+\LTchunksize=\count290
+\LTcapwidth=\dimen156
+\LT@head=\box50
+\LT@firsthead=\box51
+\LT@foot=\box52
+\LT@lastfoot=\box53
+\LT@cols=\count291
+\LT@rows=\count292
+\c@LT@tables=\count293
+\c@LT@chunks=\count294
+\LT@p@ftn=\toks21
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\
+booktabs.sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen160
-\lightrulewidth=\dimen161
-\cmidrulewidth=\dimen162
-\belowrulesep=\dimen163
-\belowbottomsep=\dimen164
-\aboverulesep=\dimen165
-\abovetopsep=\dimen166
-\cmidrulesep=\dimen167
-\cmidrulekern=\dimen168
-\defaultaddspace=\dimen169
-\@cmidla=\count302
-\@cmidlb=\count303
-\@aboverulesep=\dimen170
-\@belowrulesep=\dimen171
-\@thisruleclass=\count304
-\@lastruleclass=\count305
-\@thisrulewidth=\dimen172
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.st
-y
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box56
-\fn@width=\dimen173
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.st
-y
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+\heavyrulewidth=\dimen157
+\lightrulewidth=\dimen158
+\cmidrulewidth=\dimen159
+\belowrulesep=\dimen160
+\belowbottomsep=\dimen161
+\aboverulesep=\dimen162
+\abovetopsep=\dimen163
+\cmidrulesep=\dimen164
+\cmidrulekern=\dimen165
+\defaultaddspace=\dimen166
+\@cmidla=\count295
+\@cmidlb=\count296
+\@aboverulesep=\dimen167
+\@belowrulesep=\dimen168
+\@thisruleclass=\count297
+\@lastruleclass=\count298
+\@thisrulewidth=\dimen169
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\cal
+c.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count299
+\calc@Bcount=\count300
+\calc@Adimen=\dimen170
+\calc@Bdimen=\dimen171
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count301
+\calc@Cskip=\skip60
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/footnoteh
+yper\footnotehyper.sty"
+Package: footnotehyper 2019/11/07 v1.1a hyperref aware footnote.sty (JFB)
+\FNH@notes=\box54
+\FNH@width=\dimen172
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\
+graphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\
+graphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\
+trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.
-cfg
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-
+cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen174
-\Gin@req@width=\dimen175
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
-Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
-y)
-Package grffile Info: This package is an empty stub for compatibility on input 
-line 40.
-) (/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\na
+tbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip58
-\bibsep=\skip59
+\bibhang=\skip61
+\bibsep=\skip62
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count306
-) (./MA206supplement.aux
+\c@NAT@ctr=\count302
+) (MA206supplement.aux
 
 LaTeX Warning: Label `tab:unnamed-chunk-34' multiply defined.
 
 )
 \openout1 = `MA206supplement.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 116.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 116.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 116.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 116.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 116.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 116.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 116.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 123.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -507,23 +607,23 @@ Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [Ligatures=TeX,Scale=MatchLowercase,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,BoldFont={latinmodern-math.otf}].
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,BoldFont={latinmodern-math.otf}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->s*[0.9999964596882403]"[latinmodern-math.otf]/OT:scri
-pt=math;language=dflt;mapping=tex-text;"
+pt=math;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->s*[0.9999964596882403]"[latinmodern-math.otf]/OT:scri
-pt=math;language=dflt;mapping=tex-text;"
+pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 116.
+(Font)              scaled to size 10.0pt on input line 123.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -542,39 +642,38 @@ Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [Ligatures=TeX,Scale=MatchLowercase,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,
-Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,
-Style=MathScriptScript}},BoldFont={latinmodern-math.otf}].
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <8.5->s*[0.9999964596882403]"[latinmodern-math.otf]/OT:s
-cript=math;language=dflt;mapping=tex-text;"<6-8.5>s*[0.9999964596882403]"[latin
-modern-math.otf]/OT:script=math;language=dflt;+ssty=0;mapping=tex-text;"<-6>s*[
-0.9999964596882403]"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1
-;mapping=tex-text;"
+cript=math;language=dflt;"<6-8.5>s*[0.9999964596882403]"[latinmodern-math.otf]/
+OT:script=math;language=dflt;+ssty=0;"<-6>s*[0.9999964596882403]"[latinmodern-m
+ath.otf]/OT:script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->s*[0.9999964596882403]"[latinmodern-math.otf]/OT:scri
-pt=math;language=dflt;mapping=tex-text;"
+pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 116.
+(Font)              scaled to size 10.0pt on input line 123.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 116.
+(Font)              `operators' in the math version `normal' on input line 123.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 116.
+ line 123.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 116.
+(Font)              `operators' in the math version `bold' on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 116.
+t line 123.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -608,11 +707,11 @@ Package fontspec Info: latinmodern-math scale = 1.000096459334209.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [Ligatures=TeX,Scale=MatchLowercase,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,
-Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,
-Style=MathScriptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=1.0001,Font
-Adjustment={\fontdimen
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=1.0001,FontAdjustment={\f
+ontdimen
 (fontspec)             8\font =6.77pt\relax \fontdimen 9\font =3.94pt\relax
 (fontspec)             \fontdimen 10\font =4.44pt\relax \fontdimen 11\font
 (fontspec)             =6.86pt\relax \fontdimen 12\font =3.45pt\relax
@@ -629,10 +728,9 @@ Adjustment={\fontdimen
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <8.5->s*[1.000096459334209]"[latinmodern-math.otf]/OT:sc
-ript=math;language=dflt;mapping=tex-text;"<6-8.5>s*[1.000096459334209]"[latinmo
-dern-math.otf]/OT:script=math;language=dflt;+ssty=0;mapping=tex-text;"<-6>s*[1.
-000096459334209]"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;ma
-pping=tex-text;"
+ript=math;language=dflt;"<6-8.5>s*[1.000096459334209]"[latinmodern-math.otf]/OT
+:script=math;language=dflt;+ssty=0;"<-6>s*[1.000096459334209]"[latinmodern-math
+.otf]/OT:script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 8\font =6.77pt\relax \fontdimen 9\font
@@ -647,7 +745,7 @@ pping=tex-text;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->s*[1.000096459334209]"[latinmodern-math.otf]/OT:scrip
-t=math;language=dflt;mapping=tex-text;"
+t=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 8\font =6.77pt\relax \fontdimen 9\font
@@ -662,15 +760,15 @@ t=math;language=dflt;mapping=tex-text;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 116.
+(Font)              `symbols' in the math version `normal' on input line 123.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 116.
+t line 123.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 116.
+(Font)              `symbols' in the math version `bold' on input line 123.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 116.
+t line 123.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -704,11 +802,11 @@ Package fontspec Info: latinmodern-math scale = 0.9998964600422715.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [Ligatures=TeX,Scale=MatchLowercase,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,
-Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,
-Style=MathScriptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=0.9999,Font
-Adjustment={\fontdimen
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=0.9999,FontAdjustment={\f
+ontdimen
 (fontspec)             8\font =0.4pt\relax \fontdimen 9\font =2.0pt\relax
 (fontspec)             \fontdimen 10\font =1.67pt\relax \fontdimen 11\font
 (fontspec)             =1.11pt\relax \fontdimen 12\font =6.0pt\relax
@@ -719,10 +817,9 @@ Adjustment={\fontdimen
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <8.5->s*[0.9998964600422715]"[latinmodern-math.otf]/OT:s
-cript=math;language=dflt;mapping=tex-text;"<6-8.5>s*[0.9998964600422715]"[latin
-modern-math.otf]/OT:script=math;language=dflt;+ssty=0;mapping=tex-text;"<-6>s*[
-0.9998964600422715]"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1
-;mapping=tex-text;"
+cript=math;language=dflt;"<6-8.5>s*[0.9998964600422715]"[latinmodern-math.otf]/
+OT:script=math;language=dflt;+ssty=0;"<-6>s*[0.9998964600422715]"[latinmodern-m
+ath.otf]/OT:script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 8\font =0.4pt\relax \fontdimen 9\font
@@ -731,7 +828,7 @@ modern-math.otf]/OT:script=math;language=dflt;+ssty=0;mapping=tex-text;"<-6>s*[
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->s*[0.9998964600422715]"[latinmodern-math.otf]/OT:scri
-pt=math;language=dflt;mapping=tex-text;"
+pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 8\font =0.4pt\relax \fontdimen 9\font
@@ -741,73 +838,79 @@ pt=math;language=dflt;mapping=tex-text;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-16.
+23.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 116.
+t line 123.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 116
+(Font)              `largesymbols' in the math version `bold' on input line 123
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 116.
-Package hyperref Info: Link coloring OFF on input line 116.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+t line 123.
+LaTeX Info: Redefining \microtypecontext on input line 123.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype
+\mt-LatinModernRoman.cfg"
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+\AtBeginShipoutBox=\box55
+Package hyperref Info: Link coloring OFF on input line 123.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\
+nameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\
+refcount.sty"
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/getti
-tlestring.sty
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitl
+estring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count303
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
-(./MA206supplement.out) (./MA206supplement.out)
-\@outlinefile=\write4
-\openout4 = `MA206supplement.out'.
-
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+LaTeX Info: Redefining \nameref on input line 123.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 118.
+(Font)              scaled to size 12.0pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 118.
+(Font)              scaled to size 8.0pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 118.
+(Font)              scaled to size 6.0pt on input line 125.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-18.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+25.
+
+("C:\Users\robert.lasater\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm
+.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 118.
+(Font)              scaled to size 12.0011pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 118.
+(Font)              scaled to size 8.00073pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 118.
+(Font)              scaled to size 6.00055pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 118.
+(Font)              scaled to size 11.99872pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 118.
+(Font)              scaled to size 7.99915pt on input line 125.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 118.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 118
-.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 118
-.
-(/Users/kfcummiskey/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+(Font)              scaled to size 5.99936pt on input line 125.
+[1
 
 
 ] [2
 
-] (./MA206supplement.toc
+] (MA206supplement.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -825,8 +928,8 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
 )
-\tf@toc=\write5
-\openout5 = `MA206supplement.toc'.
+\tf@toc=\write4
+\openout4 = `MA206supplement.toc'.
 
 [3] [4
 
@@ -835,7 +938,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 ]
 Chapter 1.
 
-Underfull \hbox (badness 1028) in paragraph at lines 137--137
+Underfull \hbox (badness 1028) in paragraph at lines 144--144
 []\TU/lmr/bx/n/14.4 Goals of quantitative research (describe,
  []
 
@@ -843,91 +946,86 @@ Underfull \hbox (badness 1028) in paragraph at lines 137--137
 
 ]
 Chapter 2.
-[11] [12]
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
-[13]
+[11] [12] [13]
 File: ./images/confounder.png Graphic file (type bmp)
 <./images/confounder.png>
 [14]
 File: ./images/collider.png Graphic file (type bmp)
 <./images/collider.png>
-
-Underfull \vbox (badness 3333) has occurred while \output is active []
-
-[15]
 File: ./images/mediator.png Graphic file (type bmp)
 <./images/mediator.png>
-[16] [17] [18
+[15] [16]
+Chapter 3.
+[17
 
 ]
-Chapter 3.
-[19]
 File: ./images/ice_cream_graph.png Graphic file (type bmp)
 <./images/ice_cream_graph.png>
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 360.
-[20]
+[18]
 File: MA206supplement_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (ty
 pe pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-4-1.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[21]
+[19]
 File: MA206supplement_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (ty
 pe pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-5-1.pdf>
-[22] [23] [24]
+[20] [21]
 File: MA206supplement_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (ty
 pe pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-7-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22]
 File: MA206supplement_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (ty
 pe pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-8-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25]
+[23]
 File: MA206supplement_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (ty
 pe pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-9-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[26]
+[24]
 File: MA206supplement_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-10-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[27]
+[25]
 File: MA206supplement_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-12-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[28]
+[26]
 File: MA206supplement_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-14-1.pdf>
-[29]
+[27]
 File: MA206supplement_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-15-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
 
-Underfull \hbox (badness 7397) in paragraph at lines 541--541
+Underfull \hbox (badness 7397) in paragraph at lines 548--548
 []\TU/lmr/bx/n/14.4 Quantitative explanatory variable with
  []
 
-[30]
+
+Underfull \vbox (badness 5460) has occurred while \output is active []
+
+[28]
 File: MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-16-1.pdf>
@@ -937,20 +1035,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Overfull \hbox (148.59343pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
-UNDING VARIABLE \TU/lmr/m/n/10 31
+UNDING VARIABLE \TU/lmr/m/n/10 29
  []
 
-[31] [32]
+[29] [30]
 File: MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-18-1.pdf>
 
 Overfull \hbox (148.59343pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
-UNDING VARIABLE \TU/lmr/m/n/10 33
+UNDING VARIABLE \TU/lmr/m/n/10 31
  []
 
-[33] [34]
+[31]
+Overfull \vbox (1.0129pt too high) detected at line 700
+ []
+
+[32]
 File: MA206supplement_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-20-1.pdf>
@@ -958,103 +1060,110 @@ File: MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-21-1.pdf>
 
-Underfull \vbox (badness 7116) has occurred while \output is active []
-
-
 Overfull \hbox (148.59343pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 3.2.  QUANTITATIVE EXPLANATORY VARIABLE WITH QUANTITATIVE CONFO
-UNDING VARIABLE \TU/lmr/m/n/10 35
+UNDING VARIABLE \TU/lmr/m/n/10 33
  []
 
-[35] [36]
-Chapter 4.
-[37
+[33] [34
 
 ]
+Chapter 4.
+[35]
 File: MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-23-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[38] [39] [40]
+[36] [37]
 File: MA206supplement_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-27-1.pdf>
-[41]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 879--879
+
+Underfull \vbox (badness 1540) has occurred while \output is active []
+
+[38] [39]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 886--886
 []\TU/lmtt/m/n/10 ##                            Estimate Std. Error t value Pr(
 >|t|)[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 879--879
+Overfull \hbox (12.0pt too wide) in paragraph at lines 886--886
 []\TU/lmtt/m/n/10 ## (Intercept)                60123.88   34377.89   1.749   0
 .0812 .[] 
  []
 
 
-Overfull \hbox (22.5pt too wide) in paragraph at lines 879--879
+Overfull \hbox (22.5pt too wide) in paragraph at lines 886--886
 []\TU/lmtt/m/n/10 ## []SQUARE FEET[]                168.84      16.92   9.976  
  <2e-16 ***[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 879--879
+Overfull \hbox (1.5pt too wide) in paragraph at lines 886--886
 []\TU/lmtt/m/n/10 ## CITYNewburgh               -8718.48   37440.43  -0.233   0
 .8160[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 879--879
+Overfull \hbox (12.0pt too wide) in paragraph at lines 886--886
 []\TU/lmtt/m/n/10 ## []SQUARE FEET[]:CITYNewburgh   -39.34      18.76  -2.096  
  0.0368 *[] 
  []
 
-[42] [43] [44
-
-]
+[40]
 Chapter 5.
 File: ./images/crawlObstacle.jpg Graphic file (type bmp)
 <./images/crawlObstacle.jpg>
 File: ./images/tireObstacle.jpg Graphic file (type bmp)
 <./images/tireObstacle.jpg>
 
-Overfull \hbox (2.20631pt too wide) in paragraph at lines 894--895
+Overfull \hbox (2.19576pt too wide) in paragraph at lines 901--902
 [][] [] 
  []
 
 
-Underfull \vbox (badness 1038) has occurred while \output is active []
+Underfull \vbox (badness 3312) has occurred while \output is active []
 
-[45] [46]
+[41
+
+] [42]
 File: MA206supplement_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-31-1.pdf>
-[47] [48]
+[43]
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+[44]
 File: MA206supplement_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-32-1.pdf>
-[49]
+[45]
 File: MA206supplement_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (t
 ype pdf)
 <use MA206supplement_files/figure-latex/unnamed-chunk-33-1.pdf>
-[50] (./MA206supplement.bbl [51] [52
+[46] (MA206supplement.bbl [47] [48
 
-] [53]) [54] (./MA206supplement.aux)
+] [49])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1141.
+[50]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1141.
+(MA206supplement.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1141.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1141.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `MA206supplement.out' has not changed.
-(rerunfilecheck)             Checksum: 250B683C3CBFF082E64F41981F52B9AC;3354.
  ) 
 Here is how much of TeX's memory you used:
- 16115 strings out of 478943
- 295519 string characters out of 5866130
- 753655 words of memory out of 5000000
- 35680 multiletter control sequences out of 15000+600000
- 409897 words of font info for 82 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 98i,8n,122p,1727b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18870 strings out of 414621
+ 336246 string characters out of 2905384
+ 779067 words of memory out of 3000000
+ 35720 multiletter control sequences out of 15000+200000
+ 536341 words of font info for 69 fonts, out of 3000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 58i,8n,115p,1729b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MA206supplement.pdf (54 pages).
+Output written on MA206supplement.pdf (50 pages).

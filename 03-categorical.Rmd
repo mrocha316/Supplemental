@@ -183,10 +183,10 @@ Confounding variables can, of course, be quantitative as well.  Here we will exp
 
 ### Unadjusted effect of $X$ on $Y$
 
-The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the "top 2\%". [Do you think I should cite info for poverty line and top 2%?] We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
+The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line^[https://aspe.hhs.gov/2021-poverty-guidelines#threshholds] but below the "top 2\%"^[https://www.businessinsider.com/top-two-percent-every-us-state-2017-7].We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
 
 ```{r}
-wage_dat<-read_csv("./data/wage_data.csv")
+wage_dat<-read_csv("wage_data.csv")
 wage_dat%>%
   ggplot(aes(x=FamilySize, y=Earnings))+
   geom_point()+
@@ -198,11 +198,12 @@ $$\widehat{Earnings} = \beta_0+\beta_1*FamilySize$$
 Fitting this in R, we get the following results:
 
 ```{r}
+
 size_mod = lm(Earnings~FamilySize, data = wage_dat)
 summary(size_mod)
 ```
 
-We see that there is a very significant effect of family size on earnings; for every additional member of the family, we expect to earn about $48702 more.
+We see that there is a very significant effect of family size on earnings; for every additional member of the family, we expect to earn about $4802 more.
 
 ### Effect of $X$ on $Y$ adjusting for $C$
 
@@ -250,3 +251,4 @@ Our histogram, however, shows that the residuals seem to be skewed relatively he
 ```{r, fig.height = 3}
 hist(size_age_mod$residuals)
 ```
+
