@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Causality and Multiple Regression Supplement</title>
   <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Causality and Multiple Regression Supplement" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Krista Watts and Kevin Cummiskey" />
 
 
-<meta name="date" content="2021-05-25" />
+<meta name="date" content="2021-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 
 <link rel="next" href="introduction.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,25 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,33 +134,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a><ul>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
 <li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
 <li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
-<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a><ul>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
 <li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
 <li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a><ul>
-<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a><ul>
+<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>3.1.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
 <li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y-1"><i class="fa fa-check"></i><b>3.2.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
-<li class="chapter" data-level="3.2.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c-1"><i class="fa fa-check"></i><b>3.2.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
-<li class="chapter" data-level="3.2.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.2.3</b> Assessing model adequacy</a></li>
+<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a></li>
+<li class="chapter" data-level="3.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y-1"><i class="fa fa-check"></i><b>3.3</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="3.4" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c-1"><i class="fa fa-check"></i><b>3.4</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
+<li class="chapter" data-level="3.5" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.5</b> Assessing model adequacy</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>4</b> Interactions</a><ul>
+<li class="chapter" data-level="4" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>4</b> Interactions</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="interactions.html"><a href="interactions.html#main-effect-of-house-size-on-sales-price"><i class="fa fa-check"></i><b>4.1</b> Main effect of house size on sales price</a></li>
 <li class="chapter" data-level="4.2" data-path="interactions.html"><a href="interactions.html#interaction-between-house-size-and-location"><i class="fa fa-check"></i><b>4.2</b> Interaction between house size and location</a></li>
 </ul></li>
@@ -187,35 +194,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Causality and Multiple Regression Supplement</h1>
 <p class="author"><em>Krista Watts and Kevin Cummiskey</em></p>
-<p class="date"><em>2021-05-25</em></p>
+<p class="date"><em>2021-06-02</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>This etext is an introduction to causality in statistics and multivariable methods for students in their first college course in statistics. Traditionally, except for a terse warning from instructors that “correlation does not imply causation”, students only encounter causality in statistics if they take graduate-level courses in certain disciplines (economics, epidemiology, etc.). However, given the ubiquity of data-driven arguments in modern society, a deeper understanding of drawing cause-and-effect conclusions from data is a core competency of college graduates and deserves attention in the liberal arts curriculum. For more on causality in the undergraduate curriculum, see our paper <span class="citation">(Cummiskey et al. <a href="#ref-cummiskey2020causal">2020</a>)</span> and others on this subject <span class="citation">(Horton <a href="#ref-horton2015challenges">2015</a>; Kaplan <a href="#ref-kaplan2018teaching">2018</a>; Lübke et al. <a href="#ref-lubke2020we">2020</a>)</span>.</p>
-<p>After introducing concepts in causality, we use an example-based approach to multiple regression emphasizing how the scientific goal of the study impacts modeling decisions and interpretation of results. Prediction and cause-and-effect are the two main scientific goals of studies using multiple regression. These goals determine how researchers use and interpret models. However, this distinction is rarely made in introductory courses. Too often, multiple regression in the introductory course focuses on prediction and much of the “thinking” outsourced to algorithmic searches. This narrow focus on prediction deprives students of the opportunity to exercise critical judgment and creativity. On the other hand, cause-and-effect studies require tying subject matter knowledge to developing causal models. During this process, students have to carefully consider relationships between variables (which is not particularly important in prediction), thus developing multivariable thinking, an important goal of the revised GAISE report <span class="citation">(Carver et al. <a href="#ref-carver2016guidelines">2016</a>)</span>. Our approach to multiple regression uses the scientific goal to motivate how we think about our data and models. <span class="citation">Hernán, Hsu, and Healy (<a href="#ref-hernan2019second">2019</a>)</span> argue for this approach in data science education; we believe it is appropriate for introductory statistics courses also.</p>
+<p>This etext is an introduction to causality in statistics and multivariable methods for students in their first college course in statistics. Traditionally, except for a terse warning from instructors that “correlation does not imply causation,” students only encounter causality in statistics if they take graduate-level courses in certain disciplines (economics, epidemiology, etc.). However, given the ubiquity of data-driven arguments in modern society, a deeper understanding of drawing cause-and-effect conclusions from data is a core competency of college graduates and deserves attention in the liberal arts curriculum. For more on causality in the undergraduate curriculum, see our paper <span class="citation">(<a href="references.html#ref-cummiskey2020causal" role="doc-biblioref">Cummiskey et al. 2020</a>)</span> and others on this subject <span class="citation">(<a href="references.html#ref-horton2015challenges" role="doc-biblioref">Horton 2015</a>; <a href="references.html#ref-kaplan2018teaching" role="doc-biblioref">Kaplan 2018</a>; <a href="references.html#ref-lubke2020we" role="doc-biblioref">Lübke et al. 2020</a>)</span>.</p>
+<p>After introducing concepts in causality, we use an example-based approach to multiple regression emphasizing how the scientific goal of the study impacts modeling decisions and interpretation of results. Prediction and cause-and-effect are the two main scientific goals of studies using multiple regression. These goals determine how researchers use and interpret models. However, this distinction is rarely made in introductory courses. Too often, multiple regression in the introductory course focuses on prediction and much of the “thinking” outsourced to algorithmic searches. This narrow focus on prediction deprives students of the opportunity to exercise critical judgment and creativity. On the other hand, cause-and-effect studies require tying subject matter knowledge to developing causal models. During this process, students have to carefully consider relationships between variables (which is not particularly important in prediction), thus developing multivariable thinking, an important goal of the revised GAISE report <span class="citation">(<a href="references.html#ref-carver2016guidelines" role="doc-biblioref">Carver et al. 2016</a>)</span>. Our approach to multiple regression uses the scientific goal to motivate how we think about our data and models. <span class="citation"><a href="references.html#ref-hernan2019second" role="doc-biblioref">Hernán, Hsu, and Healy</a> (<a href="references.html#ref-hernan2019second" role="doc-biblioref">2019</a>)</span> argue for this approach in data science education; we believe it is appropriate for introductory statistics courses also.</p>
 <p>This etext is appropriate for a wide variety of introductory statistics courses including both algrebra-based and calculus-based courses. It assumes students understand basic concepts in data analysis, inference (confidence intervals and statistical tests for means and proportions), and simple linear regression.</p>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-carver2016guidelines">
-<p>Carver, Robert, Michelle Everson, John Gabrosek, Nicholas Horton, Robin Lock, Megan Mocko, Allan Rossman, et al. 2016. “Guidelines for Assessment and Instruction in Statistics Education (Gaise) College Report 2016.” AMSTAT.</p>
-</div>
-<div id="ref-cummiskey2020causal">
-<p>Cummiskey, Kevin, Bryan Adams, James Pleuss, Dusty Turner, Nicholas Clark, and Krista Watts. 2020. “Causal Inference in Introductory Statistics Courses.” <em>Journal of Statistics Education</em> 28 (1). Taylor &amp; Francis: 2–8.</p>
-</div>
-<div id="ref-hernan2019second">
-<p>Hernán, Miguel A, John Hsu, and Brian Healy. 2019. “A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks.” <em>Chance</em> 32 (1). Taylor &amp; Francis: 42–49.</p>
-</div>
-<div id="ref-horton2015challenges">
-<p>Horton, Nicholas J. 2015. “Challenges and Opportunities for Statistics and Statistical Education: Looking Back, Looking Forward.” <em>The American Statistician</em> 69 (2). Taylor &amp; Francis: 138–45.</p>
-</div>
-<div id="ref-kaplan2018teaching">
-<p>Kaplan, Daniel. 2018. “Teaching Stats for Data Science.” <em>The American Statistician</em> 72 (1). Taylor &amp; Francis: 89–96.</p>
-</div>
-<div id="ref-lubke2020we">
-<p>Lübke, Karsten, Matthias Gehrke, Jörg Horst, and Gero Szepannek. 2020. “Why We Should Teach Causal Inference: Examples in Linear Regression with Simulated Data.” <em>Journal of Statistics Education</em> 28 (2). Taylor &amp; Francis: 133–39.</p>
-</div>
 </div>
             </section>
 

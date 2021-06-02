@@ -181,12 +181,12 @@ In our example, researchers were specifically interested in the relationship bet
 Confounding variables can, of course, be quantitative as well.  Here we will explore the situation where you have a quantitative treatment variable $(X)$, a quantitative response variable $(Y)$, and a quantitative confounding variable $(C)$.  In fact, the ice cream example from the chapter 4 was just such a situation.
 
 
-### Unadjusted effect of $X$ on $Y$
+## Unadjusted effect of $X$ on $Y$
 
-The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line but below the "top 2\%". [Do you think I should cite info for poverty line and top 2%?] We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
+The file wage_data.csv on the course website contains a subset of wage data from the Center for Economic and Policy Research. It includes individual annual income from wages and salary (Earnings) for people who are above the poverty line^[https://aspe.hhs.gov/2021-poverty-guidelines#threshholds] but below the "top 2\%"^[https://www.businessinsider.com/top-two-percent-every-us-state-2017-7].We wish to explore the relationship between family size and earnings.   A scatterplot indicates that there does appear to be a positive relationship between the two variables. 
 
 ```{r}
-wage_dat<-read_csv("./data/wage_data.csv")
+wage_dat<-read_csv("wage_data.csv")
 wage_dat%>%
   ggplot(aes(x=FamilySize, y=Earnings))+
   geom_point()+
@@ -198,13 +198,14 @@ $$\widehat{Earnings} = \beta_0+\beta_1*FamilySize$$
 Fitting this in R, we get the following results:
 
 ```{r}
+
 size_mod = lm(Earnings~FamilySize, data = wage_dat)
 summary(size_mod)
 ```
 
-We see that there is a very significant effect of family size on earnings; for every additional member of the family, we expect to earn about $48702 more.
+We see that there is a very significant effect of family size on earnings; for every additional member of the family, we expect to earn about $4802 more.
 
-### Effect of $X$ on $Y$ adjusting for $C$
+## Effect of $X$ on $Y$ adjusting for $C$
 
 However, there are a number of factors that are related to both earnings and family size, perhaps in a causal way.  We will look at age.  We expect to earn more as we age and get more experience in the workforce and possibly even more education.  We also expect that, in general, family size will increase - or at least stay the same - as we get older.  We can visually inspect our data to check this.  Below is a graph of earnings versus age.
 
@@ -227,7 +228,7 @@ summary(size_age_mod)
 ```
 We see that there is still a significant positive effect of family size on earnings, although it's magnitude is slightly larger.  We expect to earn about \$5534 less per year for every additional member of the family *after adjusting for age*.  We also note that the coefficient for age is 449.7, meaning that, for every year older a person is, we expect them to earn \$450 more on average, after adjusting for family size.  Of course, the relationship between family size and earnings is a complex one that would require a much more extensive analysis to fully understand.
 
-### Assessing model adequacy
+## Assessing model adequacy
 
 Just like with previous regression models, these results might not mean much if our validity conditions aren't met.
 
@@ -250,3 +251,4 @@ Our histogram, however, shows that the residuals seem to be skewed relatively he
 ```{r, fig.height = 3}
 hist(size_age_mod$residuals)
 ```
+
