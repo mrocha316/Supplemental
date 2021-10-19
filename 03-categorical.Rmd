@@ -34,7 +34,7 @@ ht_mod=lm(SBP~HT,
 summary(ht_mod)
 ```
 
-Note the coefficient on height is actually positive, meaning that taller people actually tend to have higher blood pressure!  In fact, we expect SBP to go up by about 0.05 mmHG for every cm in additional height. This makes sense when we look at the data.   There is A LOT of data here, but we see a general increase in SBP as height increases.
+Note the coefficient on height is negative, meaning that taller people actually tend to have lower blood pressure!  In fact, we expect SBP to go down by about .103 mmHG for every cm in additional height. This makes sense when we look at the data.   There is A LOT of data here, but we see a general decrease in SBP as height increases.
 
 ```{r, fig.height = 3}
 bp_dat%>%
@@ -44,7 +44,7 @@ bp_dat%>%
   theme_classic()
 ```
   
-This is contrary to what we expected.  So I guess previous research was wrong.  Wait – not so fast.  Biological sex is a potential confounder.  
+This is matches to what we expected.  So I guess our work is done.  Wait – not so fast.  Biological sex is a potential confounder.  
 
 ### Effect of $X$ on $Y$ adjusting for $C$
 
@@ -76,7 +76,7 @@ ht_gen_mod=lm(SBP~HT+SEX,
 summary(ht_gen_mod)
 ```
 
-We see that the relationship between height and SBP is now negative.  Specifically, for every extra centimeter of height, we expect SBP to go down by 0.24 mmHG.  Sex confounds the relationship between height and blood pressure.  We can also note that the coefficient for Sex is a little over 9, meaning that on average, men have a SBP 9 mmHG higher than women.
+We see that the relationship between height and SBP remains negative.  Specifically, for every extra centimeter of height, we expect SBP to go down by 0.379 mmHG.  Sex confounds the relationship between height and blood pressure.  We can also note that the coefficient for Sex is a little over 8, meaning that on average, men have a SBP 8 mmHG higher than women.
 
 Hmm, what are we forgetting…?  Model diagnostics!  
 
@@ -226,7 +226,7 @@ When we estimate the coefficents for this model in R, we get the following resul
 size_age_mod = lm(Earnings~FamilySize+Age, data = wage_dat)
 summary(size_age_mod)
 ```
-We see that there is still a significant positive effect of family size on earnings, although it's magnitude is slightly larger.  We expect to earn about \$5534 less per year for every additional member of the family *after adjusting for age*.  We also note that the coefficient for age is 449.7, meaning that, for every year older a person is, we expect them to earn \$450 more on average, after adjusting for family size.  Of course, the relationship between family size and earnings is a complex one that would require a much more extensive analysis to fully understand.
+We see that there is still a significant positive effect of family size on earnings, although it's magnitude is slightly larger.  We expect to earn about \$5534 more per year for every additional member of the family *after adjusting for age*.  We also note that the coefficient for age is 449.7, meaning that, for every year older a person is, we expect them to earn \$450 more on average, after adjusting for family size.  Of course, the relationship between family size and earnings is a complex one that would require a much more extensive analysis to fully understand.
 
 ### Assessing model adequacy
 
