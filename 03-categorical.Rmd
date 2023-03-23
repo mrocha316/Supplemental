@@ -155,7 +155,7 @@ plot(m2$fitted.values,m2$residuals)
 ```
 -->
 
-Next we investigate our assumption of constant variance.  In the plot below, we see a clear fanning out of the residuals; as $\hat{y}$ increases, the variance of the residuals decreases.
+Next we investigate our assumption of constant variance.  In the plot below, we see a clear fanning out of the residuals; as $\hat{y}$ increases, the variance of the residuals increases.
 
 ```{r, echo=FALSE}
 x=sort(runif(500,10,20))
