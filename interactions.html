@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Interactions | Causality and Multiple Regression Supplement</title>
+  <meta name="description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Interactions | Causality and Multiple Regression Supplement" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Interactions | Causality and Multiple Regression Supplement" />
+  
+  <meta name="twitter:description" content="This is a supplement for MA206 Probability and Statistics, West Point, NY." />
+  
+
+<meta name="author" content="Krista Watts and Kevin Cummiskey" />
+
+
+<meta name="date" content="2021-06-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="confounding-adjustment-with-regression.html"/>
+<link rel="next" href="activity.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro Stats Supplement</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#goals-of-quantitative-research-describe-predict-cause-and-effect"><i class="fa fa-check"></i><b>1.1</b> Goals of quantitative research (describe, predict, cause-and-effect)</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#validity"><i class="fa fa-check"></i><b>1.2</b> Validity</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causality.html"><a href="causality.html"><i class="fa fa-check"></i><b>2</b> Causality</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="causality.html"><a href="causality.html#what-does-it-mean-for-one-thing-to-cause-another"><i class="fa fa-check"></i><b>2.1</b> What does it mean for one thing to cause another</a></li>
+<li class="chapter" data-level="2.2" data-path="causality.html"><a href="causality.html#randomized-controlled-experiments"><i class="fa fa-check"></i><b>2.2</b> Randomized controlled experiments</a></li>
+<li class="chapter" data-level="2.3" data-path="causality.html"><a href="causality.html#observational-studies-and-confounding"><i class="fa fa-check"></i><b>2.3</b> Observational Studies and Confounding</a></li>
+<li class="chapter" data-level="2.4" data-path="causality.html"><a href="causality.html#causal-diagrams"><i class="fa fa-check"></i><b>2.4</b> Causal Diagrams</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="causality.html"><a href="causality.html#confounding-variable"><i class="fa fa-check"></i><b>2.4.1</b> Confounding variable</a></li>
+<li class="chapter" data-level="2.4.2" data-path="causality.html"><a href="causality.html#collider"><i class="fa fa-check"></i><b>2.4.2</b> Collider</a></li>
+<li class="chapter" data-level="2.4.3" data-path="causality.html"><a href="causality.html#mediator"><i class="fa fa-check"></i><b>2.4.3</b> Mediator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html"><i class="fa fa-check"></i><b>3</b> Confounding adjustment with regression</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#categorical-confounding-variable"><i class="fa fa-check"></i><b>3.1</b> Categorical confounding variable</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y"><i class="fa fa-check"></i><b>3.1.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c"><i class="fa fa-check"></i><b>3.1.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy"><i class="fa fa-check"></i><b>3.1.3</b> Assessing model adequacy</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#quantitative-explanatory-variable-with-quantitative-confounding-variable"><i class="fa fa-check"></i><b>3.2</b> Quantitative explanatory variable with quantitative confounding variable</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#unadjusted-effect-of-x-on-y-1"><i class="fa fa-check"></i><b>3.2.1</b> Unadjusted effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#effect-of-x-on-y-adjusting-for-c-1"><i class="fa fa-check"></i><b>3.2.2</b> Effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> adjusting for <span class="math inline">\(C\)</span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="confounding-adjustment-with-regression.html"><a href="confounding-adjustment-with-regression.html#assessing-model-adequacy-1"><i class="fa fa-check"></i><b>3.2.3</b> Assessing model adequacy</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactions.html"><a href="interactions.html"><i class="fa fa-check"></i><b>4</b> Interactions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="interactions.html"><a href="interactions.html#main-effect-of-house-size-on-sales-price"><i class="fa fa-check"></i><b>4.1</b> Main effect of house size on sales price</a></li>
+<li class="chapter" data-level="4.2" data-path="interactions.html"><a href="interactions.html#interaction-between-house-size-and-location"><i class="fa fa-check"></i><b>4.2</b> Interaction between house size and location</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>5</b> Activity</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Causality and Multiple Regression Supplement</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactions" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Interactions</h1>
+<p>Last chapter, we investigate the effect of a treatment on an outcome. In this chapter, we investigate how the effect of a treatment on an outcome changes with another variable. If the effect changes with this variable, we say there is an <em>interaction</em> between this variable and the treatment. The distinction between the two types of research questions is important.</p>
+<p>Last chapter, the research question of interest is: <em>what is the effect of height on blood pressure?</em> Instead, we might ask: <em>is the effect of height on blood pressure different for males and females?</em> In other words, is there an interaction between height and Sex. This research question is fundamentally different because the primary interest is in how Sex <em>changes</em> the relationship between height and blood pressure. (Note some disciplines refer to Sex as an <em>effect modifier</em> because Sex <em>changes</em> or <em>modifies</em> the relationship between height and blood pressure.)</p>
+<p>Identify which of the following research questions involve interactions.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>How does studying affect academic performance?</p></li>
+<li><p>Does the effect of studying on academic performance depend upon sleep?</p></li>
+<li><p>How much does a 500 square foot addition to a house increase its sales price?</p></li>
+<li><p>Is the increase in sales price for a 400 square foot addition different in the Town of Cornwall than the City of Newburgh?</p></li>
+</ol>
+<p>Above, b) and d) are research questions involving interactions. In a), the primary question of interest is the effect of a treatment variable (time studying) on an outcome variable (academic performance). In b), we are interested in the interaction between sleep and time studying. In other words, we want to know if the amount of sleep modifies the effect of studying on academic performance. It seems likely that studying is more effective when you get more sleep and evidence of this interaction tells us something about how the brain retains knowledge. c) and d) follow a similar pattern. In c), we are interested in the effect of house size on sales price. In d), we are interested in the interaction between house size and location. In other words, we want to know if the location of the house changes the relationship between size and sales price.</p>
+<p>A very common misconception is that an interaction between two variables implies the two variables are associated with each other. To see why this is not the case, consider research question d) above. An interaction between house size and location means the average sales price per one square foot increase in house size is different in Cornwall than Newburgh. An association between house size and location means houses are, on average, bigger in either Cornwall or Newburgh. Clearly, houses being more expensive per square foot increase in size in one location (an interaction) does not imply the houses are bigger in either location (association).</p>
+<p>In the next section, we investigate an example of an interaction between house size and location in real estate transactions. Newburgh, New York is a small city (population: 30,000) along the Hudson River about 60 miles north of New York City. Nearby, the town of Cornwall, New York (population: 13,000) is also along the Hudson River with similar commute times to NYC. Despite their similar locations, real estate prices in the two locations are very different. The file houses.csv contains records of 356 single family homes with three or four bedrooms sold in Cornwall or Newburgh from May 2020 to May 2021 (source: redfin.com). The figure below depicts the sales price versus house size by location.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="interactions.html#cb22-1" aria-hidden="true" tabindex="-1"></a>houses <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;./data/houses.csv&quot;</span>)</span>
+<span id="cb22-2"><a href="interactions.html#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="interactions.html#cb22-3" aria-hidden="true" tabindex="-1"></a>houses <span class="sc">%&gt;%</span> </span>
+<span id="cb22-4"><a href="interactions.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">SQUARE FEET</span><span class="st">`</span>, </span>
+<span id="cb22-5"><a href="interactions.html#cb22-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> PRICE,</span>
+<span id="cb22-6"><a href="interactions.html#cb22-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> CITY)) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="interactions.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-8"><a href="interactions.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;House size (sq ft)&quot;</span>,</span>
+<span id="cb22-9"><a href="interactions.html#cb22-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Sales price ($)&quot;</span>,</span>
+<span id="cb22-10"><a href="interactions.html#cb22-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Location&quot;</span>)</span></code></pre></div>
+<p><img src="MA206supplement_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div id="main-effect-of-house-size-on-sales-price" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Main effect of house size on sales price</h2>
+<p>First, let’s estimate the effect of house size on sales price using the model below. We’ll refer to <span class="math inline">\(\beta_1\)</span> in this model as the <em>main effect</em> of house size.</p>
+<p><span class="math display">\[\widehat{Price} = \beta_0 + \beta_1 Size\]</span></p>
+<p>where <span class="math inline">\(Price\)</span> is the sales price of the house in dollars and <span class="math inline">\(Size\)</span> is the size of the house in square feet.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="interactions.html#cb23-1" aria-hidden="true" tabindex="-1"></a>model_main_effect <span class="ot">&lt;-</span> houses <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="interactions.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(PRICE <span class="sc">~</span> <span class="st">`</span><span class="at">SQUARE FEET</span><span class="st">`</span>, <span class="at">data =</span> .)</span>
+<span id="cb23-3"><a href="interactions.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="interactions.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_main_effect)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = PRICE ~ `SQUARE FEET`, data = .)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -279057  -38960    2236   46628  274449 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   36757.744  14889.155   2.469    0.014 *  
+## `SQUARE FEET`   146.683      7.963  18.421   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 78710 on 354 degrees of freedom
+## Multiple R-squared:  0.4894, Adjusted R-squared:  0.488 
+## F-statistic: 339.3 on 1 and 354 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>From the model output, the estimate of the main effect of house size on sales price is $146.68 per square foot increase. In other words, the average sales price increases by $146.68 per square foot increase in house size. If a homeowner adds a 20ft x 20ft addition, they can expect to increase the sales price of their home by about $60000.</p>
+</div>
+<div id="interaction-between-house-size-and-location" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Interaction between house size and location</h2>
+<p>In the last section, we found the average sales price increases by $146.68 for each square foot increase in house size. In this section, we ask whether there is an interaction between house size and location. In other words, is the increase in average sales price per square foot increase in house size the same in Newburgh as Cornwall?</p>
+<p>The figure below depicts the sales price versus house size with a regression line for each location and shows some evidence of the following.</p>
+<ul>
+<li><p>The average sales price increases with house size because the lines have positive slopes. <em>We would say there is a main effect of house size</em>.</p></li>
+<li><p>The average sales price is lower in Newburgh than Cornwall because the blue line is lower than the red line. <em>We would say there is a main effect of location</em>.</p></li>
+<li><p>There is an interaction between house size and location because the two lines are not parallel. In other words, the increase in average sales price per square foot of house size is smaller in Newburgh than Cornwall. The slopes of the Newburgh and Cornwall lines are $129.5 and $168.84 per square foot increase, respectively. This is a huge difference! A homeowner in Newburgh building a 20ft x 20ft addition would expect to increase their sales price by about $16000 less than a homeowner in Cornwall building the same addition.</p></li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="interactions.html#cb25-1" aria-hidden="true" tabindex="-1"></a>houses <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="interactions.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">SQUARE FEET</span><span class="st">`</span>, </span>
+<span id="cb25-3"><a href="interactions.html#cb25-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> PRICE,</span>
+<span id="cb25-4"><a href="interactions.html#cb25-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> CITY)) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="interactions.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-6"><a href="interactions.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;House size (sq ft)&quot;</span>,</span>
+<span id="cb25-7"><a href="interactions.html#cb25-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Sales price ($)&quot;</span>,</span>
+<span id="cb25-8"><a href="interactions.html#cb25-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Location&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="interactions.html#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="MA206supplement_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>We can construct confidence intervals and perform hypothesis tests on the interaction (difference in slopes) between house size and location using a regression model. Below is a regression model with an interaction between house size and location. The quantity of interest in our analysis is <span class="math inline">\(\beta_3\)</span>, the coefficient on the interaction term.</p>
+<p><span class="math display">\[\widehat{Price} = \beta_0 + \beta_1 Size + \beta_2 Location + \beta_3 Location * Size\]</span></p>
+<p>where <span class="math inline">\(Location\)</span> equals one if the house is in Newburgh and equals zero if in Cornwall. Interpretations of each term in the model are:</p>
+<ul>
+<li><p><span class="math inline">\(\beta_0\)</span>: the average sales price of a house in Cornwall with zero square feet.</p></li>
+<li><p><span class="math inline">\(\beta_1\)</span>: the change in average sales price for a one square foot increase in size for a house in Cornwall.</p></li>
+<li><p><span class="math inline">\(\beta_2\)</span>: the difference in average sales price comparing a zero square foot home in Newburgh to a zero square foot home in Cornwall.</p></li>
+<li><p><span class="math inline">\(\beta_3\)</span>: the difference in the change in average sales price for a one square foot increase in size comparing Newburgh to Cornwall.</p></li>
+</ul>
+<p>Generally, we are not interested in <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\beta_2\)</span> when the research question is about an interaction. Too often, even experienced researchers misinterpret these coefficients. For example, <span class="math inline">\(\beta_2\)</span> in this model is <strong>not</strong> the effect of location.</p>
+<p>Why is <span class="math inline">\(\beta_3\)</span> the quantity of interest in this study? Recall we want to determine the difference between the slopes of the Newburgh and Cornwall lines. In the model above, the expected sales price of a home in Newburgh is: <span class="math display">\[\widehat{Price}_{newburgh} = \beta_0 + \beta_1 Size + \beta_2 * (1) + \beta_3 * (1) * Size = (\beta_0 + \beta_2) + (\beta_1 + \beta_3) Size\]</span> The slope of the Newburgh line is <span class="math inline">\(\beta_1 + \beta_3\)</span>. The expected sales price of a home in Cornwall is: <span class="math display">\[\widehat{Price}_{cornwall} = \beta_0 + \beta_1 Size + \beta_2 * (0) + \beta_3 * (0) * Size = \beta_0 + \beta_1 Size\]</span> The slope of the Cornwall line is <span class="math inline">\(\beta_1\)</span>. Therefore, the difference in slopes comparing Newburgh to Cornwall is <span class="math inline">\((\beta_1 + \beta_3) - \beta_1 = \beta_3\)</span>.</p>
+<p>The R code below fits the interaction model.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="interactions.html#cb26-1" aria-hidden="true" tabindex="-1"></a>model_interaction <span class="ot">&lt;-</span> houses <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="interactions.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(PRICE <span class="sc">~</span> <span class="st">`</span><span class="at">SQUARE FEET</span><span class="st">`</span><span class="sc">*</span>CITY, <span class="at">data =</span> .)</span>
+<span id="cb26-3"><a href="interactions.html#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="interactions.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_interaction)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = PRICE ~ `SQUARE FEET` * CITY, data = .)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -248040  -33210    5729   46740  281326 
+## 
+## Coefficients:
+##                            Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                60123.88   34377.89   1.749   0.0812 .  
+## `SQUARE FEET`                168.84      16.92   9.976   &lt;2e-16 ***
+## CITYNewburgh               -8718.48   37440.43  -0.233   0.8160    
+## `SQUARE FEET`:CITYNewburgh   -39.34      18.76  -2.096   0.0368 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 71350 on 352 degrees of freedom
+## Multiple R-squared:  0.5828, Adjusted R-squared:  0.5792 
+## F-statistic: 163.9 on 3 and 352 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>We see the change in average sales price per square foot increase in house size is about $40 smaller in Newburgh than in Cornwall. The <span class="math inline">\(p\)</span>-value for this coefficient indicates there is strong evidence of an interaction between house size and location.</p>
+<p>Note the coefficient on <span class="math inline">\(CITY\)</span> has a large <span class="math inline">\(p\)</span>-value. Many researchers misinterpret this to mean there is no effect of location on sales price. From the figure, it is very clear sales prices are higher on average in Cornwall than Newburgh for houses of similar size. The large <span class="math inline">\(p\)</span>-value for the <span class="math inline">\(CITY\)</span> coefficient simply tells us that there is not evidence houses <em>with zero square feet</em> are more expensive in Newburgh than Cornwall. It is a meaningless quantity often misinterpreted as something important.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="confounding-adjustment-with-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="activity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MA206supplement.pdf", "MA206supplement.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
